@@ -6,7 +6,7 @@
 @layer base {
 
   * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   body {
     font-family: var(--font-sans);
