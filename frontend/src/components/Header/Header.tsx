@@ -12,7 +12,7 @@ const Header = () => {
     const notification: boolean = true;
 
     return (
-        <div className="w-[95%] h-[130px] flex justify-between items-center">
+        <div className="w-[95%] h-[130px] flex justify-between items-center mb-4">
             <div>
                 <h1 className="text-[#404040] text-[55px] font-semibold">Weekly sumup</h1>
                 <p className="text-[#AEAEAE] -text-[16px]">Get summary of your weekly online transactions here.</p>
