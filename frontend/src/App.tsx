@@ -6,14 +6,19 @@ import Overview from "./pages/Overview/Overview"
 function App() {
 
   return (
-  <div className="bg-white w-full h-screen items-center justify-center flex">
+  <div className="bg-white w-full h-screen flex gap-4">                   
       <Sidebar/>
-      <main className="w-full h-full flex items-center flex flex-col py-4 gap-6">
+
+      <div className="h-full flex-1 flex-col gap-4 p-4 flex bg-blue" >
         <Header/>
-        <Outlet>
-          <Overview/>
-        </Outlet>
-      </main>
+
+        <main className="w-full flex-1 flex flex-col justify-between">
+          <Outlet>
+            <Overview/>
+          </Outlet>
+        </main>
+      </div>
+
   </div>
   )
 }

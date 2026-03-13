@@ -1,14 +1,16 @@
 import Navbar from "../ui/Navbar/Navbar"
 
-const Menu = () => {
+const Sidebar = () => {
 
     return (
-        <div className="h-full w-3xs border-r-2 border-[#c7c7c7]/40 flex flex-col items-center ">
-            <h1 className="text-center m-8 font-bold text-[54px]">Omini</h1>
+        <div className="h-full w-3xs border-r-1 border-[#c7c7c7]/40 flex flex-col items-center ">
+            <div className="w-full m-8 flex items-center justify-center">
+                <a className="text-center  font-bold text-[54px]">Omini</a>
+            </div>
+
             <Navbar/ >
-            
         </div>
     )
 }
-
-export default Menu
+        
+export default Sidebar
