@@ -1,5 +1,5 @@
 import type { CardNavProps } from "../Cards.type";
-import CardNavButton from "./CardsNavButton";
+import CardNavButton from "./CardNavButton";
 
 const CardNav = ({children, nextIndex, prevIndex}: CardNavProps) => {
 
@@ -13,4 +13,4 @@ const CardNav = ({children, nextIndex, prevIndex}: CardNavProps) => {
   );
 };
 
-export default CardNav
+export default CardNav;

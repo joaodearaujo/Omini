@@ -1,4 +1,4 @@
-import type { CreditCardProps } from "./CreditCard.type";
+import type { CreditCardProps } from "../../../features/Cards/Cards.type";
 
 import CreditCardContent from "./components/CardContent";
 

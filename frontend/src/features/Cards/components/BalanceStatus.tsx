@@ -1,5 +1,5 @@
 import type { BalanceItemsProps } from "../Cards.type"
-import type { CreditCardProps } from "../../../components/ui/CreditCard/CreditCard.type"
+import type { CreditCardProps } from "../Cards.type"
 import DisableButton from "./DisableButton"
 
 const BalanceItem = ({label, value, isMain, color} : BalanceItemsProps) => {

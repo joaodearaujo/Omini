@@ -1,5 +1,5 @@
 import Bar from "../../../components/ui/Bar/Bar"
-import type { CreditCardProps } from "../../../components/ui/CreditCard/CreditCard.type"
+import type { CreditCardProps } from "../Cards.type"
 
  const PaymentLimit = ({card}: CreditCardProps) => {
   return (

@@ -1,9 +1,10 @@
-import CreditCard from "../../components/ui/CreditCard/CreditCard"
-import PaymentLimit from "./components/PaymentLimit"
-import BalanceStatus from "./components/BalanceStatus"
-import CardNav from "./components/CardNav"
+import CreditCard from "../../../components/ui/CreditCard/CreditCard"
+import PaymentLimit from "../../../features/Cards/components/PaymentLimit";
+import CardsNav from "../../../features/Cards/components/CardNav";
+import BalanceStatus from "../../../features/Cards/components/BalanceStatus";
+
 import { useState } from "react"
-import type { CardInfo } from "./Cards.type"
+import type { CardInfo } from "../../../features/Cards/Cards.type"
 
 const MOCK_CARDS: CardInfo[] = [
   {
@@ -160,9 +161,9 @@ const Cards = () => {
         <section className="flex-1 flex gap-4">
             <div className="flex-2 flex flex-col items-center justify-between gap-4">
                 
-                <CardNav nextIndex={nextIndex} prevIndex={prevIndex}>
+                <CardsNav nextIndex={nextIndex} prevIndex={prevIndex}>
                     <CreditCard card={currentCard}/>
-                </CardNav>
+                </CardsNav>
                 
                 <PaymentLimit card={currentCard}/>
             </div>
