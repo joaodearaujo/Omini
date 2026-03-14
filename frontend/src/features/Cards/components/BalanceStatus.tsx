@@ -1,4 +1,5 @@
 import type { BalanceItemsProps } from "../Cards.type"
+import type { CreditCardProps } from "../../../components/ui/CreditCard/CreditCard.type"
 import DisableButton from "./DisableButton"
 
 const BalanceItem = ({label, value, isMain, color} : BalanceItemsProps) => {
@@ -12,12 +13,12 @@ const BalanceItem = ({label, value, isMain, color} : BalanceItemsProps) => {
   )
 }
 
-const BalanceStatus = () => {
+const BalanceStatus = ({card}: CreditCardProps) => {
   return (
     <div className="flex flex-col w-full flex-1 gap-6 items-end">
-      <BalanceItem label="Current Balance" value={23.234} isMain color="text-[#197bbd]"/>
-      <BalanceItem label="Income" value={3.344} color="text-[#439a86]"/>
-      <BalanceItem label="Outcome" value={784} color="text-[#bb3340]"/>      
+      <BalanceItem label="Current Balance" value={card.balance} isMain color="text-[#197bbd]"/>
+      <BalanceItem label="Income" value={card.income} color="text-[#439a86]"/>
+      <BalanceItem label="Outcome" value={card.outcome} color="text-[#bb3340]"/>      
       <DisableButton/>
 
     </div>

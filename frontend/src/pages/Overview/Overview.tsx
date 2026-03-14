@@ -8,10 +8,19 @@ const Overview = () => {
             <Card>
                 <Cards/>
             </Card>
+            <Card>
+                <Cards/>
+            </Card>
+            
         </div>
 
         <div className="col-span-6 flex flex-col flex-1 gap-4">
-
+            <Card>
+                <Cards/>
+            </Card>
+            <Card>
+                <Cards/>
+            </Card>
         </div>
     </div>
   )
