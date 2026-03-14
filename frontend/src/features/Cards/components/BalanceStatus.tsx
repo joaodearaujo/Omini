@@ -13,7 +13,7 @@ const BalanceItem = ({label, value, isMain, color} : BalanceItemsProps) => {
 
 const BalanceStatus = () => {
   return (
-    <div className="flex w-full flex-1 flex-col gap-3 items-end px-2">
+    <div className="flex w-full h-autoflex-1 flex-col gap-3 items-end px-2">
 
       <BalanceItem label="Current Balance" value={23.234} isMain color="text-[#197bbd]"/>
       <BalanceItem label="Income" value={3.344} color="text-[#439a86]"/>
