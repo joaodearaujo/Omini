@@ -20,6 +20,8 @@ const NavButton = ({ isRight = false }: { isRight?: boolean }) => {
 };
 
 const CardNav = ({children}: CardNavProps) => {
+
+  
   return (
     <div className="flex gap-2 w-full items-center justify-center">
       <NavButton />   

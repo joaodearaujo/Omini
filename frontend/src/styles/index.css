@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
 
 @layer base {
 
+  @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
   * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
   }
 
   body {
