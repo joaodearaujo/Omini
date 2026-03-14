@@ -1,7 +1,7 @@
 
 const CreditCard = () => {
   return (
-        <div className="w-[360px] h-[220px] rounded-4xl bg-linear-to-r shadow-md from-[#197BBD] to-[#3391D0] flex flex-col items-start justify-around px-6 py-4 transition ease-in-out display-400 hover:scale-101 text-white">
+        <div className="w-[360px] h-[220px] rounded-4xl bg-linear-to-r cursor-pointer shadow-md from-[#197BBD] to-[#3391D0] flex flex-col items-start justify-around px-6 py-4 transition ease-in-out display-400 hover:scale-101 text-white">
             <div>
                 <h1 className="font-semibold ">Nubank</h1>
                 <p className="text-[12px] opca">PREMIUM ACCOUNT</p>

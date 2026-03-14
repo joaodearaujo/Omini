@@ -1,6 +1,6 @@
-import Sidebar from "./components/Sidebar/Sidebar"
-import Header from "./components/Header/Header"
-import Outlet from "./components/Outlet/Outlet"
+import Sidebar from "./features/Sidebar/Sidebar"
+import Header from "./features/Header/Header"
+import Outlet from "./features/Outlet/Outlet"
 import Overview from "./pages/Overview/Overview"
 
 function App() {

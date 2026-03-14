@@ -1,5 +1,5 @@
-import Card from "../../components/ui/Card/Card"
-import Cards from "../../components/Cards/Cards";
+import Card from "../../components/ui/Card/Card";
+import Cards from "../../features/Cards/Cards";
 
 const Overview = () => {
   return (
@@ -8,18 +8,10 @@ const Overview = () => {
             <Card>
                 <Cards/>
             </Card>
-            <Card>
-                <Cards/>
-            </Card>
         </div>
 
         <div className="col-span-6 flex flex-col flex-1 gap-4">
-            <Card>
-                <Cards/>
-            </Card>
-            <Card>
-                <Cards/>
-            </Card>
+
         </div>
     </div>
   )
