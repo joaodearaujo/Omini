@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
 export interface CardProps {
-    children: ReactNode
+    children: ReactNode;
+    title: string;
 }

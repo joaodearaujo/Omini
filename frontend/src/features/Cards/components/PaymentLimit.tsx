@@ -11,7 +11,7 @@ import type { CreditCardProps } from "../Cards.type"
         </Bar>
         <div className="w-full max-w-[400px] h-auto flex justify-between gap-2">
             <p className="text-[#AEAEAE] font-light">Payment Limit</p>
-            <p className="text-[#404040] font-semibold">{`$${card.limitUsage} / $${card.limit}`}</p>
+            <p className="text-[#404040] font-medium">{`$${card.limitUsage} / $${card.limit}`}</p>
         </div>
     </div>
 

@@ -8,7 +8,7 @@ const BalanceItem = ({label, value, isMain, color} : BalanceItemsProps) => {
   return (
       <div className="flex w-full flex-1 max-w-full flex-col gap-1 items-end">
         <p className={`${color} leading-none ${isMain ? 'text-[46px] font-semibold' : 'text-[24px] font-medium'}`}>${value ?? 0}</p>
-        <p className={` text-[#807c7c] font-light ${isMain ? 'text-[18px] ' : 'text-[16px]'}`}>{label}</p>
+        <p className={`text-[#807c7c] font-light ${isMain ? 'text-[18px] ' : 'text-[16px]'}`}>{label}</p>
       </div>
   )
 }

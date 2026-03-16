@@ -6,7 +6,7 @@ const CardNavButton = ({ isRight = false, onClick }: CardNavButtonProps) =>{
   const SelectedIcon = isRight ? ChevronRight : ChevronLeft;
 
   return (
-    <button onClick={onClick} className="group bg-transparent cursor-pointer transition-all duration-300 ease-in-out">
+    <button onClick={onClick} className="group bg-transparent rounded-full cursor-pointer transition-all duration-300 ease-in-out">
       <SelectedIcon 
         size={40} 
         className="text-[#404040] transition-transform duration-300 group-hover:scale-110" 
