@@ -28,7 +28,7 @@ const MOCK_CARDS: CardInfo[] = [
     number: "5502 9931 0042 1123",
     owner: "Marta Vieira da Silva",
     date: "05/30",
-    balance: 4500.5,
+    balance: 4505,
     income: 2000.0,
     outcome: 1200.0,
     limit: 10000.0,
@@ -126,7 +126,7 @@ const MOCK_CARDS: CardInfo[] = [
     number: "5100 0000 1111 2222",
     owner: "Dom Pedro II",
     date: "07/31",
-    balance: 1000000.0,
+    balance: 1000.0,
     income: 50000.0,
     outcome: 10000.0,
     limit: 500000.0,
@@ -140,13 +140,18 @@ const MOCK_CARDS: CardInfo[] = [
     number: "4111 2222 3333 4444",
     owner: "Marie Curie",
     date: "04/26",
-    balance: 1200.75,
+    balance: 1200,
     income: 3000.0,
     outcome: 1800.0,
     limit: 5000.0,
     limitUsage: 2100.0,
   },
 ];
+
+const STYLE = {
+  wrapper: 'flex-2 flex flex-col items-center justify-between gap-4',
+}
+
 const Cards = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -157,9 +162,9 @@ const Cards = () => {
   const currentCard = MOCK_CARDS[currentIndex]
 
   return (
-        <section className="flex-1 flex gap-4">
-            <div className="flex-2 flex flex-col items-center justify-between gap-4">
-                
+        <section className="flex h-full gap-4">
+            <div className={STYLE.wrapper}>
+
                 <CardNav nextIndex={nextIndex} prevIndex={prevIndex}>
                     <CreditCard card={currentCard}/>
                 </CardNav>
@@ -168,7 +173,8 @@ const Cards = () => {
             </div>
 
             <div className="w-px h-full bg-black/10"/>
-                <BalanceStatus card={currentCard}/>        
+
+            <BalanceStatus card={currentCard}/>        
         </section>
 
   )

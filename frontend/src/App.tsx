@@ -6,17 +6,17 @@ import Overview from "./pages/Overview/Overview"
 function App() {
 
   return (
-  <div className="bg-white w-full h-screen flex ">                   
+  <div className="bg-white w-full h-screen flex gap-4">                   
       <Sidebar/>
 
-      <div className="h-full flex-1 flex-col gap-4 p-4 flex bg-blue " >
+      <div className="w-px h-full bg-black/10"/>
+
+      <div className="h-full flex-1 flex-col p-4 gap-6 flex bg-blue " >
         <Header/>
 
-        <main className="w-full flex-1 flex flex-col justify-between">
-          <Outlet>
-            <Overview/>
-          </Outlet>
-        </main>
+        <Outlet>
+          <Overview/>
+        </Outlet>
       </div>
 
   </div>

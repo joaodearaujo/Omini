@@ -42,7 +42,7 @@ const MOCK_TRANSACTIONS: TransactionProps[] = [
 const Transactions = () => {
 
   return (
-    <div className=" max-h-[320px] h-full overflow-x-auto overflow-scroll overflow-hidden px-">
+    <div className=" max-h-[280px] overflow-x-auto overflow-scroll overflow-hidden px-1">
         <TransactionsTable transactions={MOCK_TRANSACTIONS}/>
     </div>
   )
