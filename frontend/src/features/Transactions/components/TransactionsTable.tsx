@@ -22,7 +22,7 @@ const HEADERS = [
 const TableData = ({data, style, className = 'text-start'}: TableDataProps & {className?: string}) => {
 
   return (
-      <td className={`px-2 py-4 font-[400] text-[#AEAEAE] align-middle whitespace-nowrap truncate ${className}`}
+      <td className={`px-2 py-3 font-[400] text-[#AEAEAE] align-middle whitespace-nowrap truncate ${className}`}
       style={style}>{data}</td>
   )
 }
