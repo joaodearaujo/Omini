@@ -1,5 +1,5 @@
 import TransactionsTable from "./components/TransactionsTable";
-import { MOCK_TRANSACTIONS } from "../../MOCK/MOCK_DATA";
+import { MOCK_TRANSACTIONS } from "../../MOCK/MOCK_TRANSACTIONS";
 
 
 const Transactions = () => {

@@ -1,9 +1,5 @@
 import type { ReactNode } from 'react';
 
-export interface CreditCardProps {
-    card: CardInfo;
-}
-
 export interface BalanceItemsProps {
   label: string;
   value: number;
@@ -22,24 +18,8 @@ export interface CardNavButtonProps {
   onClick: () => void;
 }
 
-export interface CardInfo {
-    id: string;
-    color: string;
-    bank: string;
-    flag: string;
-    number: string;
-    owner: string;
-    date: string;
-    balance: number;
-    income: number;
-    outcome: number;
-    limit: number;
+export interface PaymentLimitProps {
+    totalLimit: number;
     limitUsage: number;
 }
 
-
-
-export interface CardFieldProps {
-    label: string;
-    value: string;
-}

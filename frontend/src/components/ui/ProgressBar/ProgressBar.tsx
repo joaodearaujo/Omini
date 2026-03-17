@@ -14,7 +14,6 @@ const ProgressBar = ({track, indicator}: ProgressBarProps) => {
         <div className={STYLE.indicator}
             style={{ width: `${usage}%`}}
             role="progressbar">
-              
         </div>  
     </div>
   )

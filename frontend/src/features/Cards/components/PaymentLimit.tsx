@@ -1,22 +1,21 @@
 import ProgressBar from "../../../components/ui/ProgressBar/ProgressBar"
-import type { CreditCardProps } from "../Cards.type"
+import type { PaymentLimitProps } from "../Cards.type"
+import DataRow from "../../../components/ui/DataRow/DataRow"
 
 const STYLE = {
-  container: 'flex flex-col w-[360px] items-center gap-4 justify-between"',
-  wrapper: 'w-full h-full flex justify-between gap-2',
+  wrapper: 'flex flex-col w-full max-w-[360px] items-center gap-4 justify-between',
 }
 
- const PaymentLimit = ({card}: CreditCardProps) => {
+const labelData = 'Payment Limit'
 
+const PaymentLimit = ({limitUsage = 0, totalLimit = 0}: PaymentLimitProps) => {
+
+  const  formatedValue = `R$ ${limitUsage} / R$ ${totalLimit}`
+  
   return (
-    <div className={STYLE.container}>
-
-        <ProgressBar limit={card.limit} limitUsage={card.limitUsage}/>
-
-        <div className={STYLE.wrapper}>
-            <p className="text-[#AEAEAE] font-light">Payment Limit</p>
-            <p className="text-[#404040] font-medium">{`$${card.limitUsage} / $${card.limit}`}</p>
-        </div>
+    <div className={STYLE.wrapper}>
+        <ProgressBar indicator={totalLimit} track={limitUsage}/>
+        <DataRow label={labelData} value={formatedValue}/>
     </div>
 
      

@@ -4,7 +4,7 @@ import type { TransactionsProps } from "../Transactions/Transactions.type";
 import type { OutcomePercentageProps } from "./OutcomeStatistics.type";
 
 const STYLE = {
-  container: 'w-full h-full min-h-[290px] flex flex-col gap-4 overflow-y-auto px-2',
+  container: 'w-full h-full max-h-[290px] flex flex-col gap-4 overflow-y-auto overflow-hidden px-2',
 };
 
 const CATEGORY_MAP: Record<string, React.ElementType> = {
@@ -40,6 +40,7 @@ const OutcomePercentage = ({ category, icon, track, indicator }: OutcomePercenta
 };
 
 const OutcomeStatistics = ({ transactions }: TransactionsProps) => {
+    
   const stats = transactions.reduce<Record<string, number>>((acc, item) => {
     const cat = item.category;
     acc[cat] = (acc[cat] || 0) + 1;
