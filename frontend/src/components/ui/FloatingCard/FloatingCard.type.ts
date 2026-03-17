@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 
-export interface SectionProps {
+export interface FloatingCardProps {
     children: ReactNode;
     title: string;
     style?: CSSProperties;

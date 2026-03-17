@@ -1,4 +1,4 @@
-import type { SectionProps } from "./Section.type";
+import type { FloatingCardProps } from "./FloatingCard.type";
 
 const STYLE = {
   root: 'w-full h-fit flex flex-col justify-center items-center p-6 border-1 bg-white border-black/10 rounded-3xl',
@@ -6,7 +6,7 @@ const STYLE = {
   title: 'font-semibold text-[18px] text-[#404040]'
 }
 
-const Section = ({children, title, style}: SectionProps) => {
+const FloatingCard = ({children, title, style}: FloatingCardProps) => {
   return (
     <article className={STYLE.root} style={style}>
         <div className={STYLE.container}>
@@ -20,4 +20,4 @@ const Section = ({children, title, style}: SectionProps) => {
   )
 }
 
-export default Section;
+export default FloatingCard;
