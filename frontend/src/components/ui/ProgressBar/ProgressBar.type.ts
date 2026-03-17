@@ -1,4 +1,4 @@
 export interface ProgressBarProps {
-    limit: number;
-    limitUsage: number;
+    track: number;
+    indicator: number;
 }

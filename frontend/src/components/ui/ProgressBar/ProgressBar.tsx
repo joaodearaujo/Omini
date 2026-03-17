@@ -5,9 +5,9 @@ const STYLE = {
   indicator:'h-[12px] rounded-full bg-[#197BBD] transition-all duration-1200 ease-in-out',
 }
 
-const ProgressBar = ({limit, limitUsage}: ProgressBarProps) => {
+const ProgressBar = ({track, indicator}: ProgressBarProps) => {
 
-  const usage = limit > 0 ? Math.round((limitUsage / limit ) * 100) : 0;
+  const usage = track > 0 ? Math.round((track / indicator ) * 100) : 0;
 
   return (
     <div className={STYLE.track}>

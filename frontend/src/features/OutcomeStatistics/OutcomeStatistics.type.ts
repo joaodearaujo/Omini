@@ -1,0 +1,9 @@
+import type { LucideIcon } from "lucide-react";
+import type { ComponentType } from "react";
+
+export interface OutcomePercentageProps {
+    category: string;
+    icon: LucideIcon | ComponentType<{ size?: number; className?: string }>
+    track: number;
+    indicator: number;
+}

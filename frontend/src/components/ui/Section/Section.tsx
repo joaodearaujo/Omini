@@ -1,7 +1,7 @@
 import type { SectionProps } from "./Section.type";
 
 const STYLE = {
-  root: 'w-full  min-h-[280px] max-h-[420px] flex flex-col justify-center items-center p-6 border-1 bg-white border-black/10 rounded-3xl',
+  root: 'w-full flex-1 flex flex-col justify-center items-center p-6 border-1 bg-white border-black/10 rounded-3xl',
   container: 'w-full h-full flex flex-col gap-4',
   title: 'font-semibold text-[18px] text-[#404040]'
 }

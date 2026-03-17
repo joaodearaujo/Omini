@@ -14,7 +14,7 @@ const BalanceItem = ({label, value, isMain, color} : BalanceItemsProps) => {
 
 const BalanceStatus = ({card}: CreditCardProps) => {
   return (
-    <div className="flex flex-col flex-1 h-full gap-6 items-end pr-3">
+    <div className="flex flex-col flex-1 h-full gap-6 items-end">
       <BalanceItem label="Current Balance" value={card.balance} isMain color="text-[#197bbd]"/>
       <BalanceItem label="Income" value={card.income} color="text-[#439a86]"/>
       <BalanceItem label="Outcome" value={card.outcome} color="text-[#bb3340]"/>      

@@ -52,7 +52,7 @@ const TransactionsTable = ({transactions}: TransactionsProps) => {
                   
                 <td className="px-2 py-4 ">
                   <div className="flex items-center gap-2 justify-start">
-                    <span className="p-1 rounded-lg bg-[#e5e5e5]">
+                    <span className="p-1 rounded-lg bg-[#e5e5e5] shadow-md">
                      <Icon size={18}/>
                     </span>
                   
