@@ -41,10 +41,10 @@ const OutcomePercentage = ({ category, icon, track, indicator }: OutcomePercenta
 
 const OutcomeStatistics = ({ transactions }: TransactionsProps) => {
     
-  const stats = transactions.reduce<Record<string, number>>((acc, item) => {
-    const cat = item.category;
-    acc[cat] = (acc[cat] || 0) + 1;
-    return acc;
+  const stats = transactions.reduce<Record<string, number>>((categoryObject, item) => {
+    const categoryName = item.category;
+    categoryObject[categoryName] = (categoryObject[categoryName] || 0) + 1;
+    return categoryObject;
   }, {});
 
   const totalCount = transactions.length;

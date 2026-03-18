@@ -3,7 +3,7 @@ import type { CreditCardProps } from "./CreditCard.type";
 import CreditCardContent from "./components/CardContent";
 
 const STYLE = {
-  CARD_LAYOUT: 'min-w-[360px] aspect-[1.58/1] flex items-start justify-around p-6',
+  CARD_LAYOUT: 'w-[360px] aspect-[1.58/1] flex items-start justify-around p-6',
   CARD_THEME: `rounded-4xl cursor-default shadow-sm transition`,
   CARD_INTERACTION: 'transition ease-in-out duration-400 hover:scale-101',
 }

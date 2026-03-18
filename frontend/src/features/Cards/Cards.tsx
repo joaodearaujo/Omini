@@ -31,7 +31,7 @@ const Cards = () => {
                 />
             </div>
 
-            <div className="w-px h-full bg-black/10"/>
+            <div className="w-px h-[240px] bg-black/10"/>
 
             <BalanceStatus card={currentCard}/>        
         </section>
