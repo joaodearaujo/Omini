@@ -13,7 +13,7 @@ const TransactionsTable = ({transactions}: TransactionsProps) => {
             {transactions.map((transaction) => {
               return (
               <tr key={transaction.id} className="border-b border-black/10" >    
-                <TableData  style={{color:"#404040"}} Icon={CATEGORY_MAP[transaction.category]} data={transaction.receiver}/>
+                <TableData  style={{color:"#404040"}} Icon={CATEGORY_MAP[transaction.category].icon} data={transaction.receiver}/>
                 <TableData  data={transaction.category}/>
                 <TableData  data={transaction.date}/>
                 <TableData  style={{color:"#404040", justifySelf:'end'}} data={`R$ ${transaction.amount}`}/>
