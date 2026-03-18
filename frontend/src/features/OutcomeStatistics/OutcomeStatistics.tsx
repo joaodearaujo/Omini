@@ -23,7 +23,7 @@ const OutcomePercentage = ({ category, icon, track, indicator }: OutcomePercenta
   return (
     <div className="flex items-center gap-4">
       <div className="flex-none flex items-center justify-center">
-        <span className="flex items-center justify-center h-[50px] w-[50px] bg-[#FFEADA] shadow-md rounded-lg">
+        <span className="flex items-center justify-center h-[50px] w-[50px] bg-[#FFEADA] shadow-sm rounded-lg">
           <LucideIcon size={28} className="text-[#F8964C]" />
         </span>
       </div>

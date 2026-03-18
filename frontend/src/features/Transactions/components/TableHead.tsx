@@ -1,6 +1,6 @@
 
 const STYLE = {
-    tableHeaed: 'font-[400]  px-2 py-1 capitalize text-[#AEAEAE]',
+    tableHeaed: 'font-[400] px-2 py-1 capitalize text-[#AEAEAE]',
 }
 
 const HEADERS = [
@@ -16,7 +16,7 @@ const TableHead = () => {
         <tr className="">
             {HEADERS.map((item) => {
             return (
-            <th key={`${STYLE.tableHeaed} ${item.name}`} className={`${item.width} ${item.align}` }>{item.name}</th>
+            <th key={`${item.name}`} className={`${STYLE.tableHeaed} ${item.width} ${item.align}` }>{item.name}</th>
          )
         })} 
         </tr>

@@ -1,4 +1,4 @@
-import Card from "../../components/ui/Section/Section";
+import FloatingCard from "../../components/ui/FloatingCard/FloatingCard";
 import Cards from "../../features/Cards/Cards";
 import Transactions from "../../features/Transactions/Transactions";
 import Goals from "../../features/Goals/Goals";
@@ -10,23 +10,23 @@ const Overview = () => {
   return (
     <div className="grid grid-cols-18 gap-4 flex-1 h-full">
         <div className="col-span-10 flex items-center gap-4 flex-col flex-1">
-            <Card title="Cards">
+            <FloatingCard title="Cards">
                 <Cards/>
-            </Card>
+            </FloatingCard>
 
-            <Card title="Transactions">
+            <FloatingCard title="Transactions">
                 <Transactions/>
-            </Card>
+            </FloatingCard>
         </div>
 
         <div className="col-span-8 flex flex-col flex-1 gap-4 ">
-            <Card title="Goals" style={{border:'none'}}>
+            <FloatingCard title="Goals" style={{border:'none'}}>
                 <Goals goals={MOCK_GOALS} />
-            </Card>
+            </FloatingCard>
 
-            <Card title="Outcome Statistics">
+            <FloatingCard title="Outcome Statistics">
                 <OutcomeStatistics transactions={MOCK_TRANSACTIONS}/>
-            </Card>
+            </FloatingCard>
         </div>
     </div>
   )

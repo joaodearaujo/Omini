@@ -24,7 +24,7 @@ const GoalsCard = ({value = 234, date ='10/12/30', label= 'label'}: GoalCardProp
     const Icon = CATEGORY_GOALS[label as GoalCategory] || HandCoins;
 
     return (
-        <div className={STYLE.goalCard}>
+        <div key={label} className={STYLE.goalCard}>
             <div className={STYLE.upWrapper}>
                 <p className={STYLE.value}>{`R$ ${value}`}</p>
                 <p className={STYLE.date}>{date}</p>

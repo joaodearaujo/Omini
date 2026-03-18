@@ -7,9 +7,8 @@ const TransactionsTable = ({transactions}: TransactionsProps) => {
 
   return (
       <table className="w-full h-full border-collapse table-fixed">
-
         <TableHead/>
-        
+
         <tbody>
             {transactions.map((transaction) => {
               return (

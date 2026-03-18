@@ -12,9 +12,10 @@ const Goals = ({goals}: GoalsProps) => {
     <div className="flex items-center gap-2">
         <div className={STYLE.container}>
             {goals.map((goal) => {
-                
                 return (
-                    <GoalsCard {...goal}/>
+                    <div key={goal.id}>
+                        <GoalsCard {...goal}/>
+                    </div>
                 )
             })}
         </div>
