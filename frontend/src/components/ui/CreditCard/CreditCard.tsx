@@ -8,20 +8,20 @@ const STYLE = {
   CARD_INTERACTION: 'transition ease-in-out duration-400 hover:scale-101',
 }
  
-const CreditCard = ({card}: CreditCardProps) => {
+const CreditCard = ({creditCard}: CreditCardProps) => {
 
   return (
         <div className={`${STYLE.CARD_LAYOUT} 
                          ${STYLE.CARD_THEME} 
                          ${STYLE.CARD_INTERACTION}`}
 
-                         style={{backgroundColor : card.color}}
+                         style={{backgroundColor: creditCard.color}}
             >
-            <CreditCardContent  bank={card.bank}
-                                flag={card.flag}
-                                owner={card.owner}
-                                number= {card.number}
-                                date={card.date}
+            <CreditCardContent  bank={creditCard.bank}
+                                flag={creditCard.flag}
+                                owner={creditCard.owner}
+                                number= {creditCard.number}
+                                date={creditCard.date}
                                 />
         </div>
   )

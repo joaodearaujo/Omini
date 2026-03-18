@@ -1,15 +1,15 @@
 import TransactionsTable from "./components/TransactionsTable";
-import { MOCK_TRANSACTIONS } from "../../MOCK/MOCK_TRANSACTIONS";
+import type { TransactionsProps } from "./Transactions.type";
 
 const STYLE = {
   container: 'max-h-[260px] overflow-x-auto overflow-scroll overflow-hidden',
 }
 
-const Transactions = () => {
+const Transactions = ({transactions}: TransactionsProps ) => {
 
   return (
     <div className={STYLE.container}>
-        <TransactionsTable transactions={MOCK_TRANSACTIONS}/>
+        <TransactionsTable transactions={transactions}/>
     </div>
   )
 }

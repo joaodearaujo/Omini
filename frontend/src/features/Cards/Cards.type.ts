@@ -1,5 +1,11 @@
 import type { ReactNode } from 'react';
-import type { CardInfoProps } from '../../components/ui/CreditCard/CreditCard.type';
+import type { CardInfoProps} from '../../components/ui/CreditCard/CreditCard.type';
+
+export interface CardProps {
+  prevIndex: () => void;
+  nextIndex: () => void;
+  currentCard: CardInfoProps;
+}
 
 export interface BalanceItemsProps {
   label: string;

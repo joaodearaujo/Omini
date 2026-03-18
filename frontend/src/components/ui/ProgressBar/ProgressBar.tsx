@@ -1,8 +1,8 @@
 import {type  ProgressBarProps } from "./ProgressBar.type";
 
 const STYLE = {
-  track: 'flex w-full h-[12px] items-center shadow-sm justify-start ] rounded-full  bg-[#F1F1F1]',
-  indicator:'h-[12px] rounded-full shadow-sm transition-all duration-1200 ease-in-out',
+  track: 'flex w-full h-[12px] items-center shadow-sm justify-start] rounded-full bg-[#F1F1F1]',
+  indicator:'h-[12px] rounded-full ransition-all duration-1000 ease-in-out',
 }
 
 const ProgressBar = ({track, indicator, color = '#197BBD'}: ProgressBarProps) => {

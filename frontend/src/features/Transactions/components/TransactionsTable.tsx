@@ -1,9 +1,9 @@
-import type { TransactionsProps } from "../Transactions.type";
+import type { TransactionsTableProps } from "../Transactions.type";
 import TableData from "./TableData";
 import { CATEGORY_MAP } from "../../../Utilities/CategoryMap";
 import TableHead from "./TableHead";
 
-const TransactionsTable = ({transactions}: TransactionsProps) => {
+const TransactionsTable = ({transactions}: TransactionsTableProps) => {
 
   return (
       <table className="w-full h-full border-collapse table-fixed">

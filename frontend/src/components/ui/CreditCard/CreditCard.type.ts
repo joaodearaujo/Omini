@@ -1,6 +1,6 @@
 
 export interface CreditCardProps {
-    card: CardInfoProps;
+    creditCard: CardInfoProps;
 }
 
 export interface CardInfoProps {

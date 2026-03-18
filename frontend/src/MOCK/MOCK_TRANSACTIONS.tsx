@@ -1,100 +1,114 @@
 import type { TransactionProps } from "../features/Transactions/Transactions.type";
-import type { GoalCardProps } from "../features/Goals/Goals.type";
 
-export const MOCK_TRANSACTIONS: TransactionProps[] = [
-  {
-    id: "7b2d1a3e-5c4b-4a2f-9d1e-8f0a3b2c1d4e",
-    receiver: "Amazon Services",
-    category: "Essentials", 
-    date: "2025-10-12", 
-    amount: 145.20
-  },
-  {
-    id: "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-    receiver: "Whole Foods Market",
-    category: "Food",     
-    date: "2025-10-10",
-    amount: 282.35
-  },
-  {
-    id: "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
-    receiver: "Netflix",
-    category: "Lifestyle", 
-    date: "2025-10-08",
-    amount: 55.90
-  },
-  {
-    id: "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-    receiver: "Gas Station",
-    category: "Transport",
-    date: "2025-10-05",
-    amount: 210.00
-  },
-  {
-    id: "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
-    receiver: "Apple Health",
-    category: "Health",
-    date: "2025-10-03",
-    amount: 45.00
-  },
-  {
-    id: "9f0a1b2c-3d4e-5f6a-7b8c-9d0e1f2a3b4c",
-    receiver: "Starbucks",
-    category: "Food",
-    date: "2025-10-01",
-    amount: 18.50
-  },
-  {
-    id: "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
-    receiver: "Pharmacy",
-    category: "Health",
-    date: "2025-09-28",
-    amount: 120.00
-  },
-  {
-    id: "1f2a3b4c-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
-    receiver: "Uber",
-    category: "Transport",
-    date: "2025-09-25",
-    amount: 35.40
-  }
-];
-
-export const MOCK_GOALS: GoalCardProps[] = [
-  {
-    id: "goal-001",
-    value: 12500, 
-    date: '15/12/26', 
-    label: 'Holidays'
-  },
-  {
-    id: "goal-002",
-    value: 4500, 
-    date: '20/08/26', 
-    label: 'Renovation'
-  },
-  {
-    id: "goal-003",
-    value: 3500, 
-    date: '10/05/26', 
-    label: 'Gaming'
-  },
-  {
-    id: "goal-004",
-    value: 100000, 
-    date: '01/01/30', 
-    label: 'Savings'
-  },
-  {
-    id: "goal-005",
-    value: 2500, 
-    date: '12/10/25', 
-    label: 'New Bike'
-  },
-  {
-    id: "goal-006",
-    value: 8000, 
-    date: '05/03/27', 
-    label: 'MacBook Pro'
-  }
-];
+export const MOCK_TRANSACTIONS: Record<string, TransactionProps[]> = {
+  "cc-001": [
+    { id: "t1-01", receiver: "Amazon", category: "Essentials", date: "2026-03-18", amount: 120.50 },
+    { id: "t1-02", receiver: "Starbucks", category: "Food", date: "2026-03-17", amount: 15.00 },
+    { id: "t1-03", receiver: "Uber", category: "Transport", date: "2026-03-16", amount: 32.40 },
+    { id: "t1-04", receiver: "Netflix", category: "Lifestyle", date: "2026-03-15", amount: 55.90 },
+    { id: "t1-05", receiver: "Pharmacy", category: "Health", date: "2026-03-14", amount: 45.00 },
+    { id: "t1-06", receiver: "Apple Store", category: "Lifestyle", date: "2026-03-13", amount: 99.00 },
+    { id: "t1-07", receiver: "Whole Foods", category: "Food", date: "2026-03-12", amount: 210.30 },
+    { id: "t1-08", receiver: "Gas Station", category: "Transport", date: "2026-03-11", amount: 85.00 },
+    { id: "t1-09", receiver: "Rent", category: "Essentials", date: "2026-03-10", amount: 1500.00 },
+    { id: "t1-10", receiver: "Gym", category: "Health", date: "2026-03-09", amount: 80.00 },
+    { id: "t1-11", receiver: "Steam", category: "Lifestyle", date: "2026-03-08", amount: 45.20 },
+    { id: "t1-12", receiver: "McDonalds", category: "Food", date: "2026-03-07", amount: 32.00 },
+    { id: "t1-13", receiver: "Parking", category: "Transport", date: "2026-03-06", amount: 12.00 },
+    { id: "t1-14", receiver: "Water Bill", category: "Essentials", date: "2026-03-05", amount: 45.60 },
+    { id: "t1-15", receiver: "Dentist", category: "Health", date: "2026-03-04", amount: 350.00 },
+    { id: "t1-16", receiver: "Spotify", category: "Lifestyle", date: "2026-03-03", amount: 21.90 },
+    { id: "t1-17", receiver: "Bakery", category: "Food", date: "2026-03-02", amount: 18.40 },
+    { id: "t1-18", receiver: "Train Ticket", category: "Transport", date: "2026-03-01", amount: 4.50 },
+    { id: "t1-19", receiver: "Electric Bill", category: "Essentials", date: "2026-02-28", amount: 110.00 },
+    { id: "t1-20", receiver: "Cinema", category: "Lifestyle", date: "2026-02-27", amount: 30.00 }
+  ],
+  "cc-002": [
+    { id: "t2-01", receiver: "IKEA", category: "Essentials", date: "2026-03-18", amount: 250.00 },
+    { id: "t2-02", receiver: "Sushi Bar", category: "Food", date: "2026-03-17", amount: 85.00 },
+    { id: "t2-03", receiver: "Bus Pass", category: "Transport", date: "2026-03-16", amount: 50.00 },
+    { id: "t2-04", receiver: "Hulu", category: "Lifestyle", date: "2026-03-15", amount: 14.99 },
+    { id: "t2-05", receiver: "Clinic", category: "Health", date: "2026-03-14", amount: 120.00 },
+    { id: "t2-06", receiver: "Wine Shop", category: "Lifestyle", date: "2026-03-13", amount: 45.00 },
+    { id: "t2-07", receiver: "Supermarket", category: "Food", date: "2026-03-12", amount: 112.00 },
+    { id: "t2-08", receiver: "Toll", category: "Transport", date: "2026-03-11", amount: 8.50 },
+    { id: "t2-09", receiver: "Internet", category: "Essentials", date: "2026-03-10", amount: 75.00 },
+    { id: "t2-10", receiver: "Yoga", category: "Health", date: "2026-03-09", amount: 60.00 },
+    { id: "t2-11", receiver: "Bookstore", category: "Lifestyle", date: "2026-03-08", amount: 22.50 },
+    { id: "t2-12", receiver: "Pizza Hut", category: "Food", date: "2026-03-07", amount: 40.00 },
+    { id: "t2-13", receiver: "Taxi", category: "Transport", date: "2026-03-06", amount: 25.00 },
+    { id: "t2-14", receiver: "Cleaning Products", category: "Essentials", date: "2026-03-05", amount: 35.00 },
+    { id: "t2-15", receiver: "Vitamin Shop", category: "Health", date: "2026-03-04", amount: 55.00 },
+    { id: "t2-16", receiver: "Bowling", category: "Lifestyle", date: "2026-03-03", amount: 42.00 },
+    { id: "t2-17", receiver: "Burger King", category: "Food", date: "2026-03-02", amount: 28.00 },
+    { id: "t2-18", receiver: "Bike Repair", category: "Transport", date: "2026-03-01", amount: 65.00 },
+    { id: "t2-19", receiver: "Insurance", category: "Essentials", date: "2026-02-28", amount: 80.00 },
+    { id: "t2-20", receiver: "Museum", category: "Lifestyle", date: "2026-02-27", amount: 15.00 }
+  ],
+  "cc-003": [
+    { id: "t3-01", receiver: "Home Depot", category: "Essentials", date: "2026-03-18", amount: 89.90 },
+    { id: "t3-02", receiver: "Steakhouse", category: "Food", date: "2026-03-17", amount: 140.00 },
+    { id: "t3-03", receiver: "Airline Ticket", category: "Transport", date: "2026-03-16", amount: 550.00 },
+    { id: "t3-04", receiver: "Disney+", category: "Lifestyle", date: "2026-03-15", amount: 33.90 },
+    { id: "t3-05", receiver: "Therapy", category: "Health", date: "2026-03-14", amount: 200.00 },
+    { id: "t3-06", receiver: "Concert Ticket", category: "Lifestyle", date: "2026-03-13", amount: 150.00 },
+    { id: "t3-07", receiver: "Farmers Market", category: "Food", date: "2026-03-12", amount: 65.00 },
+    { id: "t3-08", receiver: "Uber Eat", category: "Food", date: "2026-03-11", amount: 42.50 },
+    { id: "t3-09", receiver: "Subscription Box", category: "Essentials", date: "2026-03-10", amount: 29.90 },
+    { id: "t3-10", receiver: "Eye Exam", category: "Health", date: "2026-03-09", amount: 150.00 },
+    { id: "t3-11", receiver: "Game Skin", category: "Lifestyle", date: "2026-03-08", amount: 10.00 },
+    { id: "t3-12", receiver: "Italian Resto", category: "Food", date: "2026-03-07", amount: 95.00 },
+    { id: "t3-13", receiver: "Car Wash", category: "Transport", date: "2026-03-06", amount: 20.00 },
+    { id: "t3-14", receiver: "Cloud Storage", category: "Essentials", date: "2026-03-05", amount: 9.99 },
+    { id: "t3-15", receiver: "Medication", category: "Health", date: "2026-03-04", amount: 25.00 },
+    { id: "t3-16", receiver: "Art Supplies", category: "Lifestyle", date: "2026-03-03", amount: 115.00 },
+    { id: "t3-17", receiver: "Taco Bell", category: "Food", date: "2026-03-02", amount: 15.00 },
+    { id: "t3-18", receiver: "Electric Scooter", category: "Transport", date: "2026-03-01", amount: 8.00 },
+    { id: "t3-19", receiver: "Phone Bill", category: "Essentials", date: "2026-02-28", amount: 60.00 },
+    { id: "t3-20", receiver: "Video Game", category: "Lifestyle", date: "2026-02-27", amount: 70.00 }
+  ],
+  "cc-004": [
+    { id: "t4-01", receiver: "Target", category: "Essentials", date: "2026-03-18", amount: 45.20 },
+    { id: "t4-02", receiver: "Five Guys", category: "Food", date: "2026-03-17", amount: 22.00 },
+    { id: "t4-03", receiver: "Lyft", category: "Transport", date: "2026-03-16", amount: 18.50 },
+    { id: "t4-04", receiver: "YouTube Premium", category: "Lifestyle", date: "2026-03-15", amount: 11.99 },
+    { id: "t4-05", receiver: "First Aid Kit", category: "Health", date: "2026-03-14", amount: 35.00 },
+    { id: "t4-06", receiver: "Kindle Book", category: "Lifestyle", date: "2026-03-13", amount: 9.99 },
+    { id: "t4-07", receiver: "Costco", category: "Food", date: "2026-03-12", amount: 150.00 },
+    { id: "t4-08", receiver: "Subway", category: "Transport", date: "2026-03-11", amount: 2.75 },
+    { id: "t4-09", receiver: "Trash Service", category: "Essentials", date: "2026-03-10", amount: 30.00 },
+    { id: "t4-10", receiver: "Massage", category: "Health", date: "2026-03-09", amount: 90.00 },
+    { id: "t4-11", receiver: "Movie Rental", category: "Lifestyle", date: "2026-03-08", amount: 5.99 },
+    { id: "t4-12", receiver: "Dunkin Donuts", category: "Food", date: "2026-03-07", amount: 12.50 },
+    { id: "t4-13", receiver: "Parking Meter", category: "Transport", date: "2026-03-06", amount: 5.00 },
+    { id: "t4-14", receiver: "Netflix", category: "Lifestyle", date: "2026-03-05", amount: 15.99 },
+    { id: "t4-15", receiver: "Eye Drops", category: "Health", date: "2026-03-04", amount: 12.00 },
+    { id: "t4-16", receiver: "Patreon", category: "Lifestyle", date: "2026-03-03", amount: 10.00 },
+    { id: "t4-17", receiver: "Local Pub", category: "Food", date: "2026-03-02", amount: 45.00 },
+    { id: "t4-18", receiver: "Gas Bill", category: "Essentials", date: "2026-03-01", amount: 55.00 },
+    { id: "t4-19", receiver: "Vitamins", category: "Health", date: "2026-02-28", amount: 25.00 },
+    { id: "t4-20", receiver: "Board Game", category: "Lifestyle", date: "2026-02-27", amount: 40.00 }
+  ],
+  "cc-005": [
+    { id: "t5-01", receiver: "Car Insurance", category: "Essentials", date: "2026-03-18", amount: 1200.00 },
+    { id: "t5-02", receiver: "Fine Dining", category: "Food", date: "2026-03-17", amount: 450.00 },
+    { id: "t5-03", receiver: "Flight to Paris", category: "Transport", date: "2026-03-16", amount: 3200.00 },
+    { id: "t5-04", receiver: "Designer Shoes", category: "Lifestyle", date: "2026-03-15", amount: 850.00 },
+    { id: "t5-05", receiver: "Personal Trainer", category: "Health", date: "2026-03-14", amount: 600.00 },
+    { id: "t5-06", receiver: "Watch Repair", category: "Lifestyle", date: "2026-03-13", amount: 150.00 },
+    { id: "t5-07", receiver: "Organic Market", category: "Food", date: "2026-03-12", amount: 320.00 },
+    { id: "t5-08", receiver: "Car Detailing", category: "Transport", date: "2026-03-11", amount: 200.00 },
+    { id: "t5-09", receiver: "Property Tax", category: "Essentials", date: "2026-03-10", amount: 2500.00 },
+    { id: "t5-10", receiver: "Dermatologist", category: "Health", date: "2026-03-09", amount: 400.00 },
+    { id: "t5-11", receiver: "Art Gallery", category: "Lifestyle", date: "2026-03-08", amount: 1200.00 },
+    { id: "t5-12", receiver: "Caviar Shop", category: "Food", date: "2026-03-07", amount: 180.00 },
+    { id: "t5-13", receiver: "Limousine Service", category: "Transport", date: "2026-03-06", amount: 350.00 },
+    { id: "t5-14", receiver: "Concierge Fee", category: "Essentials", date: "2026-03-05", amount: 100.00 },
+    { id: "t5-15", receiver: "Private Lab", category: "Health", date: "2026-03-04", amount: 250.00 },
+    { id: "t5-16", receiver: "Golf Club", category: "Lifestyle", date: "2026-03-03", amount: 500.00 },
+    { id: "t5-17", receiver: "Winery", category: "Food", date: "2026-03-02", amount: 240.00 },
+    { id: "t5-18", receiver: "Gasoline", category: "Transport", date: "2026-03-01", amount: 95.00 },
+    { id: "t5-19", receiver: "Security System", category: "Essentials", date: "2026-02-28", amount: 45.00 },
+    { id: "t5-20", receiver: "Spa Day", category: "Lifestyle", date: "2026-02-27", amount: 300.00 }
+  ]
+};
