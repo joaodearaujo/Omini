@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { CardInfoProps } from '../../components/ui/CreditCard/CreditCard.type';
 
 export interface BalanceItemsProps {
   label: string;
@@ -23,3 +24,6 @@ export interface PaymentLimitProps {
     limitUsage: number;
 }
 
+export interface BalanceStatusProps {
+  card: CardInfoProps;
+}

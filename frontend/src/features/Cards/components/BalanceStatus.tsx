@@ -1,27 +1,37 @@
 import type { BalanceItemsProps } from "../Cards.type"
-import type { CreditCardProps } from "../Cards.type"
-import DisableButton from "./DisableButton"
+import type { BalanceStatusProps } from "../Cards.type";
 
-const BalanceItem = ({label, value, isMain, color} : BalanceItemsProps) => {
+const STYLE = {
+    statusWrapper: 'flex flex-col flex-1 h-full gap-6 items-end',
+    itemsWrapper: 'flex w-full flex-1 flex-col gap-1 items-end',
+}
+
+const BALANCE_CONFIG = {
+  CURRENT: {label: 'Current Balance', color: 'text-[#197bbd]'},
+  INCOME: {label: 'Income', color: 'text-[#439a86]'},
+  OUTCOME: {label: 'Outcome Balance', color: 'text-[#bb3340]'},
+ };
+
+
+const BalanceItem = ({label = 'Balance', value = 0, isMain = false, color = 'text-#404040' } : BalanceItemsProps) => {
 
   return (
-      <div className="flex w-full flex-1 flex-col gap-1 items-end">
-        <p className={`${color} leading-none  ${isMain ? 'text-[46px] font-semibold' : 'text-[24px] font-medium'}`}>${value ?? 0}</p>
-        <p className={`text-[#807c7c] font-light ${isMain ? 'text-[18px] ' : 'text-[16px]'}`}>{label}</p>
+      <div className={STYLE.itemsWrapper}>
+        <p className={`${color} leading-none  ${isMain ? 'text-[46px] font-semibold' : 'text-[24px] font-medium'}`}>R${value}</p>
+        <p className={`text-[#807c7c] font-light ${isMain ? 'text-[18px]' : 'text-[16px]'}`}>{label}</p>
       </div>
   )
 }
 
-const BalanceStatus = ({card}: CreditCardProps) => {
-  return (
-    <div className="flex flex-col flex-1 h-full gap-6 items-end">
-      <BalanceItem label="Current Balance" value={card.balance} isMain color="text-[#197bbd]"/>
-      <BalanceItem label="Income" value={card.income} color="text-[#439a86]"/>
-      <BalanceItem label="Outcome" value={card.outcome} color="text-[#bb3340]"/>      
-      <DisableButton/>
+const BalanceStatus = ({card}: BalanceStatusProps) => {
 
+  return (
+    <div className={STYLE.statusWrapper}>
+      <BalanceItem label={BALANCE_CONFIG.CURRENT.label} value={card.balance} isMain color={BALANCE_CONFIG.CURRENT.color}/>
+      <BalanceItem label={BALANCE_CONFIG.INCOME.label} value={card.income} color={BALANCE_CONFIG.INCOME.color}/>
+      <BalanceItem label={BALANCE_CONFIG.OUTCOME.label} value={card.outcome} color={BALANCE_CONFIG.OUTCOME.color}/>      
     </div>
   )
 }
 
-export default BalanceStatus
+export default BalanceStatus;
