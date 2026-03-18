@@ -1,5 +1,5 @@
 import type { GoalCardProps } from "../Goals.type";
-import { Mountain, Brush, Gamepad2, HandCoins} from "lucide-react";
+import { Mountain, Brush, Gamepad2, HandCoins, type LucideIcon} from "lucide-react";
 
 const STYLE = {
     goalCard: 'min-w-[180px] min-h-[240px] flex flex-1 flex-col justify-between p-6 rounded-4xl shadow-xs border-1 border-black/10 gap-6 transition hover:scale-102 cursor-default duration-600 ease-out',
@@ -12,16 +12,17 @@ const STYLE = {
 
 type GoalCategory = 'Holidays' | 'Renovation' | 'Gaming' | 'Savings';
 
- const CATEGORY_GOALS: Record<GoalCategory, React.ElementType> = {
-    Holidays: Mountain,
-    Renovation: Brush,
-    Gaming: Gamepad2,
-    Savings: HandCoins,
+const CATEGORY_GOALS: Record<GoalCategory, {icon: LucideIcon, color: string}> = {
+    Holidays: {icon: Mountain, color: 'text-[#0ea5e9]'},
+    Renovation: {icon: Brush, color: 'text-[#f97316]'},
+    Gaming: {icon: Gamepad2, color: 'text-[#8b5cf6]'},
+    Savings: {icon: HandCoins, color: 'text-[#10b981]'},
 };
 
 const GoalsCard = ({value = 234, date ='10/12/30', label= 'label'}: GoalCardProps) => {
 
-    const Icon = CATEGORY_GOALS[label as GoalCategory] || HandCoins;
+    const Icon = CATEGORY_GOALS[label as GoalCategory].icon;
+    const color = CATEGORY_GOALS[label as GoalCategory].color;
 
     return (
         <div key={label} className={STYLE.goalCard}>
@@ -31,7 +32,7 @@ const GoalsCard = ({value = 234, date ='10/12/30', label= 'label'}: GoalCardProp
             </div>
 
             <div className={STYLE.downWrapper}>
-                <Icon size={24}></Icon>
+                <Icon size={24} className={color} ></Icon>
                 <p className={STYLE.label}>{label}</p>
             </div>
         </div>

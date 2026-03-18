@@ -25,16 +25,4 @@ export const MOCK_GOALS: GoalCardProps[] = [
     date: '01/01/30', 
     label: 'Savings'
   },
-  {
-    id: "goal-005",
-    value: 2500, 
-    date: '12/10/25', 
-    label: 'New Bike'
-  },
-  {
-    id: "goal-006",
-    value: 8000, 
-    date: '05/03/27', 
-    label: 'MacBook Pro'
-  }
 ];
