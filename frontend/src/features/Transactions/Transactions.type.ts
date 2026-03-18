@@ -16,6 +16,6 @@ export interface TransactionProps{
 export interface TableDataProps {
     data: string;
     style?: CSSProperties;
+    className?:string;
     Icon?: LucideIcon;
 }
-
