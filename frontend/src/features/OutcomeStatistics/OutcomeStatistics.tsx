@@ -24,7 +24,7 @@ const OutcomePercentage = ({category, icon, bgColor, iconColor, track, indicator
 
       <div className="flex-1">
         <div className="w-full flex items-center gap-6">
-          <ProgressBar indicator={indicator} track={track}/>
+          <ProgressBar indicator={indicator} track={track} color={bgColor}/>
           <p className="text-[24px] font-medium text-[#696969]">{percentage}%</p>
         </div>
         <p className="text-[#AEAEAE] font-[300] capitalize">{category}</p>

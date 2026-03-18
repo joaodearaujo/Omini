@@ -14,7 +14,7 @@ const PaymentLimit = ({limitUsage = 0, totalLimit = 0}: PaymentLimitProps) => {
   
   return (
     <div className={STYLE.wrapper}>
-        <ProgressBar indicator={totalLimit} track={limitUsage}/>
+        <ProgressBar indicator={totalLimit} track={limitUsage} color="#197BBD"/>
         <DataRow label={labelData} value={formatedValue}/>
     </div>
 
