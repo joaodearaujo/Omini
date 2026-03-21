@@ -8,12 +8,12 @@ const CategoryStats = ({category, icon, bgColor, iconColor, track, indicator }: 
   const LucideIcon = icon || HelpCircle;
 
   return (
-    <div className="flex items-center gap-1">
-      <div className="flex items-center justify-center p-2">
-        <span className={`flex items-center justify-center h-full w-full min-w-[30px] min-h-[30px] p-2 rounded-lg`}
+    <div className="flex items-center gap-3">
+      <div className="flex h-fit items-center justify-center">
+        <span className={`flex items-center justify-center h-full w-full min-w-[20px] min-h-[20px] p-2 rounded-lg`}
               style={{backgroundColor:`${bgColor}`}}
         >
-          <LucideIcon size={26} className={iconColor} />
+          <LucideIcon size={20} className={iconColor} />
         </span>
       </div>
 
@@ -22,7 +22,7 @@ const CategoryStats = ({category, icon, bgColor, iconColor, track, indicator }: 
           <ProgressBar indicator={indicator} track={track} color={bgColor}/>
           <p className="text-[24px] font-medium text-[#696969]">{percentage}%</p>
         </div>
-        <p className="text-[#AEAEAE] font-[300] capitalize w-fit">{category}</p>
+        <p className="text-[#AEAEAE] font-[300] text-[14px] capitalize w-fit">{category}</p>
       </div>
     </div>
   );

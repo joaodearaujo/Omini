@@ -11,7 +11,7 @@ function App() {
 
       <div className="w-px h-full bg-black/10"/>
 
-      <div className="h-full flex-1 flex-col p-8 gap-8 flex bg-blue " >
+      <div className="h-full flex-1 flex-col p-8 gap-4 flex bg-blue " >
         <Header/>
 
         <Outlet>

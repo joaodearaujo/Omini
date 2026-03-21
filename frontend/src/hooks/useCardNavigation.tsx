@@ -1,7 +1,7 @@
-import type { CardInfoProps } from '../../components/ui/CreditCard/CreditCard.type';
+import type { CardInfoProps } from '../components/ui/CreditCard/CreditCard.type';
 import { useState } from 'react';
 
-const useCardNavigation = (CARDS_LIST: CardInfoProps[]) => {
+const useCardsNavigation = (CARDS_LIST: CardInfoProps[]) => {
 
   const cardSafe = CARDS_LIST;
 
@@ -21,4 +21,4 @@ const useCardNavigation = (CARDS_LIST: CardInfoProps[]) => {
     };
 }
 
-export default useCardNavigation
+export default useCardsNavigation;

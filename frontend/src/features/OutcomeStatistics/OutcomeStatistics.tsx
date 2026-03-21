@@ -1,8 +1,8 @@
 import type { TransactionsTableProps } from "../Transactions/Transactions.type";
-import { CATEGORY_MAP } from "../../Utilities/CategoryMap";
+import { CATEGORY_MAP } from "../../utils/CategoryMap";
 import CategoryStats from "./components/CategoryStats";
 const STYLE = {
-  container: 'w-full h-full max-h-[290px] flex flex-col gap-4 overflow-y-auto overflow-hidden px-2',
+  container: 'w-full h-full flex flex-col gap-1 overflow-y-auto overflow-hidden px-2',
 };
 
 

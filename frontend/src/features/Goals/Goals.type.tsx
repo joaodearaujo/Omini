@@ -8,3 +8,8 @@ export interface GoalCardProps {
 export interface GoalsProps {
     goals: GoalCardProps[];
 }
+
+export interface GoalButtonNavProps {
+    isRight?: boolean;
+    onClick: () => void;
+}

@@ -8,8 +8,8 @@ const STYLE = {
     number: 'text-[24px] font-medium truncate tracking-wider',
 }
 
-const labelOne = 'Owner';
-const labelTwo = 'Expiration Date';
+const labelOne = 'Card Holder';
+const labelTwo = 'Expires';
 
 const CreditCardContent = ({bank = 'bank',
                             flag = 'flag',
@@ -26,7 +26,7 @@ const CreditCardContent = ({bank = 'bank',
             
             <p className={STYLE.number}>{number}</p>
 
-            <div className="w-full flex gap-8">
+            <div className="w-full flex justify-between">
                 <CardField label={labelOne} value={owner}/>
                 <CardField label={labelTwo} value={date}/>
             </div>

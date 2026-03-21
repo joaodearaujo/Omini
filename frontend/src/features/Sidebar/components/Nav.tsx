@@ -19,8 +19,8 @@ const Nav = () => {
 
      const navLinks: navLinksProps[] = [
         {name:'Overview', href:'#', icon: LayoutDashboard},
+        {name:'My cards', href:'#', icon: CreditCard},
         {name:'Transactions', href:'#', icon: ArrowRightLeft},
-        {name:'Cards', href:'#', icon: CreditCard},
         {name:'Goals', href:'#', icon: Target},
         {name:'Settings', href:'#', icon: Settings},
     ];

@@ -10,7 +10,6 @@ const STYLE = {
 
 const Cards = ({nextIndex, prevIndex, currentCard}: CardProps) => {
 
-
   return (
         <section className="flex h-full gap-4">
             <div className={STYLE.wrapper}>

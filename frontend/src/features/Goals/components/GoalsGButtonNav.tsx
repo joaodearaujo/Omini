@@ -1,15 +1,19 @@
-import {  ChevronRight } from "lucide-react";
+import {  ChevronRight, ChevronLeft } from "lucide-react";
+import type { GoalButtonNavProps } from "../Goals.type";
 
 const STYLE = {
-    button: 'flex  w-fit h-fit items-center justify-center rounded-full bg-[#F0F0F0] cursor-pointer hover:scale-105 transition duration-300 ease-in-out z-10',
+    button: 'flex  w-fit h-fit items-center justify-center rounded-full cursor-pointer hover:scale-105 transition duration-300 ease-in-out z-10',
     icon: 'group-hover:scale-101 text-[#404040]',
 }
 
-const GoalGButtonNav = () => {
-  const Icon = ChevronRight
+
+
+const GoalGButtonNav = ({onClick, isRight} : GoalButtonNavProps) => {
+
+  const Icon = isRight ? ChevronRight : ChevronLeft
 
     return (
-        <button className={STYLE.button}>
+        <button onClick={onClick} className={STYLE.button}>
             <Icon size={30} className={STYLE.icon}/>
         </button>
     )

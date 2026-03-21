@@ -2,7 +2,7 @@ import TransactionsTable from "./components/TransactionsTable";
 import type { TransactionsProps } from "./Transactions.type";
 
 const STYLE = {
-  container: 'max-h-[260px] overflow-x-auto overflow-scroll overflow-hidden',
+  container: 'h-full max-h-[260px] overflow-x-auto overflow-scroll overflow-hidden',
 }
 
 const Transactions = ({transactions}: TransactionsProps ) => {

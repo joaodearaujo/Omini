@@ -1,26 +1,30 @@
 import type { GoalsProps } from "./Goals.type";
 import GoalGButtonNav from "./components/GoalsGButtonNav";
 import GoalsCard from "./components/GoalsCard";
+import useGoalsNavigation from "../../hooks/useGoalsNavigation";
 
 const STYLE = {
-    container: 'w-full h-full flex gap-4 overflow-x-auto overflow-hidden relative py-2 px-1 items-start ',
-    goalCard: 'min-w-[180px] min-h-[240px] flex flex-1 flex-col justify-between p-6 rounded-4xl shadow-xs border-1 border-black/10 gap-6 transition hover:scale-102 cursor-default durations-600 ease-out',
+    container: 'w-full h-full flex gap-6 overflow-x-auto p-2 no-scrollbar',
+    goalCard: 'min-w-[180px] min-h-[240px] shrink-0 flex flex-1 flex'
 }
 
 const Goals = ({goals}: GoalsProps) => {
+
+    const {goalsRef, goalsScrollNext, goalsScrollPrevious} = useGoalsNavigation()
+
   return (  
-    <div className="flex items-center gap-2">
-        <div className={STYLE.container}>
+    <div className="flex max-h-full items-center gap-3"  >
+        <GoalGButtonNav  onClick={goalsScrollPrevious}/>
+
+        <div className={STYLE.container} ref={goalsRef}>
             {goals.map((goal) => {
                 return (
-                    <div key={goal.id}>
-                        <GoalsCard {...goal}/>
-                    </div>
-                )
-            })}
+                        <GoalsCard key={goal.id}{...goal}/>
+                    )
+                })}
         </div>
         
-        <GoalGButtonNav/>
+        <GoalGButtonNav isRight onClick={goalsScrollNext}/>
     </div>
     )
 }
