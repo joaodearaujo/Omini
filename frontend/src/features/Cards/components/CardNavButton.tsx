@@ -7,12 +7,12 @@ const STYLE = {
 }
 
 const CardNavButton = ({ isRight = false, onClick }: CardNavButtonProps) =>{
-     
+
   const Icon = isRight ? ChevronRight : ChevronLeft;
 
   return (
     <button onClick={onClick} className={STYLE.button}>
-      <Icon size={30} className={STYLE.icon}/>
+    <Icon size={30} className={STYLE.icon}/>
     </button>
   );
 };

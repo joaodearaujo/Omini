@@ -12,9 +12,9 @@ const TableData = ({data, style, Icon, className = 'text-start'}: TableDataProps
     <td className={`${STYLE.tableData} ${className}`}>
         <span className={STYLE.wrapper} style={style}>
             {Icon && (       
-                <span className={STYLE.iconWrapper}>
+                <div className={STYLE.iconWrapper}>
                     <Icon size={18} className="text-[#404040]"/>
-                </span>
+                </div>
             )}
             {data}
         </span>

@@ -19,7 +19,7 @@ const Goals = ({goals}: GoalsProps) => {
         <div className={STYLE.container} ref={goalsRef}>
             {goals.map((goal) => {
                 return (
-                        <GoalsCard key={goal.id}{...goal}/>
+                    <GoalsCard key={goal.id}{...goal}/>
                     )
                 })}
         </div>

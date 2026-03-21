@@ -9,8 +9,8 @@ const DataRow = ({label= 'Label', value=''}: DataRowProps) => {
 
   return (
       <div className={STYLE.wrapper}>
-        <p className={STYLE.label}>{label}</p>
-        <p className={STYLE.value}>{value}</p>
+        <small className={STYLE.label}>{label}</small>
+        <small className={STYLE.value}>{value}</small>
       </div>
   );
 }

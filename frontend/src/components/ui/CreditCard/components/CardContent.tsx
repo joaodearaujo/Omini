@@ -2,7 +2,7 @@ import type { CreditCardContentProps } from "../CreditCard.type";
 import CardField from "./CardField";
 
 const STYLE = {
-    wrapper: 'flex-1 w-full h-full flex flex-col justify-between text-white',
+    wrapper: "flex-1 w-full h-full flex flex-col justify-between text-white",
     bank: 'font-medium capitalize tracking-wide',
     flag: 'text-[14px] font-light opacity-75 uppercase tracking-wider',
     number: 'text-[24px] font-medium truncate tracking-wider',
@@ -19,16 +19,23 @@ const CreditCardContent = ({bank = 'bank',
 
     return (
         <div className={STYLE.wrapper}>
-            <div>
-                <p className={STYLE.bank}>{bank}</p>
-                <p className={STYLE.flag}>{flag}</p>
+            <div className="flex flex-col">
+                <strong className={STYLE.bank}>{bank}</strong>
+                <small className={STYLE.flag}>{flag}</small>
             </div>
             
-            <p className={STYLE.number}>{number}</p>
+            <span className={STYLE.number}>{number}</span>
 
             <div className="w-full flex justify-between">
-                <CardField label={labelOne} value={owner}/>
-                <CardField label={labelTwo} value={date}/>
+                <CardField 
+                    label={labelOne} 
+                    value={owner}
+                />
+
+                <CardField 
+                    label={labelTwo}
+                     value={date}
+                />
             </div>
         </div>
     )

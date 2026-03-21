@@ -10,19 +10,19 @@ const CategoryStats = ({category, icon, bgColor, iconColor, track, indicator }: 
   return (
     <div className="flex items-center gap-3">
       <div className="flex h-fit items-center justify-center">
-        <span className={`flex items-center justify-center h-full w-full min-w-[20px] min-h-[20px] p-2 rounded-lg`}
+        <div className={`flex items-center justify-center h-full w-full min-w-[20px] min-h-[20px] p-2 rounded-lg`}
               style={{backgroundColor:`${bgColor}`}}
         >
           <LucideIcon size={20} className={iconColor} />
-        </span>
+        </div>
       </div>
 
       <div className="flex-1">
         <div className="w-full flex items-center gap-6">
           <ProgressBar indicator={indicator} track={track} color={bgColor}/>
-          <p className="text-[24px] font-medium text-[#696969]">{percentage}%</p>
+          <strong className="text-[24px] font-medium text-[#696969]">{percentage}%</strong>
         </div>
-        <p className="text-[#AEAEAE] font-[300] text-[14px] capitalize w-fit">{category}</p>
+        <small className="text-[#AEAEAE] font-[300] text-[14px] capitalize w-fit">{category}</small>
       </div>
     </div>
   );

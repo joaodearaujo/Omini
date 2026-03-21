@@ -27,13 +27,13 @@ const GoalsCard = ({value = 234, date ='10/12/30', label= 'label'}: GoalCardProp
     return (
         <div key={label} className={STYLE.goalCard}>
             <div className={STYLE.upWrapper}>
-                <p className={STYLE.value}>{`R$ ${value}`}</p>
-                <p className={STYLE.date}>{date}</p>
+                <strong className={STYLE.value}>{`R$ ${value}`}</strong>
+                <span className={STYLE.date}>{date}</span>
             </div>
 
             <div className={STYLE.downWrapper}>
                 <Icon size={24} className={color} ></Icon>
-                <p className={STYLE.label}>{label}</p>
+                <small className={STYLE.label}>{label}</small>
             </div>
         </div>
     )

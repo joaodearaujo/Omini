@@ -18,7 +18,7 @@ const Header = () => {
 
             <div className='h-full flex items-start justify-center flex-col'>
                 <h1 className={STYLE.title}>{title}</h1>
-                <p className={STYLE.subtitle}>{subtitle}</p>
+                <span className={STYLE.subtitle}>{subtitle}</span>
             </div>
 
             <div className='h-full flex items-center'>
