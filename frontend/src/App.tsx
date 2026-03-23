@@ -1,5 +1,4 @@
 import Sidebar from "./features/Sidebar/Sidebar";
-import Header from "./features/Header/Header";
 import MainContainer from "./features/MainContainer/MainContainer";
 import Overview from "./pages/Overview/Overview";
 import MyCards from "./pages/MyCards/MyCards";
@@ -12,8 +11,8 @@ const RootLayout = () => {
 
       <div className="w-px h-full bg-black/10"/>
 
-      <div className="h-full flex-1 flex-col p-8 gap-4 flex bg-blue " >
-        <Header />
+      <div className="min-w-0 max-w-full h-full border-px border-black flex-1 flex-col p-8 gap-4 flex bg-blue " >
+  
         <MainContainer />
       </div> 
     </div>

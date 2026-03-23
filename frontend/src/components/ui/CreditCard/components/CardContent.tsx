@@ -2,7 +2,7 @@ import type { CreditCardContentProps } from "../CreditCard.type";
 import CardField from "./CardField";
 
 const STYLE = {
-    wrapper: "flex-1 w-full h-full flex flex-col justify-between text-white",
+    wrapper: "flex-1 flex-shrink-0 h-full flex flex-col justify-between text-white",
     bank: 'font-medium capitalize tracking-wide',
     flag: 'text-[14px] font-light opacity-75 uppercase tracking-wider',
     number: 'text-[24px] font-medium truncate tracking-wider',

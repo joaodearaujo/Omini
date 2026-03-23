@@ -1,21 +1,19 @@
 import { CircleUserRound} from 'lucide-react';
+import type { HeaderProps } from './Header.type';
 
 const STYLE = {
     container: 'w-full min-h-[130px] flex justify-between items-center px-6 rounded-3xl border-1 border-black/10',
-    title: 'text-[#404040] text-[46px] font-semibold',
-    subtitle: 'text-[#AEAEAE] -text-[16px]',
+    title: 'text-[#404040] font-semibold text-[32px]',
+    subtitle: 'text-[#AEAEAE] text-[16px] font-light',
 }
 
-const title = 'Weekly sumup'
-const subtitle = 'Get summary of your weekly online transactions here.'
-
-const Header = () => { 
+const Header = ({title, subtitle}: HeaderProps) => { 
 
     const Icon = CircleUserRound;
 
     return (
         <header className={STYLE.container}>
-
+                
             <div className='h-full flex items-start justify-center flex-col'>
                 <h1 className={STYLE.title}>{title}</h1>
                 <span className={STYLE.subtitle}>{subtitle}</span>

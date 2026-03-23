@@ -1,7 +1,7 @@
 import type { FloatingCardProps } from "./FloatingCard.type";
 
 const STYLE = {
-  root: 'w-full h-fit max-h-[400px] flex flex-col items-center justify-center p-4 border-1 bg-surface-card border-black/10 rounded-3xl',
+  root: 'w-full h-fit max-h-full flex flex-col items-center justify-center p-4 border-1 bg-surface-card border-black/10 rounded-3xl',
   container: 'w-full h-fit flex flex-col gap-4',
   title: 'font text-heading text-dark'
 }
