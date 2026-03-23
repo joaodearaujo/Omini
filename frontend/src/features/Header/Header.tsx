@@ -2,7 +2,7 @@ import { CircleUserRound} from 'lucide-react';
 import type { HeaderProps } from './Header.type';
 
 const STYLE = {
-    container: 'w-full min-h-[130px] flex justify-between items-center px-6 rounded-3xl border-1 border-black/10',
+    container: 'w-full max-h-[130px] flex justify-between items-center p-4 rounded-3xl border-1 border-black/10',
     title: 'text-[#404040] font-semibold text-[32px]',
     subtitle: 'text-[#AEAEAE] text-[16px] font-light',
 }

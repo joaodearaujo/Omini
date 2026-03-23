@@ -67,7 +67,7 @@ const MyCards = () => {
   const subtitle = 'Manage your credit cards and transactions.'
 
   return (
-    <div className="flex flex-col w-full h-full gap-6">
+    <div className="w-full flex flex-col gap-8 min-h-0 items-center justify-center">
         <Header title={title} subtitle={subtitle}/>
         <FloatingCard>
           <Carousel />

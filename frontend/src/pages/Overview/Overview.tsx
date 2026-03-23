@@ -21,11 +21,11 @@ const Overview = () => {
 
   return (
     
-    <div className="flex flex-col gap-6">
+    <div className="w-full h-flex flex flex-col gap-8 min-h-0 items-center justify-center">
         <Header title={title} subtitle={subtitle}/>
 
         <div className="grid grid-cols-18 gap-4 w-full h-full">
-            <div className="col-span-10 flex flex-col gap-4">
+            <div className="col-span-10 gap-4 w-full h-full flex flex-col justify-between">
                 <FloatingCard title="Cards">
                     <Cards nextIndex={nextIndex}
                            prevIndex={prevIndex}
@@ -35,8 +35,8 @@ const Overview = () => {
                     <Transactions transactions={currentTransactions}/>
                 </FloatingCard>
             </div>
-            <div className="col-span-8 flex flex-col gap-4">
-                <FloatingCard title="Goals">
+            <div className="col-span-8 gap-4 w-full h-full flex flex-col justify-between">
+                <FloatingCard title="Goals" style={{backgroundColor: 'none', border:'none'}}>
                     <Goals goals={MOCK_GOALS} />
                 </FloatingCard>
                 <FloatingCard title="Outcome Statistics">
