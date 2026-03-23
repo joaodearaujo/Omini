@@ -1,11 +1,12 @@
 import type { navLinksProps } from "../Sidebar.type";
+import { Link } from "react-router";
 
 import { 
   LayoutDashboard, 
   ArrowRightLeft, 
   CreditCard, 
   Target, 
-  Settings 
+  Settings, 
 } from "lucide-react";
 
 const STYLE = { 
@@ -18,11 +19,11 @@ const STYLE = {
 const Nav = () => {
 
      const navLinks: navLinksProps[] = [
-        {name:'Overview', href:'#', icon: LayoutDashboard},
-        {name:'My cards', href:'#', icon: CreditCard},
-        {name:'Transactions', href:'#', icon: ArrowRightLeft},
-        {name:'Goals', href:'#', icon: Target},
-        {name:'Settings', href:'#', icon: Settings},
+        {name:'Overview', to:'', icon: LayoutDashboard},
+        {name:'My cards', to:'mycards', icon: CreditCard},
+        {name:'Transactions', to:'transactions', icon: ArrowRightLeft},
+        {name:'Goals', to:'goals', icon: Target},
+        {name:'Settings', to:'settings', icon: Settings},
     ];
     
     return (
@@ -31,15 +32,15 @@ const Nav = () => {
                     {navLinks.map((link) => {
                     
                         const Icon = link.icon;
+                        
                         return (
                         <li key={link.name} className="flex items-center w-full h-full">
-                            <a  className={STYLE.link}
-                                href="link.href"
+                            <Link to={`/${link.to}`} className={STYLE.link}
                                 key={link.name}
                             >
                                     <Icon size={28} className={STYLE.icon} />
                                     <span className={STYLE.span}>{link.name}</span>
-                            </a>
+                            </Link>
                         </li>
                         );
                     })}

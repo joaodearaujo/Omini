@@ -14,7 +14,7 @@ const Sidebar = () => {
                 <a className={STYLE.linkLogo}>Omini</a>
             </div>
 
-            <Nav/>
+                <Nav/>
         </div>
     )
 }
