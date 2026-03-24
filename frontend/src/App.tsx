@@ -6,18 +6,13 @@ import { createBrowserRouter, RouterProvider} from 'react-router';
 
 const RootLayout = () => {
   return (
-    <div className="bg-white w-full h-screen flex gap-4">                     
+    <div className="bg-[#fcfcfc] w-full h-screen flex ">                     
       <Sidebar/>
 
-      <div className="w-px h-full bg-black/10"/>
-
       <MainContainer />
-
     </div>
   )
 }
-
-
 
 function App() {
 

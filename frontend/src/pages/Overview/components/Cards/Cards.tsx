@@ -1,4 +1,4 @@
-import CreditCard from "../../components/ui/CreditCard/CreditCard"
+import CreditCard from "../../../../components/ui/CreditCard/CreditCard"
 import PaymentLimit from "./components/PaymentLimit"
 import BalanceStatus from "./components/BalanceStatus"
 import CardNav from "./components/CardNav"

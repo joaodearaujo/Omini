@@ -2,7 +2,7 @@ import type { GoalCardProps } from "../Goals.type";
 import { Mountain, Brush, Gamepad2, HandCoins, type LucideIcon} from "lucide-react";
 
 const STYLE = {
-    goalCard: 'min-w-[180px] min-h-[220px] flex flex-1 flex-col justify-between p-6 rounded-4xl shadow-xs border-1 border-black/10 gap-6 transition hover:scale-102 cursor-default duration-600 ease-out',
+    goalCard: 'min-w-[180px] min-h-[220px] flex flex-1 flex-col justify-between p-6 rounded-4xl shadow-xs border-1 border-black/10 gap-6 transition hover:scale-102 cursor-default duration-600 ease-out bg-white',
     upWrapper: 'w-full h-fit flex flex-col gap-2',
     value: 'text-[24px] font-medium text-[#696969] truncate whitespace-nowrap',
     date: 'text-[18px] text-[#AEAEAE] font-light',

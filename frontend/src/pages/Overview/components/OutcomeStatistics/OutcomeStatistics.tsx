@@ -1,5 +1,5 @@
 import type { TransactionsTableProps } from "../Transactions/Transactions.type";
-import { CATEGORY_MAP } from "../../utils/CategoryMap";
+import { CATEGORY_MAP } from "../../../../utils/CategoryMap";
 import CategoryStats from "./components/CategoryStats";
 const STYLE = {
   container: 'w-full max-h-[360px] flex flex-col overflow-y-auto overflow-hidden px-2',

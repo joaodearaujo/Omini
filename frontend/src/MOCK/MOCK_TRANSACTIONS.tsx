@@ -1,4 +1,4 @@
-import type { TransactionProps } from "../features/Transactions/Transactions.type";
+import type { TransactionProps } from "../pages/Overview/components/Transactions/Transactions.type";
 
 export const MOCK_TRANSACTIONS: Record<string, TransactionProps[]> = {
   "cc-001": [
@@ -89,26 +89,4 @@ export const MOCK_TRANSACTIONS: Record<string, TransactionProps[]> = {
     { id: "t4-19", receiver: "Vitamins", category: "Health", date: "2026-02-28", amount: 25.00 },
     { id: "t4-20", receiver: "Board Game", category: "Lifestyle", date: "2026-02-27", amount: 40.00 }
   ],
-  "cc-005": [
-    { id: "t5-01", receiver: "Car Insurance", category: "Essentials", date: "2026-03-18", amount: 1200.00 },
-    { id: "t5-02", receiver: "Fine Dining", category: "Food", date: "2026-03-17", amount: 450.00 },
-    { id: "t5-03", receiver: "Flight to Paris", category: "Transport", date: "2026-03-16", amount: 3200.00 },
-    { id: "t5-04", receiver: "Designer Shoes", category: "Lifestyle", date: "2026-03-15", amount: 850.00 },
-    { id: "t5-05", receiver: "Personal Trainer", category: "Health", date: "2026-03-14", amount: 600.00 },
-    { id: "t5-06", receiver: "Watch Repair", category: "Lifestyle", date: "2026-03-13", amount: 150.00 },
-    { id: "t5-07", receiver: "Organic Market", category: "Food", date: "2026-03-12", amount: 320.00 },
-    { id: "t5-08", receiver: "Car Detailing", category: "Transport", date: "2026-03-11", amount: 200.00 },
-    { id: "t5-09", receiver: "Property Tax", category: "Essentials", date: "2026-03-10", amount: 2500.00 },
-    { id: "t5-10", receiver: "Dermatologist", category: "Health", date: "2026-03-09", amount: 400.00 },
-    { id: "t5-11", receiver: "Art Gallery", category: "Lifestyle", date: "2026-03-08", amount: 1200.00 },
-    { id: "t5-12", receiver: "Caviar Shop", category: "Food", date: "2026-03-07", amount: 180.00 },
-    { id: "t5-13", receiver: "Limousine Service", category: "Transport", date: "2026-03-06", amount: 350.00 },
-    { id: "t5-14", receiver: "Concierge Fee", category: "Essentials", date: "2026-03-05", amount: 100.00 },
-    { id: "t5-15", receiver: "Private Lab", category: "Health", date: "2026-03-04", amount: 250.00 },
-    { id: "t5-16", receiver: "Golf Club", category: "Lifestyle", date: "2026-03-03", amount: 500.00 },
-    { id: "t5-17", receiver: "Winery", category: "Food", date: "2026-03-02", amount: 240.00 },
-    { id: "t5-18", receiver: "Gasoline", category: "Transport", date: "2026-03-01", amount: 95.00 },
-    { id: "t5-19", receiver: "Security System", category: "Essentials", date: "2026-02-28", amount: 45.00 },
-    { id: "t5-20", receiver: "Spa Day", category: "Lifestyle", date: "2026-02-27", amount: 300.00 }
-  ]
 };

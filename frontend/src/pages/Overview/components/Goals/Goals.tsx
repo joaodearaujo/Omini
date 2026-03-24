@@ -1,7 +1,7 @@
 import type { GoalsProps } from "./Goals.type";
 import GoalGButtonNav from "./components/GoalsGButtonNav";
 import GoalsCard from "./components/GoalsCard";
-import useGoalsNavigation from "../../hooks/useGoalsNavigation";
+import useGoalsNavigation from "../../../../hooks/useGoalsNavigation";
 
 const STYLE = {
     container: 'w-full h-full flex gap-6 overflow-x-auto p-2 no-scrollbar',

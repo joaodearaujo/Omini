@@ -1,8 +1,8 @@
 import FloatingCard from "../../components/ui/FloatingCard/FloatingCard";
-import Cards from "../../features/Cards/Cards";
-import Transactions from "../../features/Transactions/Transactions";
-import Goals from "../../features/Goals/Goals";
-import OutcomeStatistics from "../../features/OutcomeStatistics/OutcomeStatistics";
+import Cards from "./components/Cards/Cards";
+import Transactions from "./components/Transactions/Transactions";
+import Goals from "./components/Goals/Goals";
+import OutcomeStatistics from "./components/OutcomeStatistics/OutcomeStatistics";
 import { MOCK_GOALS } from "../../mock/MOCK_GOALS";
 import { MOCK_TRANSACTIONS } from "../../mock/MOCK_TRANSACTIONS";
 import { MOCK_CARDS } from "../../mock/MOCK_CARDS";
@@ -12,7 +12,7 @@ import Header from "../../features/Header/Header";
 
 const Overview = () => {
 
-    const title = 'Weekly sumup'
+    const title = 'Overview'
     const subtitle = 'Get summary of your weekly online transactions here.'
 
     const { currentIndex, currentCard, nextIndex, prevIndex } = useCardNavigation(MOCK_CARDS)
@@ -36,7 +36,7 @@ const Overview = () => {
                 </FloatingCard>
             </div>
             <div className="col-span-8 gap-4 w-full h-full flex flex-col justify-between">
-                <FloatingCard title="Goals" style={{backgroundColor: 'none', border:'none'}}>
+                <FloatingCard title="Goals" style={{backgroundColor: 'transparent', border:'none'}}>
                     <Goals goals={MOCK_GOALS} />
                 </FloatingCard>
                 <FloatingCard title="Outcome Statistics">

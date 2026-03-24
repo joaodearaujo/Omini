@@ -1,6 +1,6 @@
 import type { TransactionsTableProps } from "../Transactions.type";
 import TableData from "./TableData";
-import { CATEGORY_MAP } from "../../../utils/CategoryMap";
+import { CATEGORY_MAP } from "../../../../../utils/CategoryMap";
 import TableHead from "./TableHead";
 
 const TransactionsTable = ({transactions}: TransactionsTableProps) => {

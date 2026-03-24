@@ -57,18 +57,4 @@ export const MOCK_CARDS: CardInfoProps[] = [
     totalLimit: 15000.00,
     limitUsage: 1200.00,
   },
-  {
-    id: "cc-005",
-    color: '#ec0000', 
-    bank: "Santander",
-    flag: "Mastercard",
-    number: "5412 7500 1234 5678",
-    owner: "Isabella de Aragão",
-    date: "03/29",
-    balance: 75200.00,
-    income: 15000.00,
-    outcome: 8000.00,
-    totalLimit: 100000.00,
-    limitUsage: 45000.00,
-  },
 ];

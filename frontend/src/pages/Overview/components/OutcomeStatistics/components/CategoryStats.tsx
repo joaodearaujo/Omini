@@ -1,6 +1,6 @@
 import type { CategoryStatsProps } from "../OutcomeStatistics.type";
 import { HelpCircle } from "lucide-react";
-import ProgressBar from "../../../components/ui/ProgressBar/ProgressBar";
+import ProgressBar from "../../../../../components/ui/ProgressBar/ProgressBar";
 
 const CategoryStats = ({category, icon, bgColor, iconColor, track, indicator }: CategoryStatsProps) => {
   const percentage = indicator > 0 ? Math.round((track / indicator) * 100) : 0;
