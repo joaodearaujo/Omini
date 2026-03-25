@@ -21,7 +21,7 @@ const Overview = () => {
 
   return (
     
-    <div className="w-full h-flex flex flex-col gap-8 min-h-0 items-center justify-center">
+    <div className="max-w-full h-flex flex flex-col gap-8 min-h-0 items-center justify-center">
         <Header title={title} subtitle={subtitle}/>
 
         <div className="grid grid-cols-18 gap-4 w-full h-full">

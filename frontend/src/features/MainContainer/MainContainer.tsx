@@ -3,7 +3,7 @@ import { Outlet } from "react-router";
 const MainContainer = () => {
   
   return (
-    <main className="w-full h-full min-w-0 flex justify-center items-start p-4 mx-12">
+    <main className="w-full max-h-full min-w-0 min-h-0 flex justify-center items-start p-4 mx-8">
       <Outlet />
     </main>
   )

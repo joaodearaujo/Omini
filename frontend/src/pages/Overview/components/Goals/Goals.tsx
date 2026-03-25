@@ -4,7 +4,7 @@ import GoalsCard from "./components/GoalsCard";
 import useGoalsNavigation from "../../../../hooks/useGoalsNavigation";
 
 const STYLE = {
-    container: 'w-full h-full flex gap-6 overflow-x-auto p-2 no-scrollbar',
+    container: 'w-full h-full flex gap-4 overflow-x-auto p-2 no-scrollbar',
     goalCard: 'min-w-[180px] min-h-[240px] shrink-0 flex flex-1 flex'
 }
 

@@ -3,7 +3,7 @@ import type { FloatingCardProps } from "./FloatingCard.type";
 const STYLE = {
   root: 'w-full flex-1 max-h-full flex flex-col items-center justify-center p-4 border-1 bg-surface-card border-black/10 rounded-3xl bg-white',
   container: 'w-full h-fit flex flex-col gap-4',
-  title: 'font text-heading text-dark'
+  title: 'font-medium text-black'
 }
 
 const FloatingCard = ({children, title, style}: FloatingCardProps) => {

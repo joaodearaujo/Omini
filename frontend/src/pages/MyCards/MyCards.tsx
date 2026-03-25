@@ -9,12 +9,14 @@ import RecentTransactions from "./components/RecentTransactions"
 const MyCards = () => {
 
   return (
-    <div className="w-full flex flex-col gap-8 min-h-0 items-center justify-between">
-        <Header title={title} subtitle={subtitle}/>
-            <CardsCarousel />
-            <CardsStatus />
-            <RecentTransactions />
-    </div>
+      <div className="w-full max-h-full flex flex-col gap-8 items-center" >
+          <Header title={title} subtitle={subtitle}/>
+              <div className="w-full max-h-full flex flex-col gap-8 items-center justify-between overflow-y-auto">
+                <CardsCarousel />
+                <CardsStatus />
+                <RecentTransactions />
+              </div>
+      </div>
     )
   }
 

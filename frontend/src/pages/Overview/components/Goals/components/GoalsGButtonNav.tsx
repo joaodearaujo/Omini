@@ -6,8 +6,6 @@ const STYLE = {
     icon: 'group-hover:scale-101 text-[#404040]',
 }
 
-
-
 const GoalGButtonNav = ({onClick, isRight} : GoalButtonNavProps) => {
 
   const Icon = isRight ? ChevronRight : ChevronLeft

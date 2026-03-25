@@ -1,9 +1,9 @@
 import StatusCard from "./StatusCard"
 
 const CARDS = [
-    {title: 'Total Spending', amount: 12.84550, description: ''},
+    {title: 'Total Spending', amount: 12.84550, description: 'Across all cards'},
     {title: 'Available Credit', amount: 37154.50, description: 'Across all cards'},
-    {title: 'Rewards', amount: 37154.50, description: ''},
+    {title: 'Rewards', amount: 37154.50, description: 'Across all cards'},
     {title: 'Next Payment', amount: 2450.00, description: 'Due in 12 days'}
 ]
 

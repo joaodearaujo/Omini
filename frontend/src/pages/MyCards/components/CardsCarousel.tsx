@@ -3,11 +3,11 @@ import { MOCK_CARDS } from "../../../mock/MOCK_CARDS";
 
 
 const STYLE = {
-    container:  'w-full h-fit flex flex-col gap-4',
+    container:  'w-full h-fit flex flex-col gap-8',
     header: 'max-w-full flex justify-between items-center',
     sectionTitle:  'font-medium text-[18px]',
     button:  'bg-black text-white rounded-xl py-2 px-3 cursor-pointer',
-    cardsWrapper: 'max-w-full min-w-0 h-fit flex gap-8 justify-between overflow-x-auto',
+    cardsWrapper: 'max-w-full min-w-0 h-fit flex gap-8  overflow-x-auto justify-center',
 }
 
 
