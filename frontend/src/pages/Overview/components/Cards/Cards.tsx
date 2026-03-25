@@ -25,7 +25,7 @@ const Cards = ({nextIndex, prevIndex, currentCard}: CardProps) => {
 
             <div className="w-px h-[240px] bg-black/10"/>
 
-            <BalanceStatus card={currentCard}/>        
+            <BalanceStatus currentCard={currentCard}/>        
         </section>
 
   )

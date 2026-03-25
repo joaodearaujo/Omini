@@ -1,10 +1,21 @@
 import type { ReactNode } from 'react';
-import type { CardInfoProps} from '../../components/ui/CreditCard/CreditCard.type';
+import type { CardInfoProps } from '../../../../components/ui/CreditCard/CreditCard.type';
 
 export interface CardProps {
   prevIndex: () => void;
   nextIndex: () => void;
-  currentCard: CardInfoProps;
+  currentCard: CardInfoProps; 
+}
+
+export type BalanceStatusProps = Pick<CardProps, 'currentCard'>;
+
+export interface CardNavButtonProps {
+  isRight?: boolean;
+  onClick: () => void;
+}
+
+export interface CardNavProps extends Pick<CardProps, 'prevIndex' | 'nextIndex'> {
+  children?: ReactNode;
 }
 
 export interface BalanceItemsProps {
@@ -14,22 +25,15 @@ export interface BalanceItemsProps {
   color?: string;
 }
 
-export interface CardNavProps {
-  children?: ReactNode; 
-  nextIndex: () => void;
-  prevIndex: () => void;
-}
-
-export interface CardNavButtonProps {
-  isRight?: boolean;
-  onClick: () => void;
-}
-
 export interface PaymentLimitProps {
     totalLimit: number;
     limitUsage: number;
 }
 
-export interface BalanceStatusProps {
-  card: CardInfoProps;
+export interface BalanceItemsConfig {
+  key: keyof Pick<CardInfoProps, 'balance' | 'income' | 'outcome'>,
+  label: string,
+  color: string,
+  isMain: boolean,
 }
+
