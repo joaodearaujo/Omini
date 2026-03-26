@@ -2,8 +2,8 @@ import type { DataRowProps } from "./DataRow.type"
 
 const STYLE = {
     wrapper:'w-full h-full flex justify-between gap-2',
-    label:'text-[#AEAEAE] font-light',
-    value:'text-[#404040] font-medium',
+    label:'text-[#AEAEAE] font-light text-[16px]',
+    value:'text-[#404040] font-medium text-[16px]',
 }
 const DataRow = ({label= 'Label', value=''}: DataRowProps) => {
 

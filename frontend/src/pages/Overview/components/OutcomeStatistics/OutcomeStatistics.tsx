@@ -1,22 +1,19 @@
-import type { TransactionsTableProps } from "../Transactions/Transactions.type";
 import { CATEGORY_MAP } from "../../../../utils/CategoryMap";
 import CategoryStats from "./components/CategoryStats";
+import { useTransactionStats } from "../../../../hooks/useTransactionsStats";
+import type { TransactionsProps } from "../Transactions/Transactions.type";
+import FloatingCard from "../../../../components/ui/FloatingCard/FloatingCard";
 const STYLE = {
-  container: 'w-full max-h-[360px] flex flex-col overflow-y-auto overflow-hidden px-2',
+  container: 'w-full max-h-[360px] flex flex-col overflow-y-auto overflow-hidden',
 };
 
 
-const OutcomeStatistics = ({ transactions }: TransactionsTableProps) => {
+const OutcomeStatistics = ({transactions}: TransactionsProps) => {
     
-  const stats = transactions.reduce<Record<string, number>>((categoryObject, item) => {
-    const categoryName = item.category;
-    categoryObject[categoryName] = (categoryObject[categoryName] || 0) + 1;
-    return categoryObject;
-  }, {});
+const { stats, totalCount } = useTransactionStats({transactions});
 
-  const totalCount = transactions.length;
-  
   return (
+       <FloatingCard title="Outcome Statistics">
     <div className={STYLE.container}>
       {Object.entries(stats).map(([categoryName, count]) => (
         <CategoryStats 
@@ -31,6 +28,7 @@ const OutcomeStatistics = ({ transactions }: TransactionsTableProps) => {
         />
       ))}
     </div>
+    </FloatingCard>
   );
 };
 
