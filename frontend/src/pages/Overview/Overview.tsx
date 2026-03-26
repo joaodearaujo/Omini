@@ -1,4 +1,3 @@
-import FloatingCard from "../../components/ui/FloatingCard/FloatingCard";
 import Cards from "./components/Cards/Cards";
 import Transactions from "./components/Transactions/Transactions";
 import Goals from "./components/Goals/Goals";
@@ -9,6 +8,12 @@ import { MOCK_CARDS } from "../../mock/MOCK_CARDS";
 import useCardNavigation from "../../hooks/useCardNavigation";
 import Header from "../../features/Header/Header";
 
+const STYLE = {
+  mainWrapper: 'max-w-full flex flex-col gap-8 min-h-0',
+  gridLayout: 'grid grid-cols-12 gap-6 w-full h-full',
+  leftCol: 'col-span-7 flex flex-col gap-6 justify-between',
+  rightCol: 'col-span-5 flex flex-col gap-6 justify-between',
+};
 
 const Overview = () => {
 
@@ -21,29 +26,23 @@ const Overview = () => {
 
   return (
     
-    <div className="max-w-full h-flex flex flex-col gap-8 min-h-0 items-center justify-center">
+    <div className={STYLE.mainWrapper}>
         <Header title={title} subtitle={subtitle}/>
 
-        <div className="grid grid-cols-18 gap-4 w-full h-full">
-            <div className="col-span-10 gap-4 w-full h-full flex flex-col justify-between">
-                <FloatingCard title="Cards">
+        <main className={STYLE.gridLayout}>
+            <section className={STYLE.leftCol}>
                     <Cards nextIndex={nextIndex}
                            prevIndex={prevIndex}
-                           currentCard={MOCK_CARDS[currentIndex]}/>
-                </FloatingCard>
-                <FloatingCard title="Transactions">
+                           currentCard={MOCK_CARDS[currentIndex]} />
+                           
                     <Transactions transactions={currentTransactions}/>
-                </FloatingCard>
-            </div>
-            <div className="col-span-8 gap-4 w-full h-full flex flex-col justify-between">
-                <FloatingCard title="Goals" style={{backgroundColor: 'transparent', border:'none'}}>
+            </section>
+
+            <section className={STYLE.rightCol}>         
                     <Goals goals={MOCK_GOALS} />
-                </FloatingCard>
-                <FloatingCard title="Outcome Statistics">
                     <OutcomeStatistics transactions={currentTransactions}/>
-                </FloatingCard>
-            </div>
-        </div>
+            </section>
+        </main>
     </div>
   )
 };
