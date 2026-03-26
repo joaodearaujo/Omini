@@ -3,8 +3,8 @@ import type { BalanceItemsProps } from "../Cards.type";
 import type { BalanceItemsConfig } from "../Cards.type";
 
 const STYLE = {
-    statusWrapper: 'flex flex-col flex-1 h-full gap-6 items-end',
-    itemsWrapper: 'flex w-full flex-1 flex-col gap-1 items-end',
+    balanceWrapper: 'flex flex-col flex-1 h-full gap-4 items-end',
+    itemsWrapper: 'flex w-full h-fit flex-col gap-1 items-end',
 }
 
 const ITEMS: BalanceItemsConfig[] = [
@@ -25,7 +25,7 @@ const BalanceItem = ({label = 'Balance', value = 0, isMain = false, color = 'tex
 
 const BalanceStatus = ({ currentCard }: BalanceStatusProps) => {
   return (
-    <div className={STYLE.statusWrapper}>
+    <div className={STYLE.balanceWrapper}>
       {ITEMS.map((item => (
           <BalanceItem  key={item.key}
                         label={item.label}

@@ -15,10 +15,10 @@ const TableHead = () => {
     <thead className="sticky top-0 z-10 bg-white ">
         <tr className="">
             {HEADERS.map((item) => {
-            return (
-            <th key={`${item.name}`} className={`${STYLE.tableHeaed} ${item.width} ${item.align}` }>{item.name}</th>
-         )
-        })} 
+              return (
+              <th key={`${item.name}`} className={`${STYLE.tableHeaed} ${item.width} ${item.align}` }>{item.name}</th>
+            )
+            })} 
         </tr>
 </thead>
   )
