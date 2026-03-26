@@ -15,17 +15,13 @@ const TransactionItem = ({transaction}: TransactionItemProps) => {
 
   return (
     <div className={STYLE.conatainer}>
-
       <div className="flex gap-4">
 
           <span className={STYLE.icon.iconBackground}>
-
-              <Icon size={STYLE.icon.iconSize} 
-                    className={STYLE.icon.iconClass}></Icon>
+              <Icon size={STYLE.icon.iconSize} className={STYLE.icon.iconClass} />
           </span>
 
           <div className="flex flex-col">
-
             <strong className={STYLE.receiver}>{transaction.receiver}</strong>
 
             <small className={STYLE.info}>{`${transaction.category} • ${transaction.date}`}</small>

@@ -7,7 +7,7 @@ const RecentTransactions = () => {
 
   return (
     <FloatingCard title="Recent Transactions">
-      <div className="flex flex-col gap-2 w-full max-h-full overflow-y-auto ">
+      <div className="flex flex-col gap-2 w-full max-h-[180px] min-h-0 overflow-y-auto">
       {MOCK_CARDS.map((card) => {
 
         const cardId = card.id

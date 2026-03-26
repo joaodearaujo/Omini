@@ -19,9 +19,7 @@ const Overview = () => {
 
     const title = 'Overview'
     const subtitle = 'Get summary of your weekly online transactions here.'
-
     const { currentIndex, currentCard, nextIndex, prevIndex } = useCardNavigation(MOCK_CARDS)
-    
     const currentTransactions = MOCK_TRANSACTIONS[currentCard?.id] || []
 
   return (
