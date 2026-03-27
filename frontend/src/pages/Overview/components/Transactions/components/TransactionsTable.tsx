@@ -12,7 +12,7 @@ const TransactionsTable = ({transactions}: TransactionsTableProps) => {
         <tbody>
             {transactions.map((transaction) => {
               return (
-              <tr key={transaction.id} className="border-b border-black/10" >    
+              <tr key={transaction.id} className="p-4 bg-white hover:bg-[#f9fafb] rounded-2xl cursor-default" >    
                 <TableData  style={{color:"#404040"}} Icon={CATEGORY_MAP[transaction.category].icon} data={transaction.receiver}/>
                 <TableData  data={transaction.category}/>
                 <TableData  data={transaction.date}/>

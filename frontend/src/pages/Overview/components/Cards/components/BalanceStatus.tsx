@@ -1,6 +1,7 @@
 import type { BalanceStatusProps } from "../Cards.type";
 import type { BalanceItemsProps } from "../Cards.type";
 import type { BalanceItemsConfig } from "../Cards.type";
+import useCountUp from "../../../../../hooks/useCountUp";
 
 const STYLE = {
     balanceWrapper: 'flex flex-col flex-1 h-full gap-4 items-end',
@@ -15,9 +16,11 @@ const ITEMS: BalanceItemsConfig[] = [
 
 const BalanceItem = ({label = 'Balance', value = 0, isMain = false, color = 'text-#404040' } : BalanceItemsProps) => {
 
+  const { countRef } = useCountUp(value);
+
   return (
       <div className={STYLE.itemsWrapper}>
-        <strong className={`${color} leading-none ${isMain ? 'text-[46px] font-semibold' : 'text-[24px] font-medium'}`}>R${value}</strong>
+        <strong ref={countRef} className={`${color} leading-none ${isMain ? 'text-[46px] font-semibold' : 'text-[24px] font-medium'}`}>0</strong>
         <small className={`text-[#807c7c] font-light ${isMain ? 'text-[18px]' : 'text-[16px]'}`}>{label}</small>
       </div>
   )

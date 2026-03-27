@@ -10,7 +10,7 @@ const STYLE = {
   category: 'text-[#AEAEAE] font-[300] text-[14px] capitalize w-fit',
 }
 
-const CategoryStats = ({category, icon, bgColor, iconColor, track, indicator }: CategoryStatsProps) => {
+const CategoryStats = ({category, icon, bgColor, iconColor, barColor, track, indicator }: CategoryStatsProps) => {
 
   const percentage = indicator > 0 ? Math.round((track / indicator) * 100) : 0;
   
@@ -29,7 +29,7 @@ const CategoryStats = ({category, icon, bgColor, iconColor, track, indicator }: 
 
       <div className={STYLE.contentWrapper}>
         <div className="w-full flex items-center gap-4">
-          <ProgressBar indicator={indicator} track={track} color={bgColor}/>
+          <ProgressBar indicator={indicator} track={track} color={barColor}/>
           <strong className={STYLE.percentage}>{percentage}%</strong>
         </div>
 

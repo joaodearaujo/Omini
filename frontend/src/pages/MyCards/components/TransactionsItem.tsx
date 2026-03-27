@@ -4,7 +4,7 @@ import { CATEGORY_MAP } from "../../../utils/CategoryMap";
 
 const STYLE = {
     conatainer: 'w-full h-[60px] flex justify-between items-center p-4 bg-white hover:bg-[#f9fafb] rounded-xl cursor-default',
-    icon: {iconSize: 20, iconBackground: 'bg-[#f3f4f6] w-[35px] h-[35px] rounded-full shadow-md flex items-center justify-center', iconClass: 'text-[#404040]'},
+    icon: {iconSize: 20, iconBackground: 'bg-[#f3f4f6] w-[35px] h-[35px] rounded-full flex items-center justify-center', iconClass: 'text-[#404040]'},
     receiver: 'font-medium',
     info: 'font-light text-[#6a7282]',
     status: 'capitalize text-[#008236]',
@@ -31,7 +31,7 @@ const TransactionItem = ({transaction}: TransactionItemProps) => {
 
       <div className="flex w-[200px] items-center justify-between gap-2">
         <div className="flex items-center justify-between gap-2 bg-[#dbfce7] px-2 rounded-2xl">
-          <div className="w-[6px] h-[6px] bg-[#008236] shadow-sm shadow-[#18a352] rounded-full"></div>
+          <div className="w-[6px] h-[6px] bg-[#008236] rounded-full"></div>
 
           <small className={STYLE.status}>{transaction.status}</small>
         </div>

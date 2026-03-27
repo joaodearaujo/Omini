@@ -4,7 +4,7 @@ const STYLE = {
     tableData: 'px-2 py-3 font-[400] text-[#AEAEAE] text-end align-middle whitespace-nowrap truncate',
     icon: {iconSize: 18, iconClass: 'text-[#404040]'},
     wrapper: 'flex items-center gap-2 w-fit justify-self-star',
-    iconWrapper: 'p-1 rounded-lg bg-[#e5e5e5] shadow-md',
+    iconWrapper: 'p-1 rounded-lg bg-[#f3f4f6]',
 }
 
 const TableData = ({data, style, Icon, className = 'text-start'}: TableDataProps) => {
