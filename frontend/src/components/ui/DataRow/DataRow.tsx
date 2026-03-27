@@ -1,4 +1,9 @@
-import type { DataRowProps } from "./DataRow.type"
+
+interface DataRowProps {
+    label: string;
+    value: string;
+}
+
 
 const STYLE = {
     wrapper:'w-full h-full flex justify-between gap-2',

@@ -10,12 +10,14 @@ const useCountUp = (endValue: number, options?: CountUpOptions) => {
 
     const config = {
         startVal: 0,
-        duration: 2,
+        duration: 1,
         useEasing: true,
         useGrouping: true,
+        smartEasingThreshold: 999,
+        smartEasingAmount: 333,
         separator: '.',
         decimal: ',',
-        prefix: 'R$ '
+        ...options
       }
     
     useEffect(() => {
