@@ -8,7 +8,7 @@ import FloatingCard from "../../../../components/ui/FloatingCard/FloatingCard"
 
 const STYLE = {
   container: 'flex h-full gap-4',
-  wrapper: 'flex-2 flex flex-col items-center justify-between gap-4',
+  wrapper: 'flex-1 flex flex-col items-center justify-between gap-4',
 }
 
 const Cards = ({nextIndex, prevIndex, currentCard}: CardProps) => {

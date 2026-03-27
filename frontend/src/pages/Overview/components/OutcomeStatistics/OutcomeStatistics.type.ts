@@ -6,6 +6,7 @@ export interface CategoryStatsProps {
     icon: LucideIcon | ComponentType<{ size?: number; className?: string }>
     bgColor: string;
     iconColor: string;
+    barColor: string;
     track: number;
     indicator: number;
 }

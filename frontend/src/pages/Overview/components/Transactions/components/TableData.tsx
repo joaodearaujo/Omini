@@ -1,17 +1,31 @@
 import type { TableDataProps } from "../Transactions.type"
+import { useState, useEffect } from "react"
 
 const STYLE = {
-    tableData: 'px-2 py-3 font-[400] text-[#AEAEAE] text-end align-middle whitespace-nowrap truncate',
+    tableData: 'px-2 py-4 align-middle',
     icon: {iconSize: 18, iconClass: 'text-[#404040]'},
-    wrapper: 'flex items-center gap-2 w-fit justify-self-star',
-    iconWrapper: 'p-1 rounded-lg bg-[#e5e5e5] shadow-md',
+    wrapper: 'flex items-center gap-2 font-[400] font-light w-fit text-[#AEAEAE] justify-self-start transition-all duration-500 whitespace-nowrap truncate',
+    iconWrapper: 'p-1 rounded-lg bg-[#f3f4f6]',
 }
 
 const TableData = ({data, style, Icon, className = 'text-start'}: TableDataProps) => {
+    const [isVisible, setIsVisible] = useState<boolean>(false)
+
+    useEffect(() => {
+
+        setIsVisible(false);
+
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 50)
+
+        return () => clearTimeout(timer)
+    }, [data]);
+
 
   return (
     <td className={`${STYLE.tableData} ${className}`}>
-        <span className={STYLE.wrapper} style={style}>
+        <span className={`${STYLE.wrapper} ${isVisible ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-1'}`} style={style}>
             {Icon && (       
                 <div className={STYLE.iconWrapper}>
                     <Icon size={STYLE.icon.iconSize} className={STYLE.icon.iconClass}/>

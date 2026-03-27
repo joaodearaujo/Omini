@@ -21,10 +21,10 @@ const { stats, totalCount } = useTransactionStats({transactions});
           track={count} 
           indicator={totalCount}
           category={categoryName} 
+          barColor={CATEGORY_MAP[categoryName].progressBarColor} 
           icon={CATEGORY_MAP[categoryName].icon} 
           bgColor={CATEGORY_MAP[categoryName].bgColor}
           iconColor={CATEGORY_MAP[categoryName].iconColor}
-           
         />
       ))}
     </div>

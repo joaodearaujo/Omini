@@ -12,9 +12,10 @@ export interface TransactionsTableProps {
 
 export interface TransactionProps{
     id: string;
+    status: 'Completed' | 'Pending' | 'Canceled'
     cardId?: string;
     receiver: string;
-    category: string;
+    category: 'Food' | 'Health' | 'Transport' | 'Essentials' | 'Lifestyle';
     date: string;
     amount: number;
 }

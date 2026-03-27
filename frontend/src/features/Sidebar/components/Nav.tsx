@@ -11,9 +11,9 @@ import {
 
 const STYLE = { 
     nav: 'flex flex-col items-center mt-22 w-full',
-    link: 'w-full flex items-center justify-start rounded-lg  bg-white text-[#c7c7c7] hover:bg-[#F0F7FF] hover:text-[#197BBD] transition-all duration-600 ease-in-out p-4 gap-4',
+    link: 'w-full flex items-center justify-start rounded-lg bg-white text-[#c7c7c7] hover:bg-[#F0F7FF] hover:text-[#197BBD] transition-all duration-600 ease-in-out p-4 gap-4',
     icon: 'group-hover:text-[#197BBD] transition-colors',
-    span: 'text-center font-[500] text-[16px]'
+    span: 'text-center font-regular font-[500] text-[16px]'
 }
 
 const Nav = () => {

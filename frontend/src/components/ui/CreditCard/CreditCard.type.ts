@@ -6,8 +6,8 @@ export interface CreditCardProps {
 export interface CardInfoProps {
     id: string;
     color: string;
-    bank: string;
-    flag: string;
+    bank: 'Nubank' | 'MercadoPago' | 'Inter' | 'Bradesco' | 'Itaú' | 'Santander' | 'BTG Pactual';
+    flag: 'Mastercard' | 'Visa' | 'Elo' | 'American Express';
     number: string;
     owner: string;
     date: string;
