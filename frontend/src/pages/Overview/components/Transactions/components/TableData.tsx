@@ -2,9 +2,9 @@ import type { TableDataProps } from "../Transactions.type"
 import { useState, useEffect } from "react"
 
 const STYLE = {
-    tableData: 'px-2 py-3 align-middle',
+    tableData: 'px-2 py-4 align-middle',
     icon: {iconSize: 18, iconClass: 'text-[#404040]'},
-    wrapper: 'flex items-center gap-2 font-[400] w-fit text-[#AEAEAE] justify-self-start transition-all duration-1000 whitespace-nowrap truncate',
+    wrapper: 'flex items-center gap-2 font-[400] font-light w-fit text-[#AEAEAE] justify-self-start transition-all duration-500 whitespace-nowrap truncate',
     iconWrapper: 'p-1 rounded-lg bg-[#f3f4f6]',
 }
 

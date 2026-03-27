@@ -7,7 +7,7 @@ const STYLE = {
   container: 'flex items-center gap-4',
   iconBackground: 'flex items-center justify-center h-full w-full min-w-[20px] min-h-[20px] p-2 rounded-lg',
   contentWrapper: 'w-full h-full flex flex-col',
-  percentage: 'text-[24px] font-medium text-[#696969] tabular-nums min-w-[64px]',
+  percentage: 'text-[24px] font-medium text-[#696969] tabular-nums min-w-[64px] text-end',
   category: 'text-[#AEAEAE] font-[300] text-[14px] capitalize w-fit',
 }
 
@@ -17,7 +17,7 @@ const CategoryStats = ({category, icon, bgColor, iconColor, barColor, track, ind
   const percentage = indicator > 0 ? Math.round((track / indicator) * 100) : 0;
 
   const options = {
-    prefix: '%'
+    suffix: '%'
   }
 
   const { countRef } = useCountUp(percentage, options)
@@ -38,7 +38,7 @@ const CategoryStats = ({category, icon, bgColor, iconColor, barColor, track, ind
       <div className={STYLE.contentWrapper}>
         <div className="w-full flex items-center gap-4">
           <ProgressBar indicator={indicator} track={track} color={barColor}/>
-          <strong ref={countRef} className={STYLE.percentage}>0 %</strong>
+          <strong ref={countRef} className={STYLE.percentage}>0</strong>
         </div>
 
         <small className={STYLE.category}>{category}</small>

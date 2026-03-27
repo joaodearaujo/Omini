@@ -7,7 +7,7 @@ const STYLE = {
     header: 'max-w-full flex justify-between items-center',
     sectionTitle:  'font-medium text-[18px]',
     button:  'bg-black text-white rounded-xl py-2 px-3 cursor-pointer',
-    cardsWrapper: 'max-w-full min-w-0 h-fit flex gap-8  overflow-x-auto justify-center',
+    cardsWrapper: 'max-w-full min-w-0 h-fit flex gap-4 overflow-x-auto justify-center',
 }
 
 

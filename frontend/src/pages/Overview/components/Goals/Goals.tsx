@@ -6,7 +6,7 @@ import FloatingCard from "../../../../components/ui/FloatingCard/FloatingCard";
 
 const STYLE = {
     container: 'flex max-h-full items-center',
-    goalsWrapper: 'w-full h-full flex gap-4 overflow-x-auto p-2 no-scrollbar',
+    goalsWrapper: 'w-full h-full flex gap-4 overflow-x-auto px-2 no-scrollbar',
     goalCard: 'min-w-[180px] min-h-[240px] shrink-0 flex flex-1 flex'
 }
 
@@ -15,7 +15,7 @@ const Goals = ({goals}: GoalsProps) => {
     const {goalsRef, goalsScrollNext, goalsScrollPrevious} = useGoalsNavigation()
 
   return (   
-    <FloatingCard title="Goals" style={{backgroundColor: 'transparent', border:'none'}}>
+    <FloatingCard title="Goals" style={{backgroundColor: 'transparent', border: 'none'}}>
         <div className={STYLE.container}  >
             <GoalGButtonNav  onClick={goalsScrollPrevious}/>
 
