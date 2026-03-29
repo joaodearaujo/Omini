@@ -1,4 +1,11 @@
-import type { FloatingCardProps } from "./FloatingCard.type";
+import type { CSSProperties, 
+              ReactNode } from "react";
+
+interface FloatingCardProps {
+    children: ReactNode;
+    title?: string;
+    style?: CSSProperties;
+}
 
 const STYLE = {
   container: 'w-full flex-1 max-h-full min-h-0 flex flex-col items-center justify-start p-6 border-1 border-black/8 rounded-4xl bg-white',
@@ -15,7 +22,6 @@ const FloatingCard = ({children, title, style}: FloatingCardProps) => {
                 {<h2 className={STYLE.title}>{title}</h2>}
               </div>
           }
-
           {children}
         </div>
     </article>

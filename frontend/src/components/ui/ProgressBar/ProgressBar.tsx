@@ -1,4 +1,8 @@
-import {type  ProgressBarProps } from "./ProgressBar.type";
+interface ProgressBarProps {
+    track: number;
+    indicator: number;
+    color: string;
+}
 
 const STYLE = {
   track: 'flex w-full h-[12px] items-center justify-start] rounded-full bg-[#F1F1F1]',

@@ -2,7 +2,7 @@ import CreditCard from "../../../../components/ui/CreditCard/CreditCard"
 import PaymentLimit from "./components/PaymentLimit"
 import BalanceStatus from "./components/BalanceStatus"
 import CardNav from "./components/CardNav"
-import Divider from "../../../../components/ui/Divider"
+import Divider from "../../../../components/ui/Divider/Divider"
 import type { CardProps } from "./Cards.type"
 import FloatingCard from "../../../../components/ui/FloatingCard/FloatingCard"
 

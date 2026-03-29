@@ -13,7 +13,7 @@ const CARDS_LABELS  = [
     {label: 'Expiry Date'}
 ]
 
-const CreditCardContent = ({bank = 'bank', flag = 'flag', owner = 'Name', number =  '0000 0000 0000 000', date = '00/00'} : CreditCardContentProps ) => {
+const CreditCardContent = ({bank = 'Nubank', flag = 'Mastercard', owner = 'Name', number =  '0000 0000 0000 000', date = '00/00'} : CreditCardContentProps ) => {
 
     return (
         <div className={STYLE.wrapper}>

@@ -1,7 +1,7 @@
 import CreditCard from "../../../components/ui/CreditCard/CreditCard";
 import { MOCK_CARDS } from "../../../mock/MOCK_CARDS";
-import { useState } from "react";
 import Form from "./Form";
+import useFormVisibility from "../../../hooks/useFormVisibility";
 import type { CardsSectionsHeaderProps } from "../Mycards.type";
 
 const STYLE = {
@@ -12,39 +12,27 @@ const STYLE = {
     cardsWrapper: 'max-w-full min-w-0 h-fit flex gap-4 overflow-x-auto justify-center',
 }
 
-const sectionTitle = 'My Cards';
-const buttonName = '+ Add Card';
-
+const HEADER_CONFIG = {
+ sectionTitle: 'My Cards',
+ buttonName: '+ Add Card',
+}
 
 const CardsSectionHeader = ({onClick}: CardsSectionsHeaderProps) => {
   return (
       <div className={STYLE.header}>
-        <h3 className={STYLE.sectionTitle}>{sectionTitle}</h3>
+        <h3 className={STYLE.sectionTitle}>{HEADER_CONFIG.sectionTitle}</h3>
 
-        <button onClick={onClick} className={STYLE.button}>{buttonName}</button>
+        <button onClick={onClick} className={STYLE.button}>{HEADER_CONFIG.buttonName}</button>
       </div>
   )
 }
 
 const CardsSection = () => {
 
-const [isFormVisible, setIsFormVisible] = useState<boolean>(false)
-
-const toggleForm = () => {
-  return  (
-    setIsFormVisible(true)
-  )
-}
-
-const closeForm = () => {
-  return  (
-    setIsFormVisible(false)
-  )
-}
+const { isFormVisible, toggleForm, closeForm} = useFormVisibility()
 
   return (
     <div className={STYLE.container}>
-      
       <CardsSectionHeader onClick={toggleForm}/>
 
       {isFormVisible && (<Form onClick={closeForm}/>)}
