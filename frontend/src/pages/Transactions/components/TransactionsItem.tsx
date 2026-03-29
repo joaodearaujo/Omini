@@ -19,13 +19,14 @@ const STATUS_VARIANTS = {
 
 const TransactionItem = ({transaction, bank}: TransactionItemProps) => {
 
+  
   const Icon = CATEGORY_MAP[transaction.category].icon || HelpCircle;
 
   const status = STATUS_VARIANTS[transaction.status]
 
   return (
     <div className={STYLE.conatainer}>
-      <div className="flex w-fit items-center justify-between gap-4">
+      <div className={`flex w-fit items-center justify-between gap-4`}>
           <span className={STYLE.icon.iconBackground}>
               <Icon size={STYLE.icon.iconSize} className={STYLE.icon.iconClass} />
           </span>

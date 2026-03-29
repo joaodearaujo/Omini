@@ -7,6 +7,7 @@ import { MOCK_TRANSACTIONS } from "../../mock/MOCK_TRANSACTIONS";
 import { MOCK_CARDS } from "../../mock/MOCK_CARDS";
 import useCardNavigation from "../../hooks/useCardNavigation";
 import Header from "../../features/Header/Header";
+import { useEffect, useState } from "react";
 
 const STYLE = {
   mainWrapper: 'max-w-full flex flex-col gap-8 min-h-0',
@@ -16,6 +17,20 @@ const STYLE = {
 };
 
 const Overview = () => {
+
+    const [isVisible, setIsVisible] = useState<boolean>(false)
+
+    useEffect(() => {
+
+        setIsVisible(false);
+
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 50)
+
+        return () => clearTimeout(timer)
+    }, []);
+
 
     const title = 'Overview'
     const subtitle = 'Get summary of your weekly online transactions here.'
@@ -27,7 +42,7 @@ const Overview = () => {
     <div className={STYLE.mainWrapper}>
         <Header title={title} subtitle={subtitle}/>
 
-        <main className={STYLE.gridLayout}>
+        <main className={`${STYLE.gridLayout} duration-500 ${isVisible ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-1'}`}>
             <section className={STYLE.leftCol}>
                     <Cards nextIndex={nextIndex}
                            prevIndex={prevIndex}
