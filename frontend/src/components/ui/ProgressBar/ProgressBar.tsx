@@ -10,7 +10,6 @@ const STYLE = {
 }
 
 const ProgressBar = ({track, indicator, color = '#197BBD'}: ProgressBarProps) => {
-
   const usage = track > 0 ? Math.round((track / indicator ) * 100) : 0;
 
   return (

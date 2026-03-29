@@ -8,6 +8,7 @@
       const grouped = transactions.reduce<Record<string, number>>((acc, item) => {
         const category = item.category;
         acc[category] = (acc[category] || 0) + 1;
+        
         return acc;
       }, {});
 

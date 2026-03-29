@@ -14,7 +14,6 @@ const CARDS_LABELS  = [
 ]
 
 const CreditCardContent = ({bank = 'Nubank', flag = 'Mastercard', owner = 'Name', number =  '0000 0000 0000 000', date = '00/00'} : CreditCardContentProps ) => {
-
     return (
         <div className={STYLE.wrapper}>
             <div className="flex items-cente justify-between">

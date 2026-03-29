@@ -11,9 +11,9 @@ const STYLE = {
 const CreditCard = ({creditCard}: CreditCardProps) => {
   return (
         <div className={`${STYLE.CARD_LAYOUT} 
-                         ${STYLE.CARD_THEME} 
-                         ${STYLE.CARD_INTERACTION}`}
-                         style={{backgroundColor: `${creditCard.color}`}}
+                          ${STYLE.CARD_THEME} 
+                          ${STYLE.CARD_INTERACTION}`}
+                          style={{backgroundColor: `${creditCard.color}`}}
             >
             <CreditCardContent  {...creditCard}
                                 />

@@ -7,7 +7,6 @@ const STYLE = {
 }
 
 const Sidebar = () => {
-
     return (
         <div className={STYLE.container}>
             <div className={STYLE.logoWrapper}>

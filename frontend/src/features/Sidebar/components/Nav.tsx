@@ -15,7 +15,6 @@ const STYLE = {
     icon: 'group-hover:text-[#197BBD] transition-colors',
     span: 'text-center font-regular font-[500] text-[16px]'
 }
-
     const navLinks: navLinksProps[] = [
     {name:'Overview', to:'', icon: LayoutDashboard},
     {name:'My cards', to:'mycards', icon: CreditCard},

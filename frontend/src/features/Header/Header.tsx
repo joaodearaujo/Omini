@@ -8,7 +8,6 @@ const STYLE = {
 }
 
 const Header = ({title, subtitle}: HeaderProps) => { 
-
     const Icon = CircleUserRound;
 
     return (
