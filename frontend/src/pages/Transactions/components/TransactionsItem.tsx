@@ -1,4 +1,4 @@
-import type { TransactionItemProps } from "../Transacions.type";
+import type { TransactionItemProps } from "../Transacitions.type";
 import {  HelpCircle } from "lucide-react";
 import { CATEGORY_MAP } from "../../../utils/CategoryMap";
 
@@ -11,9 +11,17 @@ const STYLE = {
     amount: 'font-medium text-[#404040]',
 }
 
-const TransactionItem = ({transaction}: TransactionItemProps) => {
+const STATUS_VARIANTS = {
+  Completed: { bg: 'bg-[#dbfce7]', dot: 'bg-[#008236]', text: 'text-[#008236]' },
+  Pending:   { bg: 'bg-[#fef9c3]', dot: 'bg-[#ca8a04]', text: 'text-[#ca8a04]' },
+  Canceled:  { bg: 'bg-[#fee2e2]', dot: 'bg-[#dc2626]', text: 'text-[#dc2626]' },
+};
+
+const TransactionItem = ({transaction, bank}: TransactionItemProps) => {
 
   const Icon = CATEGORY_MAP[transaction.category].icon || HelpCircle;
+
+  const status = STATUS_VARIANTS[transaction.status]
 
   return (
     <div className={STYLE.conatainer}>
@@ -25,38 +33,16 @@ const TransactionItem = ({transaction}: TransactionItemProps) => {
           <div className="flex flex-col">
             <strong className={STYLE.receiver}>{transaction.receiver}</strong>
 
-            <small className={STYLE.info}>{`${transaction.category} • ${transaction.date}`}</small>
+            <small className={STYLE.info}>{`${transaction.category} • ${transaction.date} • ${bank}`}</small>
           </div>
       </div>
 
       <div className="flex w-[200px] items-center justify-between gap-2">
-        
-        {transaction.status === 'Completed' &&
 
-          <div className="flex items-center justify-between gap-2 bg-[#dbfce7] px-2 rounded-2xl">
-          <div className="w-[6px] h-[6px] bg-[#008236] rounded-full"></div>
-
-          <small className={STYLE.status}>{transaction.status}</small>
+        <div className={`flex items-center justify-between gap-2 px-2 rounded-2xl ${status.bg}`}>
+          <div className={`w-[6px] h-[6px] rounded-full ${status.dot}`}></div>
+          <small className={`capitalize font-medium ${status.text}`}>{transaction.status}</small>
         </div>
-        }
-
-        {transaction.status === 'Pending' &&
-
-          <div className="flex items-center justify-between gap-2 bg-[#fef9c3] px-2 rounded-2xl">
-          <div className="w-[6px] h-[6px] bg-[#ca8a04] rounded-full"></div>
-
-          <small className="text-[#ca8a04] capitalize">{transaction.status}</small>
-        </div>
-        }
-
-        {transaction.status === 'Canceled' &&
-
-          <div className="flex items-center justify-between gap-2 bg-[#fee2e2] px-2 rounded-2xl">
-          <div className="w-[6px] h-[6px] bg-[#dc2626] rounded-full"></div>
-
-          <small className="text-[#dc2626] capitalize">{transaction.status}</small>
-        </div>
-        }
 
         <span className={STYLE.amount}>{`R$ ${transaction.amount}`}</span>
       </div>

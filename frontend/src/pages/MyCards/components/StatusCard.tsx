@@ -8,14 +8,14 @@ const STYLE = {
     title: 'font-semibold text-[#404040] ',
     icon: {iconSize: 18, iconClass: 'text-[#404040]'},
     contentWrapper: 'flex flex-col gap-2',
-    amount: 'text-[24px] font-[500]',
+    amount: 'text-[24px] font-[500] w-[120px]',
     description: 'font-light text-[#404040]',
 }
 
 const StatusCard = ({title, amount, icon, description}: StatusCardProps) => {
 
     const options = {
-        prefix: 'R$ '
+        prefix: 'R$'
     }
 
     const { countRef } = useCountUp(amount, options)

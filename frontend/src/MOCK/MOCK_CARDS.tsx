@@ -51,7 +51,7 @@ export const MOCK_CARDS: CardInfoProps[] = [
     number: "4000 **** **** 9010",
     owner: "João Pedro Araújo",
     date: "01/26",
-    balance: 5200.00,
+    balance: 52222200.00,
     income: 3000.00,
     outcome: 800.00,
     totalLimit: 15000.00,
