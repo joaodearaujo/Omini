@@ -9,19 +9,13 @@ const STYLE = {
 }
  
 const CreditCard = ({creditCard}: CreditCardProps) => {
-
   return (
         <div className={`${STYLE.CARD_LAYOUT} 
                          ${STYLE.CARD_THEME} 
                          ${STYLE.CARD_INTERACTION}`}
-
                          style={{backgroundColor: `${creditCard.color}`}}
             >
-            <CreditCardContent  bank={creditCard.bank}
-                                flag={creditCard.flag}
-                                owner={creditCard.owner}
-                                number= {creditCard.number}
-                                date={creditCard.date}
+            <CreditCardContent  {...creditCard}
                                 />
         </div>
   )

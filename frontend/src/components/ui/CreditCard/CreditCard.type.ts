@@ -23,10 +23,4 @@ export interface CardFieldProps {
     value: string;
 }
 
-export interface CreditCardContentProps {
-    bank: string,
-    flag:string,
-    owner:string, 
-    number: string,
-    date:string,
-}
+export type CreditCardContentProps = Pick<CardInfoProps, 'bank' | 'flag' | 'owner' | 'number' | 'date'>;

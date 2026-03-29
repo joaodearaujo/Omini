@@ -8,33 +8,25 @@ const STYLE = {
     number: 'text-[18px] font-medium truncate tracking-widest',
 }
 
-const labelOne = 'Card Holder';
-const labelTwo = 'Expires';
+const CARDS_LABELS  = [
+    {label: 'Owner'},
+    {label: 'Expiry Date'}
+]
 
 const CreditCardContent = ({bank = 'bank', flag = 'flag', owner = 'Name', number =  '0000 0000 0000 000', date = '00/00'} : CreditCardContentProps ) => {
 
     return (
         <div className={STYLE.wrapper}>
             <div className="flex items-cente justify-between">
-     
                 <strong className={STYLE.bank}>{bank}</strong>
-                 <img className="w-[42px]" 
-                     src="./mastercard.svg" 
-                     alt="" />
+                <small className={STYLE.flag}>{flag}</small>
             </div>
             
             <span className={STYLE.number}>{number}</span>
 
             <div className="w-full flex justify-between">
-                <CardField 
-                    label={labelOne} 
-                    value={owner}
-                />
-
-                <CardField 
-                    label={labelTwo}
-                     value={date}
-                />
+                {CARDS_LABELS.map((item) => <CardField label={item.label} 
+                                                       value={item.label === 'Owner' ? owner : date}/>)}
             </div>
         </div>
     )
