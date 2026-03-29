@@ -1,4 +1,4 @@
-import type { TransactionsTableProps } from "../Transactions.type";
+import type { TransactionsTableProps } from "../TransactionsHistory.type";
 import TableData from "./TableData";
 import { CATEGORY_MAP } from "../../../../../utils/CategoryMap";
 import TableHead from "./TableHead";

@@ -1,4 +1,4 @@
-import type { TransactionItemProps } from "../Mycards.type";
+import type { TransactionItemProps } from "../Transacions.type";
 import {  HelpCircle } from "lucide-react";
 import { CATEGORY_MAP } from "../../../utils/CategoryMap";
 
@@ -7,7 +7,7 @@ const STYLE = {
     icon: {iconSize: 20, iconBackground: 'bg-[#f3f4f6] w-[35px] h-[35px] rounded-full flex items-center justify-center', iconClass: 'text-[#404040]'},
     receiver: 'font-[400]',
     info: 'font-light text-[#6a7282]',
-    status: 'capitalize text-[#008236]',
+    status: '' ,
     amount: 'font-medium text-[#404040]',
 }
 
@@ -30,11 +30,33 @@ const TransactionItem = ({transaction}: TransactionItemProps) => {
       </div>
 
       <div className="flex w-[200px] items-center justify-between gap-2">
-        <div className="flex items-center justify-between gap-2 bg-[#dbfce7] px-2 rounded-2xl">
+        
+        {transaction.status === 'Completed' &&
+
+          <div className="flex items-center justify-between gap-2 bg-[#dbfce7] px-2 rounded-2xl">
           <div className="w-[6px] h-[6px] bg-[#008236] rounded-full"></div>
 
           <small className={STYLE.status}>{transaction.status}</small>
         </div>
+        }
+
+        {transaction.status === 'Pending' &&
+
+          <div className="flex items-center justify-between gap-2 bg-[#fef9c3] px-2 rounded-2xl">
+          <div className="w-[6px] h-[6px] bg-[#ca8a04] rounded-full"></div>
+
+          <small className="text-[#ca8a04] capitalize">{transaction.status}</small>
+        </div>
+        }
+
+        {transaction.status === 'Canceled' &&
+
+          <div className="flex items-center justify-between gap-2 bg-[#fee2e2] px-2 rounded-2xl">
+          <div className="w-[6px] h-[6px] bg-[#dc2626] rounded-full"></div>
+
+          <small className="text-[#dc2626] capitalize">{transaction.status}</small>
+        </div>
+        }
 
         <span className={STYLE.amount}>{`R$ ${transaction.amount}`}</span>
       </div>

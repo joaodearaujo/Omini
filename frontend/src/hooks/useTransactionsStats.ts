@@ -1,5 +1,5 @@
   import { useMemo } from "react";
-  import type { TransactionsProps } from "../pages/Overview/components/Transactions/Transactions.type";
+  import type { TransactionsProps } from "../pages/Overview/components/Transactions/TransactionsHistory.type";
 
   export const useTransactionStats = ({transactions}: TransactionsProps) => {
     

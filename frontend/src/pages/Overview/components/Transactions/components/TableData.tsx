@@ -1,4 +1,4 @@
-import type { TableDataProps } from "../Transactions.type"
+import type { TableDataProps } from "../TransactionsHistory.type"
 import { useState, useEffect } from "react"
 
 const STYLE = {

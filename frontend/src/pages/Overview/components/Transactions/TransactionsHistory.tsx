@@ -1,11 +1,11 @@
 import TransactionsTable from "./components/TransactionsTable";
-import type { TransactionsProps } from "./Transactions.type";
+import type { TransactionsProps } from "./TransactionsHistory.type";
 import FloatingCard from "../../../../components/ui/FloatingCard/FloatingCard";
 const STYLE = {
   container: 'h-full max-h-[280px] overflow-x-auto overflow-scroll overflow-hidden',
 }
 
-const Transactions = ({transactions}: TransactionsProps ) => {
+const TransactionsHistory = ({transactions}: TransactionsProps ) => {
 
   return (
     <FloatingCard title="Transactions">
@@ -16,4 +16,4 @@ const Transactions = ({transactions}: TransactionsProps ) => {
   )
 }
 
-export default Transactions;
+export default TransactionsHistory;

@@ -1,7 +1,6 @@
 import FloatingCard from "../../../components/ui/FloatingCard/FloatingCard"
 import type { StatusCardProps } from "../Mycards.type"
-import { GlassWater } from "lucide-react"
-
+import useCountUp from "../../../hooks/useCountUp"
 
 const STYLE = {
     container: 'flex flex-col w-full h-[100px] justify-between',
@@ -9,14 +8,19 @@ const STYLE = {
     title: 'font-semibold text-[#404040] ',
     icon: {iconSize: 18, iconClass: 'text-[#404040]'},
     contentWrapper: 'flex flex-col gap-2',
-    amount: 'font-semibold',
+    amount: 'text-[24px] font-[500]',
     description: 'font-light text-[#404040]',
-
 }
 
-const StatusCard = ({title, amount, description}: StatusCardProps) => {
+const StatusCard = ({title, amount, icon, description}: StatusCardProps) => {
 
-    const Icon = GlassWater
+    const options = {
+        prefix: 'R$ '
+    }
+
+    const { countRef } = useCountUp(amount, options)
+
+    const Icon = icon
 
   return (  
     <FloatingCard>
@@ -28,7 +32,7 @@ const StatusCard = ({title, amount, description}: StatusCardProps) => {
             </div>
 
             <div className={STYLE.contentWrapper}>
-                <strong className={STYLE.amount}>{`R$ ${amount}`}</strong>
+                <strong ref={countRef} className={STYLE.amount}>0</strong>
                 <small className={STYLE.description}>{description}</small>
             </div>
         </div>

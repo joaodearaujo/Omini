@@ -10,7 +10,7 @@ const useCountUp = (endValue: number, options?: CountUpOptions) => {
 
     const config = {
         startVal: 0,
-        duration: 1,
+        duration: 2,
         useEasing: true,
         useGrouping: true,
         smartEasingThreshold: 999,
@@ -22,6 +22,7 @@ const useCountUp = (endValue: number, options?: CountUpOptions) => {
     
     useEffect(() => {
             if(countRef.current) {
+                
                 instanceRef.current = new CountUp(countRef.current, endValue, config);
                 
                 if (!instanceRef.current.error) {

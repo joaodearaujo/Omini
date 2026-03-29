@@ -1,8 +1,8 @@
-import type { TransactionProps } from "../pages/Overview/components/Transactions/Transactions.type";
+import type { TransactionProps } from "../pages/Overview/components/Transactions/TransactionsHistory.type";
 
 export const MOCK_TRANSACTIONS: Record<string, TransactionProps[]> = {
   "cc-001": [
-    { id: "t1-01", receiver: "Amazon", category: "Essentials", date: "Mar 18, 2026", amount: 120.50, status: "Completed" },
+    { id: "t1-01", receiver: "Amazon", category: "Essentials", date: "Mar 18, 2026", amount: 120.50, status: "Canceled" },
     { id: "t1-02", receiver: "Starbucks", category: "Food", date: "Mar 17, 2026", amount: 15.00, status: "Completed" },
     { id: "t1-03", receiver: "Uber", category: "Transport", date: "Mar 16, 2026", amount: 32.40, status: "Pending" },
     { id: "t1-04", receiver: "Netflix", category: "Lifestyle", date: "Mar 15, 2026", amount: 55.90, status: "Completed" },

@@ -3,6 +3,7 @@ import MainContainer from "./features/MainContainer/MainContainer";
 import Overview from "./pages/Overview/Overview";
 import MyCards from "./pages/MyCards/MyCards";
 import { createBrowserRouter, RouterProvider} from 'react-router';
+import Transacitions from "./pages/Transactions/Transacitions";
 
 const RootLayout = () => {
   return (
@@ -13,7 +14,7 @@ const RootLayout = () => {
     </div>
   )
 }
-
+  
 function App() {
 
 const router = createBrowserRouter(
@@ -33,7 +34,7 @@ const router = createBrowserRouter(
         },
         {
           path: '/transactions',
-          element: <MyCards/>   
+          element: <Transacitions/>   
         },
         {
           path: '/goals',

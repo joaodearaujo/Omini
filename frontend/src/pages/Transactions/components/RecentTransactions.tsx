@@ -7,17 +7,18 @@ const RecentTransactions = () => {
 
   return (
     <FloatingCard title="Recent Transactions">
-      <div className="flex flex-col gap-4 w-full py-2 max-h-[180px] min-h-0 overflow-y-auto">
+      <div className="flex flex-col gap-4 max-h-[680px] py-2 min-h-0 overflow-y-auto">
       {MOCK_CARDS.map((card) => {
 
-        const cardId = card.id
+        const transactions = MOCK_TRANSACTIONS[card.id] || [];
 
-        return (
-          <TransactionItem transaction={
-            MOCK_TRANSACTIONS[cardId][0]
-          } />  
-        )
-      })}
+        return transactions.map((transaction) => (
+          <TransactionItem 
+            key={transaction.id}
+            transaction={transaction}
+          />
+          ));
+        })}
 
       </div>
     </FloatingCard>

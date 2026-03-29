@@ -1,5 +1,5 @@
 import Cards from "./components/Cards/Cards";
-import Transactions from "./components/Transactions/Transactions";
+import TransactionsHistory from "./components/Transactions/TransactionsHistory";
 import Goals from "./components/Goals/Goals";
 import OutcomeStatistics from "./components/OutcomeStatistics/OutcomeStatistics";
 import { MOCK_GOALS } from "../../mock/MOCK_GOALS";
@@ -33,7 +33,7 @@ const Overview = () => {
                            prevIndex={prevIndex}
                            currentCard={MOCK_CARDS[currentIndex]} />
                            
-                    <Transactions transactions={currentTransactions}/>
+                    <TransactionsHistory transactions={currentTransactions}/>
             </section>
 
             <section className={STYLE.rightCol}>         

@@ -1,11 +1,13 @@
-import type { TransactionProps } from "../Overview/components/Transactions/Transactions.type";
+import type { LucideIcon } from "lucide-react";
 
 export interface StatusCardProps {
     amount: number,
     title: string,
     description?: string,
+    icon: LucideIcon,
 }
 
-export interface TransactionItemProps {
-    transaction: TransactionProps;
-}
+
+export interface CardsSectionsHeaderProps {
+    onClick: () => void;
+} 
