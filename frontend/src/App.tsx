@@ -4,6 +4,8 @@ import Overview from "./pages/Overview/Overview";
 import MyCards from "./pages/MyCards/MyCards";
 import { createBrowserRouter, RouterProvider} from 'react-router';
 import Transacitions from "./pages/Transactions/Transacitions";
+import GoalsPage from "./pages/GoalsPage/GoalsPage";
+import { Settings } from "lucide-react";
 
 const RootLayout = () => {
   return (
@@ -38,11 +40,11 @@ const router = createBrowserRouter(
         },
         {
           path: '/goals',
-          element: <MyCards/>   
+          element: <GoalsPage/>   
         },
         {
           path: '/settings',
-          element: <MyCards/>   
+          element: <Settings/>   
         },
       ]
     },
