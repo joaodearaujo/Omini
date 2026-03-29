@@ -3,7 +3,7 @@ import type { PaymentLimitProps } from "../Cards.type";
 import DataRow from "../../../../../components/ui/DataRow/DataRow";
 
 const STYLE = {
-  wrapper: 'flex flex-col w-full max-w-[360px] items-center gap-4 justify-between',
+  wrapper: 'flex flex-col w-full max-w-[360px] items-center gap-1 justify-between',
 };
 
 const labelData = 'Payment Limit';
