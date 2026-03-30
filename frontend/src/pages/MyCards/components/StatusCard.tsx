@@ -5,7 +5,7 @@ import useCountUp from "../../../hooks/useCountUp"
 const STYLE = {
     container: 'flex flex-col w-full h-[100px] justify-between',
     headerWrapper: 'flex  items-center  justify-between',
-    title: 'font-semibold text-[#404040] ',
+    title: 'font-[500] text-[#404040] ',
     icon: {iconSize: 18, iconClass: 'text-[#404040]'},
     contentWrapper: 'flex flex-col gap-2',
     amount: 'text-[24px] font-[500] w-[120px]',

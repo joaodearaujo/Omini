@@ -6,7 +6,3 @@ export interface StatusCardProps {
     description?: string,
     icon: LucideIcon,
 }
-
-export interface CardsSectionsHeaderProps {
-    onClick: () => void;
-} 

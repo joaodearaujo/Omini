@@ -5,6 +5,7 @@ import {
   LayoutDashboard, 
   ArrowRightLeft, 
   CreditCard, 
+  Target, 
   Settings, 
 } from "lucide-react";
 
@@ -18,6 +19,7 @@ const STYLE = {
     {name:'Overview', to:'', icon: LayoutDashboard},
     {name:'My cards', to:'mycards', icon: CreditCard},
     {name:'Transactions', to:'transactions', icon: ArrowRightLeft},
+    {name:'Goals', to:'goals', icon: Target},
     {name:'Settings', to:'settings', icon: Settings},
 ];
 

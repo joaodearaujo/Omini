@@ -38,6 +38,10 @@ const router = createBrowserRouter(
           element: <Transacitions/>   
         },
         {
+          path: '/goals',
+          element: <GoalsPage/>   
+        },
+        {
           path: '/settings',
           element: <Settings/>   
         },
