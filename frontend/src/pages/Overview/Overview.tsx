@@ -12,8 +12,8 @@ import useFadeIn from "../../hooks/useFadeIn";
 const STYLE = {
   mainWrapper: 'max-w-full flex flex-col gap-8 min-h-0',
   gridLayout: 'grid grid-cols-12 gap-6 w-full h-full',
-  leftCol: 'col-span-7 flex flex-col gap-6 justify-between',
-  rightCol: 'col-span-5 flex flex-col gap-6 justify-between',
+  leftCol: 'col-span-7 flex flex-col gap-6',
+  rightCol: 'col-span-5 flex flex-col gap-6',
 };
 
 const title = 'Overview'

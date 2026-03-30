@@ -5,32 +5,38 @@ type TransactionCategory = 'Food' | 'Health' | 'Transport' | 'Essentials' | 'Lif
 
  export const CATEGORY_MAP: Record<TransactionCategory, {icon: LucideIcon, iconColor: string, progressBarColor: string, bgColor: string}> = {
 
-  Food: {icon: UtensilsCrossed, 
-        iconColor: 'text-[#FF6B35]',
-        progressBarColor: '#FF6B35',
-        bgColor: '#FFB38A'},
+  Food: {
+    icon: UtensilsCrossed, 
+    iconColor: 'text-[#FF845E]',       
+    progressBarColor: '#FF845E',
+    bgColor: '#FFF5F2',               
+  },
 
   Health: {
-        icon: HeartPlus, 
-        iconColor: 'text-[#00ED64]', 
-        progressBarColor: '#00ED64',
-        bgColor: '#98FB98'},
+    icon: HeartPlus, 
+    iconColor: 'text-[#2CC069]',       
+    progressBarColor: '#2CC069',
+    bgColor: '#F2FAF5',              
+  },
 
   Transport: {
-        icon: Bus,
-        iconColor: 'text-[#1E90FF]', 
-        progressBarColor: '#1E90FF',
-        bgColor: '#87CEFA'},
+    icon: Bus,
+    iconColor: 'text-[#47A1FF]',        
+    progressBarColor: '#47A1FF',
+    bgColor: '#F0F7FF',             
+  },
 
   Essentials: {
-        icon: Lightbulb,
-        iconColor: 'text-[#00CED1]',
-        progressBarColor: '#00CED1',
-        bgColor: '#00CED115'},
+    icon: Lightbulb,
+    iconColor: 'text-[#36B9CC]',       
+    progressBarColor: '#36B9CC',
+    bgColor: '#F1FAFB',              
+  },
 
   Lifestyle: {
-        icon: Armchair,
-        iconColor: 'text-[#BA55D3]',
-        progressBarColor: '#BA55D3',
-        bgColor: '#C3B1E1'}
- };
+    icon: Armchair,
+    iconColor: 'text-[#A374F2]',        
+    progressBarColor: '#A374F2',
+    bgColor: '#F7F4FD',               
+  },
+}

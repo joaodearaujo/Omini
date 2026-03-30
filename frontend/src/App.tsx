@@ -9,9 +9,8 @@ import { Settings } from "lucide-react";
 
 const RootLayout = () => {
   return (
-    <div className="bg-[#fcfcfc] w-full h-screen flex ">                     
+    <div className="bg-[#fcfcfc] w-full h-screen flex">                     
       <Sidebar/>
-
       <MainContainer />
     </div>
   )
@@ -37,10 +36,6 @@ const router = createBrowserRouter(
         {
           path: '/transactions',
           element: <Transacitions/>   
-        },
-        {
-          path: '/goals',
-          element: <GoalsPage/>   
         },
         {
           path: '/settings',

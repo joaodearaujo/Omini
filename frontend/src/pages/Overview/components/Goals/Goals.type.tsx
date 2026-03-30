@@ -1,11 +1,4 @@
-import type { GoalCategory } from "../../../../utils/GoalCategory";
-
-export interface GoalCardProps {
-    id: string,
-    value: number,
-    date: string,
-    label: GoalCategory
-}
+import type { GoalCardProps } from "../../../../components/ui/GoalsCard/GoalsCard";
 
 export interface GoalsProps {
     goals: GoalCardProps[],

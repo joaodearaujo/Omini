@@ -6,7 +6,7 @@ import useFadeIn from "../../hooks/useFadeIn"
 
 const STYLE = { 
     container: 'w-full h-full max-h-full flex flex-col gap-8 items-center overflow-y-auto`',
-    wrapper: 'w-full max-h-full h-min-0 flex flex-col gap-7 items-start justify-between overflow-y-auto transition-all duration-800 ',
+    wrapper: 'w-full h-full h-min-0 flex flex-col gap-8 items-start overflow-y-auto transition-all duration-800 ',
 }
 
 const title = 'Credit Cards'

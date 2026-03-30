@@ -5,10 +5,10 @@ import useFormVisibility from "../../../hooks/useFormVisibility";
 import type { CardsSectionsHeaderProps } from "../Mycards.type";
 
 const STYLE = {
-    container:  'w-full h-fit flex flex-col gap-8',
+    container: 'w-full h-fit flex flex-col gap-8',
     header: 'max-w-full flex justify-between items-center',
     sectionTitle:  'font-medium text-[18px]',
-    button:  'bg-black text-white font-[500] rounded-xl py-2 px-3 cursor-pointer transition duration-400 hover:scale-104',
+    button:  'bg-black text-white font-[500] rounded-xl py-2 px-3 cursor-pointer transition duration-400',
     cardsWrapper: 'max-w-full min-w-0 h-fit flex gap-4 overflow-x-auto justify-center',
 }
 

@@ -1,5 +1,4 @@
-import type { CSSProperties, 
-              ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 interface FloatingCardProps {
     children: ReactNode;
@@ -8,9 +7,9 @@ interface FloatingCardProps {
 }
 
 const STYLE = {
-  container: 'w-full flex-1 max-h-full min-h-0 flex flex-col items-center justify-start p-6 border-1 border-black/8 rounded-4xl bg-white',
+  container: 'w-full max-h-full min-h-0 flex flex-col items-center justify-start p-6 border-1 shadow-xs border-black/8 rounded-4xl bg-white',
   wrapper: 'w-full max-h-full h-min-0 flex flex-col gap-4',
-  title: 'font-medium text-black'
+  title: 'font-medium text-black',
 }
 
 const FloatingCard = ({children, title, style}: FloatingCardProps) => {

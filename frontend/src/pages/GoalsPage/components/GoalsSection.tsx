@@ -1,4 +1,4 @@
-import GoalsCard from "../../Overview/components/Goals/components/GoalsCard"
+import GoalsCard from "../../../components/ui/GoalsCard/GoalsCard"
 import { MOCK_GOALS } from "../../../mock/MOCK_GOALS"
 
 const STYLE = {
@@ -10,7 +10,7 @@ const GoalsSection = () => {
     <div className={STYLE.container}>
         {MOCK_GOALS.map((item) => {
             return (
-                <GoalsCard {...item}/>
+                <GoalsCard key={item.id} {...item}/>
             )
         })}
     </div>

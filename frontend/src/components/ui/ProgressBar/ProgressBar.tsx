@@ -5,11 +5,11 @@ interface ProgressBarProps {
 }
 
 const STYLE = {
-  track: 'flex w-full h-[12px] items-center justify-start] rounded-full bg-[#F1F1F1]',
+  track: 'flex w-full h-[12px] items-center justify-start] rounded-full bg-[#F1F1F1] shadow-md',
   indicator:'h-[12px] rounded-full ransition-all shadow-xs duration-1000 ease-in-out outline-none',
 }
 
-const ProgressBar = ({track, indicator, color = '#197BBD'}: ProgressBarProps) => {
+const ProgressBar = ({track, indicator, color = "#197BBD"}: ProgressBarProps) => {
   const usage = track > 0 ? Math.round((track / indicator ) * 100) : 0;
 
   return (

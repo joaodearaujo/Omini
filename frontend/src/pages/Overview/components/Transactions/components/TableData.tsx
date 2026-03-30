@@ -1,5 +1,5 @@
+import useFadeIn from "../../../../../hooks/useFadeIn"
 import type { TableDataProps } from "../TransactionsHistory.type"
-import { useState, useEffect } from "react"
 
 const STYLE = {
     tableData: 'px-2 py-4 align-middle',
@@ -9,19 +9,8 @@ const STYLE = {
 }
 
 const TableData = ({data, style, Icon, className = 'text-start'}: TableDataProps) => {
-    const [isVisible, setIsVisible] = useState<boolean>(false)
 
-    useEffect(() => {
-
-        setIsVisible(false);
-
-        const timer = setTimeout(() => {
-            setIsVisible(true);
-        }, 50)
-
-        return () => clearTimeout(timer)
-    }, [data]);
-
+    const { isVisible } = useFadeIn()
 
   return (
     <td className={`${STYLE.tableData} ${className}`}>

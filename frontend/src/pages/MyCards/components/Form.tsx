@@ -1,8 +1,9 @@
+import useFadeIn from '../../../hooks/useFadeIn';
 import type { CardsSectionsHeaderProps } from '../Mycards.type';
 
 const STYLE = {
-    backdrop: 'fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center',
-    formWrapper: 'w-[30%] h-fit flex flex-col bg-white z-[1001] rounded-4xl p-8 gap-8',
+    backdrop: 'fixed w-full h-full inset-0 z-[1000] flex items-center justify-center transition-all duration-800',
+    formWrapper: 'w-[30%] h-fit flex flex-col bg-white z-[1001] rounded-4xl p-8 gap-8 border-1 border-black/10 shadow-lg',
     button: 'bg-black text-white flex-1 font-[500] rounded-xl py-2 px-3 cursor-pointer transition duration-400 hover:scale-104',
 }
 
@@ -17,12 +18,14 @@ const FORM_CONFIG = [
 
 const Form = ({onClick}: CardsSectionsHeaderProps) => {
 
+    const { isVisible } = useFadeIn()
+
   return (
-        <div className={STYLE.backdrop}>
+        <div className={`${STYLE.backdrop} ${isVisible ? 'opacity-100 translate-y-0 ' : 'opacity-0 -translate-y-1'}`}>
           <div className={STYLE.formWrapper}>
 
             <div className="flex flex-col items-center justify-center sgap-2">
-                <strong>Create your Card</strong>
+                <strong className='font-[600]'>Create your Card</strong>
                 <small>Give your credit card information below.</small>
               </div>
 
@@ -48,7 +51,7 @@ const Form = ({onClick}: CardsSectionsHeaderProps) => {
                 })}
 
                 <div className='flex gap-4'>
-                    <button className={STYLE.button} type='subit'>Create</button>
+                    <button className={STYLE.button} type='submit'>Create</button>
                     <button className={STYLE.button} onClick={onClick}>Cancel</button>
                 </div>
             </form>
