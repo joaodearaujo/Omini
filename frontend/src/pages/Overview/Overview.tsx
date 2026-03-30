@@ -7,7 +7,7 @@ import { MOCK_TRANSACTIONS } from "../../mock/MOCK_TRANSACTIONS";
 import { MOCK_CARDS } from "../../mock/MOCK_CARDS";
 import useCardNavigation from "../../hooks/useCardNavigation";
 import Header from "../../features/Header/Header";
-import { useEffect, useState } from "react";
+import useFadeIn from "../../hooks/useFadeIn";
 
 const STYLE = {
   mainWrapper: 'max-w-full flex flex-col gap-8 min-h-0',
@@ -16,33 +16,22 @@ const STYLE = {
   rightCol: 'col-span-5 flex flex-col gap-6 justify-between',
 };
 
+const title = 'Overview'
+const subtitle = 'Get summary of your weekly online transactions here.'
+
 const Overview = () => {
-
-    const [isVisible, setIsVisible] = useState<boolean>(false)
-
-    useEffect(() => {
-
-        setIsVisible(false);
-
-        const timer = setTimeout(() => {
-            setIsVisible(true);
-        }, 50)
-
-        return () => clearTimeout(timer)
-    }, []);
-
-
-    const title = 'Overview'
-    const subtitle = 'Get summary of your weekly online transactions here.'
-    const { currentIndex, currentCard, nextIndex, prevIndex } = useCardNavigation(MOCK_CARDS)
-    const currentTransactions = MOCK_TRANSACTIONS[currentCard?.id] || []
+ 
+  const { isVisible } =  useFadeIn()
+  const { currentIndex, currentCard, nextIndex, prevIndex } = useCardNavigation(MOCK_CARDS)
+  const currentTransactions = MOCK_TRANSACTIONS[currentCard?.id] || []
 
   return (
     
+
     <div className={STYLE.mainWrapper}>
         <Header title={title} subtitle={subtitle}/>
 
-        <main className={`${STYLE.gridLayout} duration-500 ${isVisible ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-1'}`}>
+        <main className={`${STYLE.gridLayout}  transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-1'}`}>
             <section className={STYLE.leftCol}>
                     <Cards nextIndex={nextIndex}
                            prevIndex={prevIndex}

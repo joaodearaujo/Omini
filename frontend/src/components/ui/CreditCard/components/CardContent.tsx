@@ -9,8 +9,8 @@ const STYLE = {
 }
 
 const CARDS_LABELS  = [
-    {label: 'Owner'},
-    {label: 'Expiry Date'}
+    {id: 'owner', label: 'Owner'},
+    {id: 'expiryDate', label: 'Expiry Date'}
 ]
 
 const CreditCardContent = ({bank = 'Nubank', flag = 'Mastercard', owner = 'Name', number =  '0000 0000 0000 000', date = '00/00'} : CreditCardContentProps ) => {
@@ -24,7 +24,7 @@ const CreditCardContent = ({bank = 'Nubank', flag = 'Mastercard', owner = 'Name'
             <span className={STYLE.number}>{number}</span>
 
             <div className="w-full flex justify-between">
-                {CARDS_LABELS.map((item) => <CardField label={item.label} 
+                {CARDS_LABELS.map((item) => <CardField key={item.id} label={item.label} 
                                                        value={item.label === 'Owner' ? owner : date}/>)}
             </div>
         </div>
