@@ -1,7 +1,5 @@
 import CreditCard from "../../../components/ui/CreditCard/CreditCard";
 import { MOCK_CARDS } from "../../../mock/MOCK_CARDS";
-import Form from "./Form";
-import useFormVisibility from "../../../hooks/useFormVisibility";
 import SectionHeader from "../../../components/ui/SectionHeader/SectionHeader";
 
 const STYLE = {
@@ -16,13 +14,10 @@ const HEADER_CONFIG = {
 
 const CardsSection = () => {
 
-const { isFormVisible, toggleForm, closeForm} = useFormVisibility()
 
   return (
     <div className={STYLE.container}>
-      <SectionHeader onClick={toggleForm} title={HEADER_CONFIG.title} button={HEADER_CONFIG.button}/>
-
-      {isFormVisible && (<Form onClick={closeForm}/>)}
+      <SectionHeader title={HEADER_CONFIG.title} button={HEADER_CONFIG.button}/>
 
       <div className={STYLE.cardsWrapper}>
           {MOCK_CARDS.map((card) => {

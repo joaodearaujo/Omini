@@ -1,6 +1,7 @@
 import type { GoalCategory } from "../../../utils/GoalCategory";
 import CATEGORY_GOALS from "../../../utils/GoalCategory";
 import ProgressBar from "../ProgressBar/ProgressBar";
+import DataRow from "../DataRow/DataRow";
 
 const STYLE = {
     container: 'flex w-full h-fit items-center justify-between gap-4 p-4 rounded-3xl border-1 border-black/10 shadow-xs',
@@ -39,7 +40,8 @@ const GoalsCard = ({value, targetValue, date, label}: GoalCardProps) => {
                                 <ProgressBar track={value} indicator={targetValue} color="#197BBD"/>
 
                                 <div className="flex justify-between gap-2">
-                                    <span className="font-[300]">{`R$${value} / R$${targetValue}`}</span>
+
+                                    <span className="text-[#404040] font-regular text-[16px]">{`R$${value} / R$${targetValue}`}</span>
                                     <span className="font-[400]">{percentage}%</span>
                                 </div>
                             </div>
