@@ -13,7 +13,7 @@ interface SectionsHeaderProps {
 const SectionHeader = ({onClick, title, button}: SectionsHeaderProps) => {
   return (
       <div className={STYLE.header}>
-        <h3 className={STYLE.title}>{title}</h3>
+        <h2 className={STYLE.title}>{title}</h2>
 
         <button onClick={onClick} className={STYLE.button}>{button}</button>
       </div>

@@ -26,24 +26,24 @@ const STYLE = {
 const Nav = () => {  
     return (
         <nav className={STYLE.nav} >
-                <ul className="flex h-full flex-col">
-                    {navLinks.map((link) => {
+            <ul className="flex h-full flex-col">
+                {navLinks.map((link) => {
+                
+                    const Icon = link.icon;
                     
-                        const Icon = link.icon;
-                        
-                        return (
-                        <li key={link.name} className="flex items-center w-full h-full">
-                            <Link to={`/${link.to}`} className={STYLE.link}
-                                key={link.name}
-                            >
-                                    <Icon size={28} className={STYLE.icon} />
-                                    <span className={STYLE.span}>{link.name}</span>
-                            </Link>
-                        </li>
-                        );
-                    })}
-                </ul>
-            </nav>
+                    return (
+                    <li key={link.name} className="flex items-center w-full h-full">
+                        <Link to={`/${link.to}`} className={STYLE.link}
+                            key={link.name}
+                        >
+                                <Icon size={28} className={STYLE.icon} />
+                                <span className={STYLE.span}>{link.name}</span>
+                        </Link>
+                    </li>
+                    );
+                })}
+            </ul>
+        </nav>
     )
 }
 

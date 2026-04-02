@@ -14,16 +14,16 @@ const STYLE = {
 
 const FloatingCard = ({children, title, style}: FloatingCardProps) => {
   return (
-    <article style={style} className={STYLE.container} >
+    <div style={style} className={STYLE.container} >
         <div className={STYLE.wrapper}>
           { title && 
-              <div className="w-fit">
+              <header className="w-fit">
                 {<h2 className={STYLE.title}>{title}</h2>}
-              </div>
+              </header>
           }
           {children}
         </div>
-    </article>
+    </div>
   )
 }
 

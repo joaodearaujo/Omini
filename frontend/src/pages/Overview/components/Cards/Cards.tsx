@@ -8,7 +8,7 @@ import FloatingCard from "../../../../components/ui/FloatingCard/FloatingCard"
 
 const STYLE = {
   container: 'flex h-full gap-4',
-  wrapper: 'flex-1 flex max-h-full min-h-0 flex-col items-center justify-between gap-4',
+  mainColumn: 'flex-1 flex max-h-full min-h-0 flex-col items-center justify-between gap-4',
 }
 
 const Cards = ({nextIndex, prevIndex, currentCard}: CardProps) => {
@@ -16,16 +16,15 @@ const Cards = ({nextIndex, prevIndex, currentCard}: CardProps) => {
   return (
     <FloatingCard title="Cards">
         <section className={STYLE.container} >
-            <div className={STYLE.wrapper}>
+            <div className={STYLE.mainColumn}>
 
-                <CardNav nextIndex={nextIndex}
-                         prevIndex={prevIndex}
-                >
+                <CardNav nextIndex={nextIndex} prevIndex={prevIndex}>
                     <CreditCard creditCard={currentCard}/>
                 </CardNav>
                 
-                <PaymentLimit limitUsage={currentCard.limitUsage}
-                              totalLimit={currentCard.totalLimit}
+                <PaymentLimit 
+                  limitUsage={currentCard.limitUsage}
+                  totalLimit={currentCard.totalLimit}
                 />
             </div>
 

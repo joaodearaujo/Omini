@@ -9,9 +9,9 @@ const TransactionsHistory = ({transactions}: TransactionsProps ) => {
 
   return (
     <FloatingCard title="Transactions">
-      <div className={STYLE.container}>
+      <section className={STYLE.container}>
           <TransactionsTable transactions={transactions}/>
-      </div>
+      </section>
     </FloatingCard>
   )
 }

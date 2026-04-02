@@ -8,12 +8,13 @@ const STYLE = {
 
 const Sidebar = () => {
     return (
-        <div className={STYLE.container}>
-            <div className={STYLE.logoWrapper}>
+        <aside className={STYLE.container}>
+            <header className={STYLE.logoWrapper}>
                 <a className={STYLE.linkLogo}>Omini</a>
-            </div>
-                <Nav/>
-        </div>
+            </header>
+            
+            <Nav/>
+        </aside>
     )
 }
         

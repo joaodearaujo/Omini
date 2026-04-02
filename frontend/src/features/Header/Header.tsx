@@ -16,7 +16,7 @@ const Header = ({title, subtitle}: HeaderProps) => {
         <header className={STYLE.container}>       
             <div className={`h-full flex items-start justify-center flex-col transition-all duration-800 ${isVisible ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-1'}`}>
                 <h1 className={STYLE.title}>{title}</h1>
-                <span className={STYLE.subtitle}>{subtitle}</span>
+                <p className={STYLE.subtitle}>{subtitle}</p>
             </div>
         </header>
     )

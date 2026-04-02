@@ -26,7 +26,6 @@ const CategoryStats = ({category, icon, bgColor, iconColor, barColor, track, ind
 
   return (
     <div className={STYLE.container}>
-
       <div className="flex  items-center justify-center">
         <span className={STYLE.iconBackground}
               style={{backgroundColor:`${bgColor}`}}
@@ -38,12 +37,11 @@ const CategoryStats = ({category, icon, bgColor, iconColor, barColor, track, ind
       <div className={STYLE.contentWrapper}>
         <div className="w-full flex items-center gap-4">
           <ProgressBar indicator={indicator} track={track} color={barColor}/>
-          <strong ref={countRef} className={STYLE.percentage}>0</strong>
+          <span ref={countRef} className={STYLE.percentage}>0</span>
         </div>
 
-        <small className={STYLE.category}>{category}</small>
+        <h1 className={STYLE.category}>{category}</h1>
       </div>
-
     </div>
   );
 };

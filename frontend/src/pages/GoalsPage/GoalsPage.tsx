@@ -8,27 +8,30 @@ const STYLE = {
     container: 'flex flex-col w-full max-h-full h-min-0 gap-8 transition-all duration-800',
 }
 
+const title = 'Goals'
+const subtitle = 'All your goals in one place!'
+
+
 const HEADER_CONFIG = {
  title: 'My Cards',
  button: '+ Add Goal',
 }
-
 
 const GoalsPage = () => {
 
     const { isVisible } =  useFadeIn()
 
   return (
-    <div className={STYLE.container}>
-        <Header title="Goals" subtitle="All your goals in one place!"/>
+    <main className={STYLE.container}>
+        <Header title={title} subtitle={subtitle}/>
 
-        <div className={`${STYLE.container}  ${isVisible ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-1'}`}>
+        <section className={`${STYLE.container}  ${isVisible ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-1'}`}>
             <FloatingCard>
                 <SectionHeader title={HEADER_CONFIG.title} button={HEADER_CONFIG.button}/>
                 <GoalsSection />
             </FloatingCard>
-        </div>
-    </div>
+        </section>
+    </main>
   )
 }
 

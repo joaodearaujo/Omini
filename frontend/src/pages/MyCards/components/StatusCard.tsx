@@ -24,18 +24,17 @@ const StatusCard = ({title, amount, icon, description}: StatusCardProps) => {
 
   return (  
     <FloatingCard>
-        <div className={STYLE.container}>
-            <div className={STYLE.headerWrapper}>
-                <small className={STYLE.title}>{title}</small>
-                
+        <article className={STYLE.container}>
+            <header className={STYLE.headerWrapper}>
+                <h5 className={STYLE.title}>{title}</h5>
                 <Icon size={STYLE.icon.iconSize} className={STYLE.icon.iconClass}></Icon>
-            </div>
+            </header>
 
             <div className={STYLE.contentWrapper}>
-                <strong ref={countRef} className={STYLE.amount}>0</strong>
+                <span ref={countRef} className={STYLE.amount}>0</span>
                 <small className={STYLE.description}>{description}</small>
             </div>
-        </div>
+        </article>
     </FloatingCard>
 )
 }

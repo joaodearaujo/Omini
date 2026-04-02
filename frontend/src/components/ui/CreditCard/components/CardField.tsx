@@ -8,11 +8,11 @@ const STYLE = {
 
 const CardField = ({label = 'label', value ='value'}: CardFieldProps) => {
     return (
-        <div className={STYLE.wrapper}>
-            <small className={STYLE.label}>{label}</small>
-            <small className={STYLE.value}>{value}</small>
-        </div>
+        <dl className={STYLE.wrapper}>
+            <dt className={STYLE.label}>{label}</dt>
+            <dd className={STYLE.value}>{value}</dd>
+        </dl>
     )
 }
 
-export default CardField
+export default CardField    

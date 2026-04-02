@@ -13,8 +13,8 @@ const DataRow = ({label= 'Label', value='Value'}: DataRowProps) => {
 
   return (
       <div className={STYLE.wrapper}>
-        <small className={STYLE.label}>{label}</small>
-        <small className={STYLE.value}>{value}</small>
+        <dt className={STYLE.label}>{label}</dt>
+        <dd className={STYLE.value}>{value}</dd>
       </div>
   );
 }

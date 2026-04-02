@@ -9,13 +9,13 @@ const STYLE = {
  
 const CreditCard = ({creditCard}: CreditCardProps) => {
   return (
-        <div className={`${STYLE.CARD_LAYOUT} 
+        <article className={`${STYLE.CARD_LAYOUT} 
                          ${STYLE.CARD_THEME}`}
 
                           style={{backgroundColor: `${creditCard.color}`}}
             >
             <CreditCardContent  {...creditCard}/>
-        </div>
+        </article>
   )
 }
 

@@ -14,7 +14,7 @@ const { stats, totalCount } = useTransactionStats({transactions});
 
   return (
        <FloatingCard title="Outcome Statistics">
-    <div className={STYLE.container}>
+    <section className={STYLE.container}>
       {Object.entries(stats).map(([categoryName, count]) => (
         <CategoryStats 
           key={categoryName}
@@ -27,7 +27,7 @@ const { stats, totalCount } = useTransactionStats({transactions});
           iconColor={CATEGORY_MAP[categoryName].iconColor}
         />
       ))}
-    </div>
+    </section>
     </FloatingCard>
   );
 };

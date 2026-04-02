@@ -12,7 +12,7 @@ const Goals = ({goals}: GoalsProps) => {
 
   return (   
     <FloatingCard title="Goals">
-        <div className={STYLE.container}  >
+        <section className={STYLE.container}  >
             <div className={STYLE.goalsWrapper}>
                 {goals.map((goal) => {
                     return (
@@ -20,7 +20,7 @@ const Goals = ({goals}: GoalsProps) => {
                         )
                     })}
             </div>        
-        </div>
+        </section>
     </FloatingCard>
     )
 }

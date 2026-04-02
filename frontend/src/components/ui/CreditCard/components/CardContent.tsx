@@ -16,17 +16,17 @@ const CARDS_LABELS  = [
 const CreditCardContent = ({bank = 'Nubank', flag = 'Mastercard', owner = 'Name', number =  '0000 0000 0000 000', date = '00/00'} : CreditCardContentProps ) => {
     return (
         <div className={STYLE.wrapper}>
-            <div className="flex items-cente justify-between">
+            <header className="flex items-cente justify-between">
                 <strong className={STYLE.bank}>{bank}</strong>
                 <small className={STYLE.flag}>{flag}</small>
-            </div>
+            </header>
             
-            <span className={STYLE.number}>{number}</span>
+            <p className={STYLE.number}>{number}</p>
 
-            <div className="w-full flex justify-between">
+            <footer className="w-full flex justify-between">
                 {CARDS_LABELS.map((item) => <CardField key={item.id} label={item.label} 
                                                        value={item.label === 'Owner' ? owner : date}/>)}
-            </div>
+            </footer>
         </div>
     )
 }

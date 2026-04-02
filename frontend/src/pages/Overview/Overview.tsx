@@ -28,24 +28,24 @@ const Overview = () => {
   return (
     
 
-    <div className={STYLE.mainWrapper}>
+    <main className={STYLE.mainWrapper}>
         <Header title={title} subtitle={subtitle}/>
 
-        <main className={`${STYLE.gridLayout}  transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-1'}`}>
-            <section className={STYLE.leftCol}>
+        <article className={`${STYLE.gridLayout}  transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-1'}`}>
+            <div className={STYLE.leftCol}>
                     <Cards nextIndex={nextIndex}
                            prevIndex={prevIndex}
                            currentCard={MOCK_CARDS[currentIndex]} />
                            
                     <TransactionsHistory transactions={currentTransactions}/>
-            </section>
+            </div>
 
-            <section className={STYLE.rightCol}>         
+            <div className={STYLE.rightCol}>         
                     <Goals goals={MOCK_GOALS} />
                     <OutcomeStatistics transactions={currentTransactions}/>
-            </section>
-        </main>
-    </div>
+            </div>
+        </article>
+    </main>
   )
 };
 

@@ -6,9 +6,9 @@ const STYLE =  {
 
 const MainContainer = () => {
   return (
-    <main className={STYLE.container}>
+    <div className={STYLE.container}>
       <Outlet />
-    </main>
+    </div>
   );
 };
 
