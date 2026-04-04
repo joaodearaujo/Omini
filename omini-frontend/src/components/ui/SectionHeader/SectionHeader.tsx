@@ -1,21 +1,19 @@
 const STYLE = {
-    header: 'max-w-full flex justify-between items-center',
+    container: 'w-full h-fit flex justify-between items-center',
     title:  'font-medium text-[18px]',
-    button:  'bg-black text-white font-[400] rounded-xl py-2 px-3 cursor-pointer transition duration-400',
+    button:  'bg-black text-white font-[400] rounded-xl py-2 px-3 cursor-pointer',
 }
 
 interface SectionsHeaderProps {
     title: string,
-    button: string,
     onClick?: () => void;
 } 
 
-const SectionHeader = ({onClick, title, button}: SectionsHeaderProps) => {
+const SectionHeader = ({onClick, title}: SectionsHeaderProps) => {
   return (
-      <div className={STYLE.header}>
+      <div className={STYLE.container}>
         <h2 className={STYLE.title}>{title}</h2>
-
-        <button onClick={onClick} className={STYLE.button}>{button}</button>
+        <button onClick={onClick} className={STYLE.button}>+ Add</button>
       </div>
   )
 }

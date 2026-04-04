@@ -1,15 +1,14 @@
 import express from 'express';
 import cors from 'cors';
-import routes from './routes/routes';
+import { TransactionController } from './controllers/TransactionController';
 
 const app = express();
+const transactionController = new TransactionController();
 
 app.use(cors());
-app.use(express.json()); // Essencial para o Postman conseguir enviar JSON
-app.use(routes);
+app.use(express.json());
 
-const PORT = 3333;
+app.get('/transactions/:cardId', (req, res) => transactionController.pullTransaction(req, res));
+app.post('/transactions', (req, res) => transactionController.createTransaction(req, res));
 
-app.listen(PORT, () => {
-  console.log(`🚀 Omini API running on http://localhost:${PORT}`);
-});
+app.listen(3333, () => console.log("Omini API rodando na porta 3333"));

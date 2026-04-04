@@ -1,11 +1,11 @@
-import Sidebar from "./features/Sidebar/Sidebar";
-import MainContainer from "./features/MainContainer/MainContainer";
-import Overview from "./pages/Overview/Overview";
-import MyCards from "./pages/MyCards/MyCards";
+import Sidebar from "./components/features/Sidebar/Sidebar";
+import MainContainer from "./components/features/MainContainer/MainContainer";
+import Overview from "./components/pages/Overview/Overview";
+import MyCards from "./components/pages/MyCards/MyCards";
 import { createBrowserRouter, RouterProvider} from 'react-router';
-import Transacitions from "./pages/Transactions/Transacitions";
-import GoalsPage from "./pages/GoalsPage/GoalsPage";
-import Settings from "./pages/Settings/Settings";
+import Transacitions from "./components/pages/Transactions/Transacitions";
+import GoalsPage from "./components/pages/GoalsPage/GoalsPage";
+import Settings from "./components/pages/Settings/Settings";
 
 const RootLayout = () => {
   return (
