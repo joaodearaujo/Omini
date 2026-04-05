@@ -1,13 +1,12 @@
-// TransactionsWrapper.tsx
 import { useState } from "react";
-import TransactionModal from "./TransactionsModal";
-import TransactionForm from "./TransactionForm";
+import Modal from "../../../ui/Modal/Modal";
+import FormCreate from "../../../ui/Form/Form";
+import TransactionsFormContent from "./TransactionsFormContent";
 import SectionHeader from "../../../ui/SectionHeader/SectionHeader";
 import FloatingCard from "../../../ui/FloatingCard/FloatingCard";
 import useFadeIn from "../../../../hooks/useFadeIn";
 
 const FORM_CONFIG = [
-
   {label: 'Receiver', type:'text', placeholder: 'e.g., Monthhly Subscription  '},
   {label: 'Amount', type:'number', placeholder: '$ 0.00'},                                            
   {label: 'Category', type:'select', options: [ {name: 'Select a Category', value: '', disabled: true},
@@ -38,23 +37,18 @@ const TransactionsWrapper = () => {
 
   return (
     <div className={`w-full h-full transition-all duration-800 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      
-      <TransactionModal isOpen={isFormOpen} onClose={() => setIsFormOpen(false)}>
-        <header className="flex flex-col gap-2 mb-8">
-          <h2 className="text-3xl font-semibold text-zinc-900">New Transaction</h2>
-          <p className="text-sm text-zinc-500">Record a new financial activity.</p>
-        </header>
-        <TransactionForm config={FORM_CONFIG} />
-      </TransactionModal>
+      <Modal title="New Transaction" description="Create your transaction here!" isOpen={isFormOpen} onClose={() => setIsFormOpen(false)}>
+        <FormCreate>
+          <TransactionsFormContent config={FORM_CONFIG}/>
+        </FormCreate>
+      </Modal>
 
       <FloatingCard>
         <section className="p-2">
           <SectionHeader title="Recent Transactions" onClick={() => setIsFormOpen(true)} />
-
         </section>
       </FloatingCard>
-      
-    </div>
+          </div>
   );
 };
 

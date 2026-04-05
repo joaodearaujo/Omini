@@ -8,7 +8,7 @@ const STYLE = {
 
 
 
-const CardsSection = () => {
+const CardsWrapper = () => {
 
 
   return (
@@ -24,4 +24,4 @@ const CardsSection = () => {
   )
 }
 
-export default CardsSection
+export default CardsWrapper
