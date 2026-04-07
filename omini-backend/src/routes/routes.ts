@@ -1,9 +1,9 @@
-import Router from 'express'
+import { Router } from 'express';
+import { GoalsController } from '../controllers/GoalsController';
 
-const routes = Router();
+const router = Router();
+const goalsController = new GoalsController();
 
-routes.get('/healthcheck', (req, res) => {
-    res.json({status: 'Omini is alive!'})
-})
+router.post('/goals', (req, res) => goalsController.handle(req, res));
 
-export default routes;
+export { router };

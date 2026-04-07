@@ -1,5 +1,3 @@
-import { GoalDTO } from "../../../dtos/GoalsDTO";
-
 export class Goal {
 
     public readonly id: string;

@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 
-interface FormCreateProps {
+interface FormProps {
   children: ReactNode;
+  onSubimit?: any;
 }
 
 const STYLE = {
@@ -9,13 +10,13 @@ const STYLE = {
   button: 'w-full h-fit bg-black text-white font-[400] rounded-xl py-3 px-3 cursor-pointer hover:bg-zinc-800 transition duration-400',
 };
 
-const FormCreate = ({children}: FormCreateProps) => {
+const Form = ({children, onSubimit}: FormProps) => {
   return (
-    <form className={STYLE.form} onSubmit={(e) => e.preventDefault()}>
+    <form className={STYLE.form} onSubmit={onSubimit}>
       {children}
       <button type="submit" className={STYLE.button}>Create</button>
     </form>
   );
 };
 
-export default FormCreate;
+export default Form;

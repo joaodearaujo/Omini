@@ -1,10 +1,6 @@
 import { GoalService } from "../services/GoalService"
+import { Request, Response } from 'express';
 
-export class goalController {
+export class GoalsController {
 
-    async handle(req: any, res: any) {
-        const service = new GoalService
-        const result = service.execute(req.body)
-        return res.staus(201).json(result)
-    }
-}   
+}

@@ -5,7 +5,7 @@ interface FormFieldProps {
   options?: { name: string; value: string; disabled?: boolean }[];
 }
 
- export interface TransactionsFormContent {
+ export interface GoalsFormContentProps {
      config: FormFieldProps[],
 }
 
@@ -15,9 +15,9 @@ const STYLE = {
     input: 'w-full rounded-xl border-1 border-black/10 py-3 px-4 outline-none focus:border-black/30 transition',
 }
 
-const TransactionsFormContent = ({ config }: TransactionsFormContent) => {
+const GoalsFormContent = ({ config }: GoalsFormContentProps) => {
   return (
-    <div>
+    <div className="flex flex-col gap-2">
         {config.map((item, index) => (
         <div key={index} className={STYLE.fieldWrapper}>
           <label className="text-sm font-medium text-zinc-600">{item.label}</label>
@@ -43,4 +43,4 @@ const TransactionsFormContent = ({ config }: TransactionsFormContent) => {
   )
 }
 
-export default TransactionsFormContent
+export default GoalsFormContent
