@@ -1,21 +1,20 @@
 import { Goal } from "../domain/entities/goal/Goal";
-import { CreateGoalDTO } from "../dtos/CreateGoalDTO";
+import { GoalRepository } from "../repositories/GoalsRepository";
 
 export class GoalService {
+  constructor(private repository: GoalRepository) {}
 
-  public  execute(data: CreateGoalDTO): Goal {
-
-    if (data.targetValue < 0) {
-      throw new Error('The value must be 1 or more.')
-    }
-
-    const goal = new Goal({
-      value: data.value,
-      targetValue: data.targetValue,
-      date: new Date(data.date),
-      category: data.category
-    });
+  async execute(data: { category: string; target: number; deadline: string }) {
+    if (data.target <= 0) throw new Error("O valor alvo deve ser positivo.");
     
-    return goal;
+    const newGoal = new Goal(data.category, data.target, data.deadline);
+    const savedGoal = await this.repository.save(newGoal);
+    
+    console.log(`[Service]: Meta ${savedGoal.category} criada.`);
+    return savedGoal;
+  }
+
+  async list() {
+    return await this.repository.listAll();
   }
 }

@@ -1,9 +1,8 @@
 import type { GoalCategory } from "../../../utils/GoalCategory";
-import CATEGORY_GOALS from "../../../utils/GoalCategory";
 import ProgressBar from "../ProgressBar/ProgressBar";
 
 const STYLE = {
-    container: 'flex w-full h-fit items-center justify-between gap-4 p-4 rounded-3xl border-1 border-black/10 shadow-xs',
+    container: 'flex w-full h-fit items-center justify-between gap-4 p-4 rounded-3xl border-1 border-black/10',
     wrapper: 'flex flex-col w-full h-fit gap-4',
 }
 
@@ -11,19 +10,16 @@ export interface GoalCardProps {
     id: string,
     value: number,
     targetValue: number,
-    date: string,
+    deadline: string,
     label: GoalCategory,
 }
 
-const GoalsCard = ({value, targetValue, date, label}: GoalCardProps) => {
-    const Icon = CATEGORY_GOALS[label].icon
-    const color = CATEGORY_GOALS[label].color
+const GoalsCard = ({value, targetValue, deadline, label}: GoalCardProps) => {
     const percentage = Math.round((value / targetValue) * 100)
 
     return (
             <article className={STYLE.container}>
                     <div aria-hidden="true" className="flex-shrink-0">
-                        <Icon size={40} className={`${color}`}/>
                     </div>
 
                     <div className={STYLE.wrapper}>
@@ -31,7 +27,7 @@ const GoalsCard = ({value, targetValue, date, label}: GoalCardProps) => {
                             <h3 className="font-[500]">{label}</h3>
                         
                             <span className="px-2 bg-gray-100 rounded-2xl">
-                                <time dateTime={date} className="text-[12px]">{date}</time>   
+                                <time dateTime={deadline} className="text-[12px]">{deadline}</time>   
                             </span>
                         </header>
 

@@ -1,3 +1,6 @@
+import FloatingCard from "../FloatingCard/FloatingCard";
+
+
 const STYLE = {
     container: 'w-full h-fit flex justify-between items-center',
     title:  'font-medium text-[18px]',
@@ -9,13 +12,14 @@ interface SectionsHeaderProps {
     onClick?: () => void;
 } 
 
-const SectionHeader = ({onClick, title}: SectionsHeaderProps) => {
-  return (
-      <div className={STYLE.container}>
+const SectionHeader = ({onClick, title}: SectionsHeaderProps) => (
+    <FloatingCard>
+      <section className={STYLE.container}>
         <h2 className={STYLE.title}>{title}</h2>
         <button onClick={onClick} className={STYLE.button}>+ Add</button>
-      </div>
+      </section>
+    </FloatingCard>
   )
-}
 
+  
 export default SectionHeader

@@ -1,8 +1,8 @@
-import FloatingCard from "../../../ui/FloatingCard/FloatingCard"
-import useFadeIn from "../../../../hooks/useFadeIn"
 import SectionHeader from "../../../ui/SectionHeader/SectionHeader"
 import GoalForm from "./GoalForm"
 import { useState } from "react"
+import GoalsList from "./GoalsList"
+import { useGoals } from "../../../../hooks/useGoals"
 
 const HEADER_CONFIG = {
  title: 'My Goals',
@@ -10,19 +10,14 @@ const HEADER_CONFIG = {
 
 const GoalsWrapper = () => {
 
-const { isVisible } =  useFadeIn()
+const { goals, loading, refresh } = useGoals();
 const [ isFormOpen, setIsFormOpen ] = useState<boolean>(false)
 
   return (
-    <div className={`w-full h-full transition-all duration-800 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-        
-        <GoalForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)}></GoalForm>
-
-      <FloatingCard>
-        <section className="p-2">
-          <SectionHeader title={HEADER_CONFIG.title} onClick={() => setIsFormOpen(true)} />
-        </section>
-      </FloatingCard>
+    <div className="flex flex-col w-full h-full gap-8">
+        <GoalForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} onGoalCreated={refresh}/>
+        <SectionHeader title={HEADER_CONFIG.title} onClick={() => setIsFormOpen(true)}/>
+        <GoalsList goals={goals} isLoading={loading} />
     </div>
   )
 }

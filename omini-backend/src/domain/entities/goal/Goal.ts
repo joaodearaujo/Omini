@@ -3,7 +3,7 @@ export class Goal {
     public readonly id: string;
     public value: number;
     public targetValue: number;
-    public date: Date;
+    public deadline: string;
     public category: string;
     
     constructor(props: Omit<Goal, 'id' | 'progressBar'>, id?: string)  {
@@ -11,7 +11,7 @@ export class Goal {
         this.id = id ?? crypto.randomUUID()
         this.value = props.value;
         this.targetValue = props.targetValue;
-        this.date = props.date;
+        this.deadline = props.deadline;
         this.category = props.category;
 
         if (this.targetValue <= 0) throw new Error('The value cannot be zero');

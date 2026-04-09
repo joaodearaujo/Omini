@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 
 interface FormProps {
   children: ReactNode;
-  onSubimit?: any;
+  onSubimit: any;
+  onChange?: any;
 }
 
 const STYLE = {
@@ -10,13 +11,13 @@ const STYLE = {
   button: 'w-full h-fit bg-black text-white font-[400] rounded-xl py-3 px-3 cursor-pointer hover:bg-zinc-800 transition duration-400',
 };
 
-const Form = ({children, onSubimit}: FormProps) => {
+const Form = ({children, onSubimit, onChange}: FormProps) => {
   return (
-    <form className={STYLE.form} onSubmit={onSubimit}>
+    <form className={STYLE.form} onSubmit={onSubimit} onChange={onChange}>
       {children}
       <button type="submit" className={STYLE.button}>Create</button>
     </form>
   );
 };
 
-export default Form;
+export default Form;  

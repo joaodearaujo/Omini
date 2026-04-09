@@ -1,37 +1,67 @@
 import Modal from "../../../ui/Modal/Modal";
 import Form from "../../../ui/Form/Form";
-import GoalsFormContent from "./GoalsFormContent";
-
-const FORM_CONFIG = [
-  {label: 'Receiver', type:'text', placeholder: 'e.g., Monthhly Subscription  '},
-  {label: 'Amount', type:'number', placeholder: '$ 0.00'},                                            
-  {label: 'Category', type:'select', options: [ {name: 'Select a Category', value: '', disabled: true},
-                                              { name: 'Income', value: 'income' },
-                                              { name: 'Expenses', value: 'expenses' },
-                                              { name: 'Savings', value: 'savings' },
-                                              { name: 'Investments', value: 'investments' },
-                                              { name: 'Entertainment', value: 'entertainment' },
-                                              { name: 'Food & Dining', value: 'food_dining' },
-                                              { name: 'Transportation', value: 'transportation' },
-                                              { name: 'Utilities', value: 'utilities' },
-                                              { name: 'Healthcare', value: 'healthcare' },
-                                              { name: 'Shopping', value: 'shopping' },
-                                              { name: 'Other', value: 'other' }]},
-  {label: 'Date', type:'date', placeholder: 'e.g, Monthhly Subscription  '},
-]
+import FormContent from "../../../ui/FormContent/FormContent"
+import { useState } from "react";
 
 interface GoalFormProps {
   isOpen: boolean,
-  sendData?: any,
-  onClose?: any,
+  onClose: () => void,
+  onGoalCreated: () => void;
 }
 
-export const GoalForm = ({isOpen, sendData, onClose}: GoalFormProps) => {
+const GOAL_FORM_CONFIG= [
+    {label: 'Goal Name', type: 'text', placeholder: 'e.g., Summer Holidays'},
+    {label: 'Amount', type: 'number', placeholder: '$ 0.00'},
+    {label: 'Goal Category', type: 'select', options: [{name: 'Select an Option', value: '', disabled: true},
+                                                       {name: 'Holidays', value: 'Holidays',},
+                                                       {name: 'Renovation', value: 'Renovation'},
+                                                       {name: 'Gaming', value: 'Gaming'},
+                                                       {name: 'Savings', value: 'Savings'}]}]
+
+export const GoalForm = ({ isOpen, onClose, onGoalCreated }: GoalFormProps) => {
+
+const [formData, setFormData] = useState({ category: 'Savings', target: 0, targetValue: 0, deadline: '' });
+
+  const handleChange = (e: any) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubimitContent = async (e: any) => {
+  e.preventDefault();
+
+  // Construct the payload to match CreateGoalDTO exactly
+  const payload = {
+    category: formData.category,
+    targetValue: Number(formData.targetValue),
+    deadline: formData.deadline,
+    value: 0, // Initial value is usually 0
+    // id: crypto.randomUUID() -> Only if the DTO requires the client to send the ID
+  };
+
+  try {
+    const response = await fetch('http://localhost:3333/goals', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Backend validation failed:", errorData);
+      return;
+    }
+    
+    onGoalCreated();
+    onClose();
+  } catch (err) {
+    console.error("Network error:", err);
+  }
+};
 
   return (
     <Modal title="Goals" description="Create all your goals here!" isOpen={isOpen} onClose={onClose}>
-      <Form onSubimit={sendData}>
-        <GoalsFormContent config={FORM_CONFIG}/>
+      <Form onSubimit={handleSubimitContent} onChange={handleChange}>
+         <FormContent config={GOAL_FORM_CONFIG} />
       </Form>
     </Modal>
   )

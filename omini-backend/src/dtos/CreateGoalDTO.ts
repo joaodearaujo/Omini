@@ -4,6 +4,6 @@
     id: string,
     value: number,
     targetValue: number,
-    date: Date,
+    deadline: string,
     category: GoalCategory,
 } 
