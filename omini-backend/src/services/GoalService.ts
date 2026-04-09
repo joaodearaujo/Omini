@@ -8,7 +8,7 @@ export class GoalService {
     if (data.target <= 0) throw new Error("O valor alvo deve ser positivo.");
     
     const newGoal = new Goal(data.category, data.target, data.deadline);
-    const savedGoal = await this.repository.save(newGoal);
+    const savedGoal = await this.repository.saveGoalOnArray(newGoal);
     
     console.log(`[Service]: Meta ${savedGoal.category} criada.`);
     return savedGoal;

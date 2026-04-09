@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 interface FormProps {
   children: ReactNode;
   onSubimit: any;
-  onChange?: any;
+  onChange: any;
 }
 
 const STYLE = {

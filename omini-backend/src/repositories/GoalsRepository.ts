@@ -3,7 +3,7 @@ import { Goal } from "../domain/entities/goal/Goal";
 export class GoalRepository {
   private goals: Goal[] = []; 
 
-  async save(goal: Goal): Promise<Goal> {
+  async saveGoalOnArray(goal: Goal): Promise<Goal> {
     this.goals.push(goal);
     return goal;
   }

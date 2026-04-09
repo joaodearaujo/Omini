@@ -13,13 +13,8 @@ const STYLE = {
 }
 
 const StatusCard = ({title, amount, icon, description}: StatusCardProps) => {
-
-    const options = {
-        prefix: 'R$'
-    }
-
+    const options = {prefix: 'R$'}
     const { countRef } = useCountUp(amount, options)
-
     const Icon = icon
 
   return (  
@@ -36,7 +31,7 @@ const StatusCard = ({title, amount, icon, description}: StatusCardProps) => {
             </div>
         </article>
     </FloatingCard>
-)
+  )
 }
 
 export default StatusCard

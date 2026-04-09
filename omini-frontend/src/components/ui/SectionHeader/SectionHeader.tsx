@@ -9,7 +9,7 @@ const STYLE = {
 
 interface SectionsHeaderProps {
     title: string,
-    onClick?: () => void;
+    onClick: () => void;
 } 
 
 const SectionHeader = ({onClick, title}: SectionsHeaderProps) => (

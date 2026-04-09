@@ -1,6 +1,7 @@
 interface FormFieldsProps {
   label: string;
   type: string;
+  name: string;
   placeholder?: string;
   options?: { name: string; value: string; disabled?: boolean }[];
 }
@@ -36,6 +37,7 @@ const FormContent = ({ config = [] }: FormContentProps) => {
 
             ) : (
               <input 
+                name={item.name}
                 type={item.type} 
                 className={STYLE.input} 
                 placeholder={item.placeholder} 

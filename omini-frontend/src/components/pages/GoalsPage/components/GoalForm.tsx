@@ -4,21 +4,22 @@ import FormContent from "../../../ui/FormContent/FormContent"
 import { useState } from "react";
 
 interface GoalFormProps {
-  isOpen: boolean,
+  isFormOpen: boolean,
   onClose: () => void,
   onGoalCreated: () => void;
 }
 
 const GOAL_FORM_CONFIG= [
-    {label: 'Goal Name', type: 'text', placeholder: 'e.g., Summer Holidays'},
-    {label: 'Amount', type: 'number', placeholder: '$ 0.00'},
-    {label: 'Goal Category', type: 'select', options: [{name: 'Select an Option', value: '', disabled: true},
+    {label: 'Goal Name', name: 'Goal Name', type: 'text', placeholder: 'e.g., Summer Holidays'},
+    {label: 'Amount', name: 'Amount',type: 'number', placeholder: '$ 0.00'},
+    {label: 'Goal Category', name: 'Category', type: 'select', options: [{name: 'Select an Option', value: '', disabled: true},
                                                        {name: 'Holidays', value: 'Holidays',},
                                                        {name: 'Renovation', value: 'Renovation'},
                                                        {name: 'Gaming', value: 'Gaming'},
                                                        {name: 'Savings', value: 'Savings'}]}]
+                                                       
 
-export const GoalForm = ({ isOpen, onClose, onGoalCreated }: GoalFormProps) => {
+export const GoalForm = ({ isFormOpen, onClose, onGoalCreated }: GoalFormProps) => {
 
 const [formData, setFormData] = useState({ category: 'Savings', target: 0, targetValue: 0, deadline: '' });
 
@@ -29,13 +30,11 @@ const [formData, setFormData] = useState({ category: 'Savings', target: 0, targe
   const handleSubimitContent = async (e: any) => {
   e.preventDefault();
 
-  // Construct the payload to match CreateGoalDTO exactly
   const payload = {
     category: formData.category,
     targetValue: Number(formData.targetValue),
     deadline: formData.deadline,
-    value: 0, // Initial value is usually 0
-    // id: crypto.randomUUID() -> Only if the DTO requires the client to send the ID
+    value: 0, 
   };
 
   try {
@@ -59,7 +58,7 @@ const [formData, setFormData] = useState({ category: 'Savings', target: 0, targe
 };
 
   return (
-    <Modal title="Goals" description="Create all your goals here!" isOpen={isOpen} onClose={onClose}>
+    <Modal title="Goals" description="Create all your goals here!" isFormOpen={isFormOpen} onClose={onClose}>
       <Form onSubimit={handleSubimitContent} onChange={handleChange}>
          <FormContent config={GOAL_FORM_CONFIG} />
       </Form>

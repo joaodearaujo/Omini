@@ -21,23 +21,22 @@ const CARDS = [
     {title: 'Total Spending', amount: totalSpending, description: 'Across all cards', icon: DollarSign},
     {title: 'Available Credit', amount: totalCredit, description: 'Across all cards', icon: CreditCard},
     {title: 'Rewards', amount: 0, description: 'Across all cards', icon: TrendingUp},
-    {title: 'Next Payment', amount: totalOutcome, description: 'Due in 12 days', icon: Calendar}
+    {title: 'Next Payment', amount: totalOutcome, description: 'Due in 12 days', icon: Calendar},
 ]
 
 const CardsStatus = () => {
 
   return (
-    <div className="w-full h-fit flex gap-4">
-        {CARDS.map((card) => {
-            return (
+    <section className="w-full h-fit flex gap-4">
+        {CARDS.map((card) => (
               <StatusCard title={card.title}
                           description={card.description}
                           icon={card.icon}
                           amount={card.amount}
                           key={card.title}/>
-            )
-        })}
-    </div>
+               ))
+        }
+    </section>
   )
 }
 

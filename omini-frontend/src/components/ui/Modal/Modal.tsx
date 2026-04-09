@@ -2,15 +2,15 @@ import FloatingCard from "../FloatingCard/FloatingCard";
 import { SquareArrowRightExit } from "lucide-react";
 
 interface ModalProps {
-  isOpen: boolean;
+  isFormOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
   title: string;
   description: string;
 }
 
-const Modal = ({ isOpen, onClose, children, title, description }: ModalProps) => {
-  if (!isOpen) return null;
+const Modal = ({ isFormOpen, onClose, children, title, description }: ModalProps) => {
+  if (!isFormOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center  p-4">
