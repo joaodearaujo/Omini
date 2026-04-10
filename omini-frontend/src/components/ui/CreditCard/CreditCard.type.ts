@@ -2,19 +2,23 @@ export interface CreditCardProps {
     creditCard: CardInfoProps;
 }
 
+ type Banks =  'Nubank' | 'Santander' | 'Inter' | 'BTG Pactual';
+
+ type Flags =  'Mastercard' | 'Visa' | 'American Express';
+
 export interface CardInfoProps {
     id: string;
     color: string;
-    bank: 'Nubank' | 'MercadoPago' | 'Inter' | 'Bradesco' | 'Itaú' | 'Santander' | 'BTG Pactual';
-    flag: 'Mastercard' | 'Visa' | 'Elo' | 'American Express';
+    bank: Banks;
+    flag: Flags;
     number: string;
     owner: string;
     date: string;
-    balance: number;
-    income: number;
-    outcome: number;
-    totalLimit: number;
-    limitUsage: number;
+    balance?: number;
+    income?: number;
+    outcome?: number;
+    totalLimit?: number;
+    limitUsage?: number;
 }
 
 export interface CardFieldProps {
