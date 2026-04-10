@@ -26,7 +26,7 @@ const FormContent = ({ config = [] }: FormContentProps) => {
 
             {item.type === 'select' ? (
 
-              <select className={STYLE.input} required defaultValue="">
+              <select className={STYLE.input} name={item.name} required defaultValue="">
                 {item.options?.map((opt, i) => (
 
                   <option key={i} value={opt.value} disabled={opt.disabled}>

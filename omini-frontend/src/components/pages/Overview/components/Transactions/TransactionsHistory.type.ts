@@ -10,7 +10,7 @@ export interface TransactionsTableProps {
     transactions: TransactionProps[];
 }
 
-export interface TransactionProps {
+export interface TransactionProps { 
     id: string;
     status: 'Completed' | 'Pending' | 'Canceled'
     cardId?: string;

@@ -2,5 +2,5 @@ import type { TransactionProps } from "../Overview/components/Transactions/Trans
 
 export interface TransactionItemProps {
     transaction: TransactionProps;
-    bank: string;
+    bank?: string;
 }

@@ -1,15 +1,16 @@
 import TransactionsWrapper from "./components/TransactionsWrapper"
-import Header from "../../features/Header/Header"
+import Main from "../../ui/Main/Main"
 
-const title = 'Transactions'
-const subtitle = 'Manage your transactions here.'
+const MAIN_CONFIG = {
+title: 'Transactions',
+subtitle: 'Manage your transactions here.',
+}
 
 const Transacitions = () => {
   return (
-    <main className="w-full h-full max-h-full flex flex-col gap-8 items-center">
-        <Header title={title} subtitle={subtitle}/>
-        <TransactionsWrapper />
-    </main>
+    <Main  title={MAIN_CONFIG.title} subtitle={MAIN_CONFIG.subtitle} >
+      <TransactionsWrapper />
+    </Main>
   )
 }
 

@@ -1,4 +1,4 @@
-import { CardInfoProps, CreditCard } from "../domain/entities/goal/CreditCard";
+import { CardInfoProps, CreditCard } from "../domain/entities/creditCard/CreditCard";
 import { CrediCardRepository } from "../repositories/CreditCardsRepository";
 
 export class CreditCardService {

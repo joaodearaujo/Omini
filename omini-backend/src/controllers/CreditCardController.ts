@@ -14,10 +14,13 @@ export class CreditCardController {
         }
     }
 
-    async handleList(req: Request, res: Response) {
-        const creditCardArray = this.creditCardSrvice.listAllCards();
-        return await res.json(creditCardArray);
+ async handleList(req: Request, res: Response) {
+    try {
+        const creditCardArray = await this.creditCardSrvice.listAllCards(); 
+        return res.json(creditCardArray);
+    } catch (error) {
+        return res.status(500).json({ message: "Erro ao listar cartões" });
     }
-
+}
     
 }

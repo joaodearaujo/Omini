@@ -2,7 +2,7 @@ import CreditCard from "../../../ui/CreditCard/CreditCard";
 import FloatingCard from "../../../ui/FloatingCard/FloatingCard";
 
 const STYLE = {
-    cardsWrapper: 'max-w-full min-w-0 h-fit flex gap-2 justify-between',
+    cardsWrapper: 'max-w-full min-w-0 h-fit flex gap-2',
 }
 
 type Banks =  'Nubank' | 'Santander' | 'Inter' | 'BTG Pactual';
@@ -28,7 +28,7 @@ const CardsList = ({creditCards, isLoading}: CardListProps) => {
 
     if (isLoading) return <FloatingCard><p className="text-white">Loading goals...</p></FloatingCard>;
 
-    if (!Array.isArray(creditCards) || creditCards.length === 0) {
+    if (creditCards.length === 0) {
         return (
             <FloatingCard>
                 <p className="text-gray-500">No Cards found.</p>

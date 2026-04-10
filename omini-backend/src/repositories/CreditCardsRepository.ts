@@ -1,4 +1,4 @@
-import { CreditCard } from "../domain/entities/goal/CreditCard"
+import { CreditCard } from "../domain/entities/creditCard/CreditCard";
 
 export class CrediCardRepository {
     private creditCardArray: CreditCard[] = []

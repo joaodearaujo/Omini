@@ -14,7 +14,7 @@ const { goals, loading, refresh } = useGoals();
 const [ isFormOpen, setIsFormOpen ] = useState<boolean>(false)
 
   return (
-    <Wrapper title={WRAPPER_CONFIG.title} onClick={() => setIsFormOpen(true)} >
+    <Wrapper title={WRAPPER_CONFIG.title} onClick={() => setIsFormOpen(true)}>
       <GoalForm isFormOpen={isFormOpen} onClose={() => setIsFormOpen(false)} onGoalCreated={refresh}/>
       <GoalsList goals={goals} isLoading={loading} />
     </Wrapper>

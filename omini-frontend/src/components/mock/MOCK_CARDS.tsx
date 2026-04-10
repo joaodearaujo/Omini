@@ -3,17 +3,17 @@ import type { CardInfoProps } from "../ui/CreditCard/CreditCard.type";
 export const MOCK_CARDS: CardInfoProps[] = [
   {
     id: "cc-001",
+    owner: "João Pedro Araújo",
     bank: "Santander",
+    color: '#E3262E', 
     flag: "Visa",
     number: "4532 **** **** 0098",
-    owner: "João Pedro Araújo",
     date: "12/28",
     balance: 12500.50,
     income: 5000.00,
     outcome: 3200.00,
     totalLimit: 25000.00,
     limitUsage: 8500.00,
-    color: '#E3262E', 
   },
   {
     id: "cc-002",
