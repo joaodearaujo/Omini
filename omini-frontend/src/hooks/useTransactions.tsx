@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useState } from "react"
-import type { TransactionsProps } from "../components/pages/Overview/components/Transactions/TransactionsHistory.type"
 
 const useTransactions = () => {
-    const [transactionsArray, setransactionsArray] = useState<TransactionsProps[]>([])
+    const [transactionsArray, setransactionsArray] = useState([])
     const [loading, setLoading] = useState<boolean>(true)
 
     const fetchtransactionsArray = useCallback(async () => {
@@ -25,4 +24,4 @@ const useTransactions = () => {
     return { transactionsArray, refresh: fetchtransactionsArray, loading }
 }
 
-export default useTransactions
+export default useTransactions;

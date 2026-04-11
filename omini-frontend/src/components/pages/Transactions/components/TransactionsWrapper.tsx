@@ -4,7 +4,6 @@ import Wrapper from "../../../ui/Wrapper/Wrapper";
 import TransactionsList from "./TransactionsList";
 import useTransactions from "../../../../hooks/useTransactions";
 
-
 const TransactionsWrapper = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const { transactionsArray, loading, refresh } = useTransactions();

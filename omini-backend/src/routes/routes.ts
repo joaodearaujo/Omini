@@ -33,8 +33,8 @@ const transactionsRepository = new TransactionsRepository();
 const transactionsService = new TransactionsService(transactionsRepository);
 const transctionsController = new TransctionsController(transactionsService);
 
-router.post('/transactions', (req, res) => creditCardController.handleCreate(req, res));
-router.get('/transactions', (req, res) => creditCardController.handleList(req, res));
+router.post('/transactions', (req, res) => transctionsController.handleCreate(req, res));
+router.get('/transactions', (req, res) => transctionsController.handleList(req, res));
 
 
 

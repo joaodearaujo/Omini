@@ -39,8 +39,8 @@ const GoalsCard = ({name, value, target, category}: GoalCardProps) => {
                         <header className="w-full flex justify-between">
                             <h3 className="font-[500]">{name}</h3>
                         
-                            {/* <span className="px-2 bg-gray-100 rounded-2xl">
-                            </span> */}
+                                {/* <span className="px-2 bg-gray-100 rounded-2xl">
+                                </span> */}
                         </header>
 
                         <footer className="flex flex-col gap-2">

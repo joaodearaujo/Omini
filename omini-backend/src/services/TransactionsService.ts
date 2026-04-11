@@ -11,6 +11,7 @@ export class TransactionsService {
         const savedTransaction = this.repository.saveTransaction(transaction);
 
         console.log('Transaction created!');
+        console.log(data)
         return savedTransaction;
 
     }

@@ -7,10 +7,6 @@ interface TransactionsListProps {
     isLoading: boolean;
 }
 
-const STYLE = {
-    transactionsWrapper: 'max-w-full min-w-0 h-fit flex gap-2',
-}
-
 const TransactionsList = ({transactions, isLoading }: TransactionsListProps) => {
 
     if (isLoading) return <FloatingCard><p className="text-white">Loading transactions...</p></FloatingCard>;
@@ -24,9 +20,9 @@ const TransactionsList = ({transactions, isLoading }: TransactionsListProps) => 
     }
 
   return (  
-    <section className={STYLE.transactionsWrapper}>
+    <FloatingCard >
         {transactions.map((transaction) => (<TransactionItem  key={transaction.id} transaction={transaction}/>))}
-    </section>
+    </FloatingCard>
   )
 }
 

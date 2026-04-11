@@ -11,37 +11,37 @@ const STYLE = {
     amount: 'font-medium text-[#404040]',
 }
 
-// const STATUS_VARIANTS = {
-//   Completed: { bg: 'bg-[#dbfce7]', dot: 'bg-[#008236]', text: 'text-[#008236]' },
-//   Pending:   { bg: 'bg-[#fef9c3]', dot: 'bg-[#ca8a04]', text: 'text-[#ca8a04]' },
-//   Canceled:  { bg: 'bg-[#fee2e2]', dot: 'bg-[#dc2626]', text: 'text-[#dc2626]' },
-// };
+const STATUS_VARIANTS = {
+  Completed: { bg: 'bg-[#dbfce7]', dot: 'bg-[#008236]', text: 'text-[#008236]' },
+  Pending:   { bg: 'bg-[#fef9c3]', dot: 'bg-[#ca8a04]', text: 'text-[#ca8a04]' },
+  Canceled:  { bg: 'bg-[#fee2e2]', dot: 'bg-[#dc2626]', text: 'text-[#dc2626]' },
+};
 
 const TransactionItem = ({transaction, bank}: TransactionItemProps) => {
 
-  
-
-  // const status = STATUS_VARIANTS[transaction.status]
+  const status = STATUS_VARIANTS[transaction.status]
+  const Icon = CATEGORY_MAP[transaction.category].icon
 
   return (
     <article className={STYLE.conatainer}>
       <div className={`flex w-fit items-center justify-between gap-4`}>
           <span className={STYLE.icon.iconBackground}>
+            <Icon size={20}/>
           </span>
 
           <div className="flex flex-col">
             <span className={STYLE.receiver}>{transaction.receiver}</span>
 
             <span className={STYLE.info}>{`${transaction.category} • ${transaction.date} • ${bank}`}</span>
-          </div>s
+          </div>
       </div>
 
       <div className="flex w-[200px] items-center justify-between gap-2">
 
-        {/* <div className={`flex items-center justify-between gap-2 px-2 rounded-2xl ${status.bg}`}>
+        <div className={`flex items-center justify-between gap-2 px-2 rounded-2xl ${status.bg}`}>
           <div className={`w-[6px] h-[6px] rounded-full ${status.dot}`}></div>
           <span className={`capitalize font-[400] text-[12px] ${status.text}`}>{transaction.status}</span>
-        </div> */}
+        </div>
 
         <span className={STYLE.amount}>{`R$ ${transaction.amount}`}</span>
       </div>

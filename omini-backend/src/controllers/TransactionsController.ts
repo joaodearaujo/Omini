@@ -17,7 +17,7 @@ export class TransctionsController {
     async handleList(req: Request, res: Response) {
         try {
             const transacionsArray = await this.transactionsService.listTransactions();
-            return transacionsArray;
+            return res.status(200).json(transacionsArray);
         } catch (error: any) {
             return res.status(500).json({message: error.message})
         }

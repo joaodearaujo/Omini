@@ -39,33 +39,43 @@ const TRANSACTIONS_FORM_CONFIG = [
     {label: 'Date', name: 'date', type: 'date'}
 ]
 
-
-
 const TransactionsForm = ({isFormOpen, onClose, onTransactionsCreated}: TransactionsFormProps) => {
 
     const [ formData, setFormaData ] = useState(
    { status: '',
-    cardId: '',
     receiver: '',
     category: '',
     date: '',
     amount: 0,}
     )
 
+    
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormaData(prev => ({...prev, [name]: name  === 'amount'? Number(value): value}))
     }
 
-    const handleSubimit = async () => {
+    const handleSubimit = async (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+
+        e.preventDefault();
 
         console.log(formData);
-        
+
+        const transactionsFromForm  =   {
+            status: formData.status,
+            receiver: formData.receiver,
+            category: formData.category,
+            date: formData.date,
+            amount: Number(formData.amount),
+
+        }
+
         try {
             const response = await fetch('http://localhost:3333/transactions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData), 
+            body: JSON.stringify(transactionsFromForm), 
         });
 
             if (!response.ok) {
