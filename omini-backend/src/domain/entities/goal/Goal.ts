@@ -1,26 +1,29 @@
+export type GoalCategory = 'Holidays' | 'Renovation' | 'Gaming' | 'Savings';
+ 
+export interface GoalProps {
+    name: string,
+    value: number,
+    target: number,
+    category: GoalCategory,
+} 
+
 export class Goal {
 
     public readonly id: string;
+    public name: string;
     public value: number;
-    public targetValue: number;
-    public deadline: string;
-    public category: string;
+    public target: number;
+    public category: GoalCategory;
     
-    constructor(props: Omit<Goal, 'id' | 'progressBar'>, id?: string)  {
+    constructor(data: GoalProps) {
 
-        this.id = id ?? crypto.randomUUID()
-        this.value = props.value;
-        this.targetValue = props.targetValue;
-        this.deadline = props.deadline;
-        this.category = props.category;
+        this.id = crypto.randomUUID()
+        this.name = data.name
+        this.value = data.value;
+        this.target = data.target;
+        this.category = data.category;
 
-        if (this.targetValue <= 0) throw new Error('The value cannot be zero');
+        if (this.target <= 0) throw new Error('The value cannot be zero');
     }
-    
-    get progressBar(): number {
-        const percentage = (this.value / this.targetValue) * 100
-        return Math.round(percentage)
-    }
-
 }
 

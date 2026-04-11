@@ -8,10 +8,9 @@ import OutcomeStatistics from "../OutcomeStatistics/OutcomeStatistics";
 import TransactionsHistory from "../Transactions/TransactionsHistory";
 
 const STYLE = {
-  mainWrapper: 'max-w-full flex flex-col gap-8 min-h-0',
-  gridLayout: 'grid grid-cols-12 gap-6 w-full h-full',
-  leftCol: 'col-span-7 flex flex-col gap-6',
-  rightCol: 'col-span-5 flex flex-col gap-6',
+  gridLayout: 'grid grid-cols-12 gap-6 w-full min-h-0 max-h-full',
+  leftCol: 'col-span-7 flex flex-col gap-6 min-h-0 max-h-full',
+  rightCol: 'col-span-5 flex flex-col gap-6 min-h-0 max-h-full',
 };
 
 const OverviewWrapper = () => {

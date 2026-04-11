@@ -6,9 +6,8 @@ import TableHead from "./TableHead";
 const TransactionsTable = ({transactions}: TransactionsTableProps) => {
 
   return (
-      <table className="w-full h-full border-collapse table-fixed">
+      <table className="h-full w-full border-collapse table-fixed overflow-y">
         <TableHead/>
-
         <tbody>
             {transactions.map((transaction) => {
               return (

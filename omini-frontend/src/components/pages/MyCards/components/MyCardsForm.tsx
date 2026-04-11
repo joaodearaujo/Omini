@@ -55,7 +55,7 @@ const MyCardsForm = ({ isFormOpen, onClose, onCardCreated }: MyCardsFormProps) =
     }));
   }
 
-  const handleSubimitContent = async (e: React.FormEvent) => {
+  const handleSubimitContent = async (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     e.preventDefault();
 
     console.log(formData);

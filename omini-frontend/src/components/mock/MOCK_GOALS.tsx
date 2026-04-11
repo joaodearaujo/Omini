@@ -2,31 +2,27 @@ import type { GoalCardProps } from "../ui/GoalsCard/GoalsCard";
 
 export const MOCK_GOALS: GoalCardProps[] = [
   {
-    id: "goal-001",
-    label: 'Holidays',
+    category: 'Holidays',
     value: 4500, 
-    targetValue: 12500, 
-    date: '15/12/26', 
+    target: 12500, 
+    name: 'Garmin', 
   },
   {
-    id: "goal-002",
-    label: 'Renovation',
+    category: 'Renovation',
     value: 1200, 
-    targetValue: 4500, 
-    date: '20/08/26', 
+    target: 4500, 
+    name: 'Trip', 
   },
   {
-    id: "goal-003",
-    label: 'Gaming',
+    category: 'Gaming',
     value: 3500, 
-    targetValue: 3500, 
-    date: '10/05/26', 
+    target: 3500, 
+    name: 'PS5', 
   },
   {
-    id: "goal-005",
-    label: 'Savings',
+    category: 'Savings',
     value: 25000, 
-    targetValue: 100000, 
-    date: '01/01/30', 
+    target: 100000, 
+    name: 'Car', 
   },
 ];

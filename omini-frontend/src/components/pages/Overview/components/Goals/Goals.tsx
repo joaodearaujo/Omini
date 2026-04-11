@@ -15,7 +15,7 @@ const STYLE = {
 const Goals = ({ goals }: GoalsProps) => (
     <FloatingCard title="Goals">
             <article className={STYLE.goalsWrapper}>
-                {goals.map(goal => <GoalsCard key={goal.id}{...goal}/>)}
+                {goals.map(goal => <GoalsCard {...goal}/>)}
             </article>        
     </FloatingCard>
 );
