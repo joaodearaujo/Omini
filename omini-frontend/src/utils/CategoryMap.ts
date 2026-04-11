@@ -1,7 +1,7 @@
  import { UtensilsCrossed, HeartPlus, Bus, Lightbulb, Armchair} from 'lucide-react'
 import type { LucideIcon } from "lucide-react";
 
-type TransactionCategory = 'Food' | 'Health' | 'Transport' | 'Essentials' | 'Lifestyle'
+type TransactionCategory = 'Food' | 'Health' | 'Transport' | 'Essentials' | 'Lifestyle';
 
  export const CATEGORY_MAP: Record<TransactionCategory, {icon: LucideIcon, iconColor: string, progressBarColor: string, bgColor: string}> = {
 
@@ -39,4 +39,4 @@ type TransactionCategory = 'Food' | 'Health' | 'Transport' | 'Essentials' | 'Lif
     progressBarColor: '#A374F2',
     bgColor: '#F7F4FD',               
   },
-}
+} as const;

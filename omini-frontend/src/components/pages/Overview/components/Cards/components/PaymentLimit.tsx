@@ -14,7 +14,7 @@ const PAYMENT_LIMIT_CONFIG = {
 }
 
 const PaymentLimit = ({limitUsage = 0, totalLimit = 0}: PaymentLimitProps) => {
-
+  
   const  formatedValue = `R$ ${limitUsage} / R$ ${totalLimit}`
   
   return (

@@ -1,6 +1,10 @@
-import type { GoalsProps } from "./Goals.type";
 import GoalsCard from "../../../../ui/GoalsCard/GoalsCard";
 import FloatingCard from "../../../../ui/FloatingCard/FloatingCard";
+import type { GoalCardProps } from "../../../../ui/GoalsCard/GoalsCard";
+
+export interface GoalsProps {
+    goals: GoalCardProps[],
+}
 
 const STYLE = {
     container: 'flex max-h-full items-center',
@@ -8,21 +12,12 @@ const STYLE = {
     goalCard: 'min-w-[180px] min-h-[240px] shrink-0 flex flex-1 flex'
 }
 
-const Goals = ({goals}: GoalsProps) => {
-
-  return (   
+const Goals = ({ goals }: GoalsProps) => (
     <FloatingCard title="Goals">
-        <section className={STYLE.container}  >
-            <div className={STYLE.goalsWrapper}>
-                {goals.map((goal) => {
-                    return (
-                        <GoalsCard key={goal.id}{...goal}/>
-                        )
-                    })}
-            </div>        
-        </section>
+            <article className={STYLE.goalsWrapper}>
+                {goals.map(goal => <GoalsCard key={goal.id}{...goal}/>)}
+            </article>        
     </FloatingCard>
-    )
-}
+);
 
 export default Goals;

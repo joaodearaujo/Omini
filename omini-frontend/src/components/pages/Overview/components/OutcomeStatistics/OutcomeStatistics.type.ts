@@ -3,9 +3,9 @@ import type { ComponentType } from "react";
 
 export interface CategoryStatsProps {
     category: string;
-    icon?: LucideIcon | ComponentType<{ size?: number; className?: string }>
+    icon: LucideIcon | ComponentType<{ size?: number; className: string }>
     bgColor: string;
-    iconColor?: string;
+    iconColor: string;
     barColor: string;
     track: number;
     indicator: number;
