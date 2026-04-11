@@ -10,7 +10,6 @@ const WRAPPER_CONFIG = {
 }
 
 const MyCardsWrapper = () => {
-
   const { creditCardsArray, loading, refresh } = useMyCards();
   const [ isFormOpen, setIsFormOpen ] = useState<boolean>(false)
 

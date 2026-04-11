@@ -2,23 +2,22 @@ import type { BalanceItemsProps } from "../Cards.type";
 import useCountUp from "../../../../../../hooks/useCountUp";
 
 const STYLE = {
-    itemsWrapper: 'flex w-full h-fit flex-col gap-1 items-end',
-}
+    container: 'flex w-full h-fit flex-col gap-1 items-end',
+    value: 'truncate leading-none w-full tabular-nums text-end',
+    label: '',
+};
 
 const BalanceItem = ({label = 'Balance', value = 0, isMain = false, color = 'text-#404040' } : BalanceItemsProps) => {
 
-  const options = {
-    prefix: 'R$'
-  }
-
+  const options = {prefix: 'R$'}
   const { countRef } = useCountUp(value, options);
 
   return (
-      <div className={STYLE.itemsWrapper}>
-          <dd ref={countRef} className={`${color} truncate leading-none w-full tabular-nums text-end ${isMain ? 'text-[46px] font-[500]' : 'text-[24px] font-medium'}`}>0</dd>
-          <dt className={`text-[#807c7c] font-light ${isMain ? 'text-[18px]' : 'text-[16px]'}`}>{label}</dt>
+      <div className={STYLE.container}>
+          <span ref={countRef} className={`${color} ${STYLE.value} ${isMain ? 'text-[46px] font-medium' : 'text-[24px] font-medium'}`}>0</span>
+          <p className={`text-[#807c7c] font-light ${isMain ? 'text-[18px]' : 'text-[16px]'}`}>{label}</p>
       </div>
   )
-}
+};
 
-export default BalanceItem
+export default BalanceItem;

@@ -3,7 +3,6 @@ export interface CreditCardProps {
 }
 
  type Banks =  'Nubank' | 'Santander' | 'Inter' | 'BTG Pactual';
-
  type Flags =  'Mastercard' | 'Visa' | 'American Express';
 
 export interface CardInfoProps {
@@ -14,11 +13,11 @@ export interface CardInfoProps {
     number: string;
     owner: string;
     date: string;
-    balance?: number;
-    income?: number;
-    outcome?: number;
-    totalLimit?: number;
-    limitUsage?: number;
+    balance: number;
+    income: number;
+    outcome: number;
+    totalLimit: number;
+    limitUsage: number;
 }
 
 export interface CardFieldProps {

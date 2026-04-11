@@ -25,11 +25,6 @@ export interface BalanceItemsProps {
   color?: string;
 }
 
-export interface PaymentLimitProps {
-    totalLimit: number;
-    limitUsage: number;
-}
-
 export interface BalanceItemsConfig {
   key: keyof Pick<CardInfoProps, 'balance' | 'income' | 'outcome'>,
   label: string,

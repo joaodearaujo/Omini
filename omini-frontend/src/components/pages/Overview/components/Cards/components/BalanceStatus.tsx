@@ -13,10 +13,10 @@ const ITEMS: BalanceItemsConfig[] = [
   {key:'outcome', label: 'Outcome', color: 'text-[#bb3340]', isMain: false},
 ] as const;
 
-const BalanceStatus = ({ currentCard }: BalanceStatusProps) => {
-  return (
-    <div className={STYLE.balanceWrapper}>
-      {ITEMS.map((item => (
+const BalanceStatus = ({ currentCard }: BalanceStatusProps) => (
+
+    <section className={STYLE.balanceWrapper}>
+      {ITEMS.map(item => (
           <BalanceItem  key={item.key}
                         label={item.label}
                         value={currentCard[item.key] ?? 0}
@@ -24,9 +24,8 @@ const BalanceStatus = ({ currentCard }: BalanceStatusProps) => {
                         isMain={item.isMain}      
           />
         )
-      ))}
-    </div>
+      )}
+    </section>
   );
-};
 
 export default BalanceStatus;
