@@ -3,10 +3,10 @@ import useFadeIn from '../../../hooks/useFadeIn';
 
 
 const STYLE = {
-    container: 'w-full max-h-[130px] flex justify-between items-center p-4 rounded-3xl border-1 border-black/10 bg-white ',
-    title: 'text-[#404040] font-semibold text-[32px]',
-    subtitle: 'text-[#AEAEAE] text-[16px] font-light',
-}
+    container: 'w-full max-h-[130px] flex justify-between items-center p-4 rounded-3xl border-1 border-black/10 bg-white mt-4',
+    title: 'text-primary text-big',
+    subtitle: 'text-secondary text-small font-light',
+} 
 
 const Header = ({title, subtitle}: HeaderProps) => { 
 

@@ -11,13 +11,13 @@ import {
 
 const STYLE = { 
     nav: 'flex flex-col items-center mt-22 w-full',
-    link: 'w-full flex items-center justify-start rounded-lg bg-white text-[#c7c7c7] hover:bg-[#F0F7FF] hover:text-[#197BBD] transition-all duration-600 ease-in-out p-4 gap-4',
-    icon: 'group-hover:text-[#197BBD] transition-colors',
-    span: 'text-center font-regular font-[500] text-[16px]'
+    link: 'w-full flex items-center justify-start rounded-lg bg-white text-link hover:bg-link-bgHover hover:text-link-hover transition-all duration-300 ease-in-out p-4 gap-4',
+    icon: 'group-hover:text-link transition-colors',
+    span: 'text-center font-regular font-[500] text-small'
 }
     const navLinks: navLinksProps[] = [
     {name:'Overview', to:'', icon: LayoutDashboard},
-    {name:'My cards', to:'mycards', icon: CreditCard},
+    {name:'Cards', to:'mycards', icon: CreditCard},
     {name:'Transactions', to:'transactions', icon: ArrowRightLeft},
     {name:'Goals', to:'goals', icon: Target},
     {name:'Settings', to:'settings', icon: Settings},

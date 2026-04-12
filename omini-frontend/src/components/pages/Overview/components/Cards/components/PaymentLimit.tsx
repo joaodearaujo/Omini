@@ -10,7 +10,6 @@ export interface PaymentLimitProps {
 
 const PAYMENT_LIMIT_CONFIG = {
   label: 'Payment Limit',
-  barColor: '#197BBD'
 }
 
 const PaymentLimit = ({limitUsage = 0, totalLimit = 0}: PaymentLimitProps) => {
@@ -19,7 +18,7 @@ const PaymentLimit = ({limitUsage = 0, totalLimit = 0}: PaymentLimitProps) => {
   
   return (
     <div className={STYLE.wrapper}>
-        <ProgressBar indicator={totalLimit} track={limitUsage} color={PAYMENT_LIMIT_CONFIG.barColor}/>
+        <ProgressBar indicator={totalLimit} track={limitUsage}/>
         <DataRow label={PAYMENT_LIMIT_CONFIG.label} value={formatedValue}/>
     </div>
   )

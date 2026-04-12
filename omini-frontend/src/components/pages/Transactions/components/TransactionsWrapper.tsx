@@ -9,7 +9,7 @@ const TransactionsWrapper = () => {
   const { transactionsArray, loading, refresh } = useTransactions();
 
 return (
-    <Wrapper title="Transactions" onClick={() => setIsFormOpen(true)}>
+    <Wrapper title="My Transactions" onClick={() => setIsFormOpen(true)}>
         <TransactionsForm isFormOpen={isFormOpen} onTransactionsCreated={refresh} onClose={() => setIsFormOpen(false)}/>
         <TransactionsList transactions={transactionsArray} isLoading={loading} />
     </Wrapper>

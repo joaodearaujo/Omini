@@ -13,13 +13,13 @@ const GoalsList = ({ goals, isLoading }: GoalsListProps) => {
   if (goals.length === 0) return <FloatingCard><p className="text-gray-500">No goals found.</p></FloatingCard>;
 
   return (
-    <FloatingCard>
+    <div className="w-full max-h-full flex flex-col">
       {goals.map((item) => (
         <div key={item.id} className="mb-4 last:mb-0">
           <GoalsCard {...item} />
         </div>
       ))}
-    </FloatingCard>
+    </div>
   );
 }
 

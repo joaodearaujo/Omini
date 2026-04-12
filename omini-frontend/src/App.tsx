@@ -9,7 +9,7 @@ import Settings from "./components/pages/Settings/Settings";
 
 const RootLayout = () => {
   return (
-    <div className="bg-[#fcfcfc] w-full h-screen flex">                     
+    <div className="bg-appBg w-full h-screen flex">                     
       <Sidebar/>
       <MainContainer />
     </div>

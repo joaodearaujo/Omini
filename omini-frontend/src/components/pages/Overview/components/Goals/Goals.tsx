@@ -8,7 +8,7 @@ export interface GoalsProps {
 
 const STYLE = {
     container: 'flex max-h-full items-center',
-    goalsWrapper: 'w-full h-[260px] min-h-0 flex flex-col gap-4 overflow-y-auto px-2 no-scrollbar',
+    goalsWrapper: 'w-full h-[280px] min-h-0 flex flex-col gap-4 overflow-y-auto px-2 no-scrollbar',
     goalCard: 'min-w-[180px] min-h-[240px] shrink-0 flex flex-1 flex'
 }
 

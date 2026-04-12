@@ -8,9 +8,9 @@ const STYLE = {
 }
 
 const ITEMS: BalanceItemsConfig[] = [
-  {key:'balance', label: 'Current Balance', color: 'text-[#197bbd]', isMain: true},
-  {key:'income', label: 'Income', color: 'text-[#439a86]', isMain: false},
-  {key:'outcome', label: 'Outcome', color: 'text-[#bb3340]', isMain: false},
+  {key:'balance', label: 'Current Balance', color: 'text-balance-current', isMain: true},
+  {key:'income', label: 'Income', color: 'text-balance-income', isMain: false},
+  {key:'outcome', label: 'Outcome', color: 'text-balance-outcome', isMain: false},
 ] as const;
 
 const BalanceStatus = ({ currentCard }: BalanceStatusProps) => (

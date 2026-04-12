@@ -11,11 +11,11 @@ const TransactionsTable = ({transactions}: TransactionsTableProps) => {
         <tbody>
             {transactions.map((transaction) => {
               return (
-              <tr key={transaction.id} className="p-4 bg-white hover:bg-[#f9fafb] rounded-2xl border-b-1 border-black/8 cursor-default" >    
-                <TableData  style={{color:"#404040", fontWeight:'400'}} Icon={CATEGORY_MAP[transaction.category].icon} data={transaction.receiver}/>
+              <tr key={transaction.id} className="bg-white hover:bg-transactionHover rounded-2xl border-b-1 border-black/8 cursor-default" >    
+                <TableData  style={{color:"var(--text-primary-color)", fontWeight:'400'}} Icon={CATEGORY_MAP[transaction.category].icon} data={transaction.receiver}/>
                 <TableData  data={transaction.category}/>
                 <TableData  data={transaction.date}/>
-                <TableData  style={{color:"#404040", justifySelf:'end', fontWeight:'400'}} data={`R$ ${transaction.amount}`}/>
+                <TableData  style={{color:"var(--text-primary-color)", justifySelf:'end', fontWeight:'400'}} data={`R$ ${transaction.amount}`}/>
               </tr>
               )
             })}

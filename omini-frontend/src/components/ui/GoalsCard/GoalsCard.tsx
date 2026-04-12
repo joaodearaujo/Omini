@@ -17,10 +17,10 @@ export interface GoalCardProps {
 export type GoalCategory = 'Holidays' | 'Renovation' | 'Gaming' | 'Savings';
 
 const CATEGORY_GOALS: Record<GoalCategory, {icon: LucideIcon, color: string, size: number}> = {
-    Holidays: {icon: Mountain, color: 'text-[#0ea5e9]', size: 50},
-    Renovation: {icon: Brush, color: 'text-[#f97316]', size: 50},
-    Gaming: {icon: Gamepad2, color: 'text-[#8b5cf6]', size: 50},
-    Savings: {icon: HandCoins, color: 'text-[#10b981]', size: 50},
+    Holidays: {icon: Mountain, color: 'text-[#0ea5e9]', size: 25},
+    Renovation: {icon: Brush, color: 'text-[#f97316]', size: 25},
+    Gaming: {icon: Gamepad2, color: 'text-[#8b5cf6]', size: 25},
+    Savings: {icon: HandCoins, color: 'text-[#10b981]', size: 25},
 } as const;
 
 const GoalsCard = ({name, value, target, category}: GoalCardProps) => {
@@ -32,15 +32,13 @@ const GoalsCard = ({name, value, target, category}: GoalCardProps) => {
     return (
             <article className={STYLE.container}>
                     <div aria-hidden="true" className="flex-shrink-0">
-                        <Icon size={CATEGORY_GOALS[category].size} className={CATEGORY_GOALS[category].color}/>
+                        
                     </div>
 
                     <div className={STYLE.wrapper}>
-                        <header className="w-full flex justify-between">
-                            <h3 className="font-[500]">{name}</h3>
-                        
-                                {/* <span className="px-2 bg-gray-100 rounded-2xl">
-                                </span> */}
+                        <header className="w-full h-[30px] gap-2 items-center flex">
+                            <Icon size={CATEGORY_GOALS[category].size} className={CATEGORY_GOALS[category].color}/>
+                            <p className="text-small">{name}</p>
                         </header>
 
                         <footer className="flex flex-col gap-2">
@@ -49,10 +47,9 @@ const GoalsCard = ({name, value, target, category}: GoalCardProps) => {
                             </div>
 
                             <div className="flex justify-between gap-2">
-                                <p className="text-[#404040] font-regular text-[16px]">{`R$${value} / R$${target}`}
-
+                                <p className="text-primary font-regular text-small">{`R$${value} / R$${target}`}
                                 </p>
-                                <h4 className="font-[400]">{percentage}%</h4>
+                                <p className="text-small">{percentage}%</p>
                             </div>
                         </footer>
                     </div>

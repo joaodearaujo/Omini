@@ -12,7 +12,7 @@ interface FormContentProps {
 
 const STYLE = {
     fieldWrapper: 'w-full h-fit flex flex-col gap-2',
-    input: 'w-full rounded-xl border-1 border-black/10 py-3 px-4 outline-none focus:border-black/30 transition',
+    input: 'w-full text-small rounded-xl border-1 border-black/10 py-3 px-4 outline-none focus:border-black/30 transition',
 }
 
 const FormContent = ({ config = [] }: FormContentProps) => {

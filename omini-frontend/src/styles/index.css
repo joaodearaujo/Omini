@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
+@config "./tailwind.config.ts";
 
 @layer base {
 
@@ -7,9 +8,49 @@
     /* border: 1px solid rgb(0, 255, 110); */
   }
 
-  :root {
-    --font-poppins: "Poppins", sans-serif;
+:root {
+  /* FONTS */
+  --font-poppins: "Poppins", sans-serif;
+
+  /* COLORS */
+  --app-bg-color: 252 252 252;         
+
+  --text-primary-color: 64 64 64;       
+  --text-secondary-color: 174 174 174; 
+  --text-strong-color: 0 0 0;          
+
+  --link-color: 199 199 199;           
+  --link-hover-color: 25 123 189;      
+  --link-bg-hover-color: 240 247 255;   
+
+  --balance-current-color: 25 123 189;  
+  --balance-income-color: 67 154 134;   
+  --balance-outcome-color: 187 51 64;  
+
+  --button-nav-color: 240 240 240;      
+  --icon-bg-color: 243 244 246;       
+
+  --status-completed-primary: 0 130 54;    
+  --status-completed-secondary: 219 252 231; 
+  
+  --status-pending-primary: 254 249 195;   
+  --status-pending-secondary: 202 138 4;   
+
+  --status-canceled-primary: 220 38 38;   
+  --status-canceled-secondary: 254 226 226;   
+
+  --progress-bar-color: 241 241 241;      
+  
+    /* TEXT SIZE */
+
+  --text-extraSmall: 0.825rem;
+  --text-small: 1rem;
+  --text-title: 1.3rem;
+  --text-medium: 1.5rem;
+  --text-big: 3rem;
   }
+
+
   
   body {
     font-family: var(--font-poppins);

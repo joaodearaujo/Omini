@@ -3,18 +3,19 @@ import {  HelpCircle } from "lucide-react";
 import { CATEGORY_MAP } from "../../../../utils/CategoryMap";
 
 const STYLE = {
-    conatainer: 'w-full h-[60px] flex justify-between items-center p-4 bg-white hover:bg-[#f9fafb] rounded-xl cursor-default',
-    icon: {iconSize: 20, iconBackground: 'bg-[#f3f4f6] w-[35px] h-[35px] rounded-full flex items-center justify-center', iconClass: 'text-[#404040]'},
+    conatainer: 'w-full h-[60px] flex justify-between items-center p-4 bg-white hover:bg-transactionHover rounded-xl cursor-default',
+    icon: {iconSize: 20, iconBackground: 'bg-iconBg w-[35px] h-[35px] rounded-full flex items-center justify-center shadow-md', iconClass: 'text-primary'},
     receiver: 'font-[400]',
-    info: 'font-light text-[#6a7282] text-[14px]',
+    info: 'font-light text-secondary text-[14px]',
     status: '' ,
-    amount: 'font-medium text-[#404040]',
+    amount: 'font-medium text-strong',
 }
 
 const STATUS_VARIANTS = {
-  Completed: { bg: 'bg-[#dbfce7]', dot: 'bg-[#008236]', text: 'text-[#008236]' },
-  Pending:   { bg: 'bg-[#fef9c3]', dot: 'bg-[#ca8a04]', text: 'text-[#ca8a04]' },
-  Canceled:  { bg: 'bg-[#fee2e2]', dot: 'bg-[#dc2626]', text: 'text-[#dc2626]' },
+  Completed: { bg: 'bg-status-completed-secondary', dot: 'bg-status-completed-primary', text: 'text-status-completed-primary'},
+  Pending: { bg: 'bg-status-pending-secondary', dot: 'bg-status-pending-primary', text: 'text-status-pending-primary'},
+  Canceled: { bg: 'bg-status-canceled-secondary', dot: 'bg-status-canceled-primary', text: 'text-status-canceled-primary'},
+
 };
 
 const TransactionItem = ({transaction, bank}: TransactionItemProps) => {

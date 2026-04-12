@@ -5,11 +5,11 @@ import useCountUp from "../../../../hooks/useCountUp"
 const STYLE = {
     container: 'flex flex-col w-full h-[100px] justify-between',
     headerWrapper: 'flex  items-center  justify-between',
-    title: 'font-[500] text-[#404040] ',
-    icon: {iconSize: 18, iconClass: 'text-[#404040]'},
+    title: 'text-small font-[500] text-primary ',
+    icon: {iconSize: 18, iconClass: 'text-primary'},
     contentWrapper: 'flex flex-col gap-2',
-    amount: 'text-[24px] font-[500] w-[120px]',
-    description: 'font-light text-[#404040]',
+    amount: 'text-strong text-medium font-[500] w-[120px]',
+    description: 'text-extraSmall font-light text-secondary',   
 }
 
 const StatusCard = ({title, amount, icon, description}: StatusCardProps) => {

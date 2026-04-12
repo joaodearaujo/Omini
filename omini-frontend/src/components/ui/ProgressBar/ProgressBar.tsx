@@ -1,11 +1,11 @@
 interface ProgressBarProps {
     track: number;
     indicator: number;
-    color: string;
+    color?: string;
 }
 
 const STYLE = {
-  track: 'flex w-full h-[12px] items-center justify-start] rounded-full bg-[#F1F1F1]',
+  track: 'flex w-full h-[12px] items-center justify-start] rounded-full bg-progressBar',
   indicator:'h-[12px] rounded-full ransition-all duration-1000 ease-in-out outline-none',
 }
 
