@@ -20,7 +20,7 @@ const FormContent = ({ config = [] }: FormContentProps) => {
     <div className="flex flex-col gap-2">
         {config.map((item, index) => (
           <div key={index} className={STYLE.fieldWrapper}>
-            <label className="text-sm font-medium text-zinc-600">
+            <label className="text-small text-zinc-600">
               {item.label}
             </label>
 

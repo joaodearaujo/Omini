@@ -9,7 +9,7 @@ interface WrapperProps {
 
 const Wrapper = ({title, onClick, children}: WrapperProps) => {
   return (
-    <div className="flex flex-col w-full h-full gap-8">
+    <div className="relative flex flex-col w-full h-full gap-8">
       <SectionHeader title={title} onClick={onClick}/>
       {children}
     </div>

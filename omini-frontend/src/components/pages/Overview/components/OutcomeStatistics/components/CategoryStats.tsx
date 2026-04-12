@@ -8,7 +8,7 @@ const STYLE = {
   iconBackground: 'flex items-center justify-center h-full w-full min-w-[20px] min-h-[20px] p-2 rounded-lg',
   contentWrapper: 'w-full h-full flex flex-col',
   percentage: 'text-medium text-primary tabular-nums min-w-[64px] text-end',
-  category: 'text-secondary font-[300] text-small capitalize w-fit',
+  category: 'text-secondary text-small capitalize w-fit',
 }
 
 const CategoryStats = ({category, icon, bgColor, iconColor, barColor, track, indicator }: CategoryStatsProps) => {

@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import scrollbar from 'tailwind-scrollbar'
+import { Weight } from 'lucide-react'
 
 export default {
   content: [
@@ -47,13 +48,12 @@ export default {
           },
         }
       },
-
       fontSize: {
-      'extraSmall': ['var(--text-extraSmall)', { lineHeight: '1.5' }],
-      'small': ['var(--text-small)', { lineHeight: '1.5' }],
-      'title': ['--text-title)', { lineHeight: '1.5' }],
-      'medium': ['var(--text-medium)', { lineHeight: '1.4' }],
-      'big': ['var(--text-big)', { lineHeight: '1.2', fontWeight: '500' }],
+        'extraSmall': ['var(--text-extraSmall)', { lineHeight: '1.5', fontWeight: '300' }],
+        'small': ['var(--text-small)', { lineHeight: '1.5', fontWeight: '400' }],
+        'medium': ['var(--text-medium)', { lineHeight: '1.4', fontWeight: '500' }],
+        'title': ['var(--text-title)', { lineHeight: '1.4', fontWeight: '500' }],
+        'big': ['var(--text-big)', { lineHeight: '1.2', fontWeight: '600' }],
       },
     }
   },

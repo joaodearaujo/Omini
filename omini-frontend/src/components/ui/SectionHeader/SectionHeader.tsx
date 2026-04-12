@@ -3,8 +3,8 @@ import FloatingCard from "../FloatingCard/FloatingCard";
 
 const STYLE = {
     container: 'w-full h-fit flex justify-between items-center',
-    title:  'font-medium text-medium  ',
-    button:  'bg-black text-white font-[400] rounded-xl py-2 px-3 cursor-pointer',
+    title:  'text-title',
+    button:  'bg-black text-white text-title hover:bg-white transition duration-300 rounded-xl py-2 px-3 cursor-pointer',
 }
 
 interface SectionsHeaderProps {

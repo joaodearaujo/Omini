@@ -5,7 +5,7 @@ import useFadeIn from '../../../hooks/useFadeIn';
 const STYLE = {
     container: 'w-full max-h-[130px] flex justify-between items-center p-4 rounded-3xl border-1 border-black/10 bg-white mt-4',
     title: 'text-primary text-big',
-    subtitle: 'text-secondary text-small font-light',
+    subtitle: 'text-secondary text-small',
 } 
 
 const Header = ({title, subtitle}: HeaderProps) => { 

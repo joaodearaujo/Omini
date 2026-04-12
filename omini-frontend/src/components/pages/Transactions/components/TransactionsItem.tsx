@@ -3,12 +3,12 @@ import {  HelpCircle } from "lucide-react";
 import { CATEGORY_MAP } from "../../../../utils/CategoryMap";
 
 const STYLE = {
-    conatainer: 'w-full h-[60px] flex justify-between items-center p-4 bg-white hover:bg-transactionHover rounded-xl cursor-default',
+    conatainer: 'w-full h-[60px] flex justify-between items-center p-4 bg-white hover:bg-transactionHover transition-all duration-500 rounded-xl cursor-default',
     icon: {iconSize: 20, iconBackground: 'bg-iconBg w-[35px] h-[35px] rounded-full flex items-center justify-center shadow-md', iconClass: 'text-primary'},
-    receiver: 'font-[400]',
-    info: 'font-light text-secondary text-[14px]',
+    receiver: 'text-small',
+    info: 'text-extraSmall text-secondary',
     status: '' ,
-    amount: 'font-medium text-strong',
+    amount: 'text-medium text-strong',
 }
 
 const STATUS_VARIANTS = {
@@ -41,7 +41,7 @@ const TransactionItem = ({transaction, bank}: TransactionItemProps) => {
 
         <div className={`flex items-center justify-between gap-2 px-2 rounded-2xl ${status.bg}`}>
           <div className={`w-[6px] h-[6px] rounded-full ${status.dot}`}></div>
-          <span className={`capitalize font-[400] text-[12px] ${status.text}`}>{transaction.status}</span>
+          <span className={`capitalize text-extraSmall ${status.text}`}>{transaction.status}</span>
         </div>
 
         <span className={STYLE.amount}>{`R$ ${transaction.amount}`}</span>

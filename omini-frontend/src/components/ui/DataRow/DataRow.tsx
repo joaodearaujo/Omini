@@ -5,8 +5,8 @@ interface DataRowProps {
 
 const STYLE = {
     wrapper:'w-full h-full flex justify-between gap-2',
-    label:'text-secondary font-light text-small',
-    value:'text-primary font-regular text-small',
+    label:'text-secondary text-small',
+    value:'text-primary text-small',
 }
 
 const DataRow = ({label= 'Label', value='Value'}: DataRowProps) => {

@@ -1,6 +1,6 @@
 
 const STYLE = {
-    tableHeaed: 'font-[400]  text-small  px-2 py-1 capitalize text-secondary',
+    tableHeaed: 'text-small  px-2 py-1 capitalize text-secondary',
 }
 
 const HEADERS = [

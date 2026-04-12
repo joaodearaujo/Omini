@@ -13,7 +13,7 @@ const STYLE = {
     nav: 'flex flex-col items-center mt-22 w-full',
     link: 'w-full flex items-center justify-start rounded-lg bg-white text-link hover:bg-link-bgHover hover:text-link-hover transition-all duration-300 ease-in-out p-4 gap-4',
     icon: 'group-hover:text-link transition-colors',
-    span: 'text-center font-regular font-[500] text-small'
+    span: 'text-center text-small font-[500]'
 }
     const navLinks: navLinksProps[] = [
     {name:'Overview', to:'', icon: LayoutDashboard},

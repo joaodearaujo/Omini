@@ -14,8 +14,8 @@ const BalanceItem = ({label = 'Balance', value = 0, isMain = false, color = 'tex
 
   return (
       <div className={STYLE.container}>
-          <span ref={countRef} className={`${color} ${STYLE.value} ${isMain ? 'text-big' : 'text-[24px] font-medium'}`}>0</span>
-          <p className={`text-secondary font-light texto-small}`}>{label}</p>
+          <span ref={countRef} className={`${color} ${STYLE.value} ${isMain ? 'text-[48px]' : 'text-medium'}`}>0</span>
+          <p className={`text-secondary text-small}`}>{label}</p>
       </div>
   )
 };

@@ -3,9 +3,9 @@ import CardField from "./CardField";
 
 const STYLE = {
     wrapper: "flex-1 flex-shrink-0 h-full flex flex-col justify-between text-white",
-    bank: 'font-medium uppercase tracking-wide',
-    flag: 'text-[14px] font-light opacity-75 uppercase tracking-wider',
-    number: 'text-[18px] font-medium truncate tracking-widest',
+    bank: 'text-title uppercase tracking-wide',
+    flag: 'text-extraSmall opacity-75 uppercase tracking-wider',
+    number: 'text-medium truncate tracking-widest',
 }
 
 const CARDS_LABELS  = [
@@ -16,7 +16,7 @@ const CARDS_LABELS  = [
 const CreditCardContent = ({bank = 'Nubank', flag = 'Mastercard', owner = 'Name', number =  '0000 0000 0000 000', date = '00/00'} : CreditCardContentProps ) => {
     return (
         <div className={STYLE.wrapper}>
-            <header className="flex items-cente justify-between">
+            <header className="flex items-center justify-between">
                 <strong className={STYLE.bank}>{bank}</strong>
                 <small className={STYLE.flag}>{flag}</small>
             </header>

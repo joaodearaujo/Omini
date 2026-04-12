@@ -47,7 +47,7 @@ const GoalsCard = ({name, value, target, category}: GoalCardProps) => {
                             </div>
 
                             <div className="flex justify-between gap-2">
-                                <p className="text-primary font-regular text-small">{`R$${value} / R$${target}`}
+                                <p className="text-primary text-small">{`R$${value} / R$${target}`}
                                 </p>
                                 <p className="text-small">{percentage}%</p>
                             </div>
