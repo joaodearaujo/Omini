@@ -1,10 +1,9 @@
 import type { HeaderProps } from './Header.type';
 import useFadeIn from '../../../hooks/useFadeIn';
 
-
 const STYLE = {
     container: 'w-full max-h-[130px] flex justify-between items-center p-4 rounded-3xl border-1 border-black/10 bg-white mt-4',
-    title: 'text-primary text-big',
+    title: 'text-strong text-big',
     subtitle: 'text-secondary text-small',
 } 
 

@@ -33,7 +33,6 @@ const CardsList = ({creditCards, isLoading}: CardListProps) => {
     const slotsAvailabe  = Array.from({ length:  totalSlots - creditCards.length});
     
   return (
-    <FloatingCard>
         <section className={STYLE.cardsWrapper}>
             {creditCards.map(card => (<div className="group:hover bg-white"> 
                                         <CreditCard key={card.id} creditCard={card}/>
@@ -41,7 +40,6 @@ const CardsList = ({creditCards, isLoading}: CardListProps) => {
 
             {slotsAvailabe.map(() => ( <CardFallback /> ))}
         </section>
-    </FloatingCard>
   )
 }
 

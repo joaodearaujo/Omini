@@ -1,4 +1,4 @@
-import type { CardInfoProps } from "../ui/CreditCard/CreditCard.type";
+import type { CardInfoProps } from "../components/ui/CreditCard/CreditCard.type";
 
 export const MOCK_CARDS: CardInfoProps[] = [
   {
