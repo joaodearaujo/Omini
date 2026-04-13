@@ -13,8 +13,10 @@ const MyCardsWrapper = () => {
   const { creditCardsArray, loading, refresh } = useMyCards();
   const [ isFormOpen, setIsFormOpen ] = useState<boolean>(false)
 
+  // const isDisabled = creditCardsArray.length >= 4;
+
   return (
-    <Wrapper title={WRAPPER_CONFIG.title} onClick={() => setIsFormOpen(true)}>
+    <Wrapper title={WRAPPER_CONFIG.title} onClick={() => setIsFormOpen(true)} >
         <MyCardsForm isFormOpen={isFormOpen} onClose={() => setIsFormOpen(false)} onCardCreated={refresh}/>
         <CardsList creditCards={creditCardsArray} isLoading={loading}/>
         <CardsStatus />

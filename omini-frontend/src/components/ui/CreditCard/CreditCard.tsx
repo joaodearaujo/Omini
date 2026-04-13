@@ -9,6 +9,8 @@ const STYLE = {
 }
  
 const CreditCard = ({creditCard}: CreditCardProps) => {
+
+
   return (
         <article className={`${STYLE.CARD_LAYOUT} 
                          ${STYLE.CARD_THEME}

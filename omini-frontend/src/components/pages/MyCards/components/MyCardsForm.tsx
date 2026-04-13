@@ -34,7 +34,7 @@ const MYCARDS_FORM_CONFIG = [
         {name: 'Mastercard', value: 'Mastercard'},
         {name: 'American Express', value: 'American Express'}
     ]},
-    {label: 'Expiration Date', name: 'date', type: 'date'}
+    {label: 'Expiration Date', name: 'date', type: 'text', placeholder: 'MM/YY'}
 ]
 
 const MyCardsForm = ({ isFormOpen, onClose, onCardCreated }: MyCardsFormProps) => {

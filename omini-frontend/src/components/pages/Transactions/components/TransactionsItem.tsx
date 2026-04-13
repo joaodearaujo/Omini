@@ -45,11 +45,11 @@ const TransactionItem = ({transaction, bank}: TransactionItemProps) => {
           <span className={`capitalize text-extraSmall ${status.text}`}>{transaction.status}</span>
         </div>
 
-        <span className={STYLE.amount}>{`${format(transaction.amount)}`}</span>
+        <span className={STYLE.amount}>-{`${format(transaction.amount)}`}</span>
       </div>
     </article>
 )
-}
+} 
 
 export default TransactionItem
 

@@ -1,7 +1,7 @@
 import CardSection from "./CardSection";
 import Divider from "../../../../../ui/Divider/Divider";
 import BalanceStatus from "./BalanceStatus";
-import type { CardInfoProps } from "../../../../MyCards/components/CardsList";
+import type { CardInfoProps } from "../../../../../ui/CreditCard/CreditCard.type";
 
 interface CardsWrapperProps {
   currentCard: CardInfoProps;

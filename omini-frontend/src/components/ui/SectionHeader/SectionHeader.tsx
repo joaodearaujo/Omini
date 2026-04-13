@@ -12,9 +12,10 @@ const STYLE = {
 interface SectionsHeaderProps {
     title: string,
     onClick: () => void;
+    isDisabled?: boolean;
 } 
 
-const SectionHeader = ({onClick, title}: SectionsHeaderProps) => {
+const SectionHeader = ({onClick, title, isDisabled}: SectionsHeaderProps) => {
 
     const Icon = Plus
 
@@ -22,7 +23,7 @@ const SectionHeader = ({onClick, title}: SectionsHeaderProps) => {
       <FloatingCard>
       <section className={STYLE.container}>
         <h2 className={STYLE.title}>{title}</h2>
-        <button onClick={onClick} className={STYLE.button}><span><Icon size={STYLE.icon.size} className={STYLE.icon.className}/></span> Add</button>
+        <button onClick={onClick} disabled={isDisabled} className={STYLE.button}><span><Icon size={STYLE.icon.size} className={STYLE.icon.className}/></span>Add</button>
       </section>
     </FloatingCard>
     )

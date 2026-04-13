@@ -12,7 +12,7 @@ interface CardsSectionProps {
 }
 
 const CardSection = ({currentCard, nextIndex, prevIndex}: CardsSectionProps) => (
- 
+
     <section className={STYLE.mainColumn}>
         <CardNav nextIndex={nextIndex} prevIndex={prevIndex}>
             <CreditCard creditCard={currentCard}/>
