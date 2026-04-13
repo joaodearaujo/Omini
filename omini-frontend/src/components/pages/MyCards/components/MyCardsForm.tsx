@@ -18,7 +18,7 @@ const MYCARDS_FORM_CONFIG = [
         {name: 'Inter', value: 'Inter'},
         {name: 'BTG Pactual', value: 'BTG Pactual'}
     ]},
-    {label: 'Card Number', name: 'cardNumber', type: 'number', placeholder: '0000 0000 0000 0000'},
+    {label: 'Card Number', name: 'cardNumber', type: 'text', placeholder: '0000 0000 0000 0000'},
     {label: 'Color', name: 'color', type: 'select', options: [
         { name: 'Select a Color', value: '', disabled: true },
         { name: 'Red', value: '#FF0000' },

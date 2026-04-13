@@ -1,8 +1,9 @@
 import CreditCard from "../../../ui/CreditCard/CreditCard";
 import FloatingCard from "../../../ui/FloatingCard/FloatingCard";
+import CardFallback from "./CardFallback";
 
 const STYLE = {
-    cardsWrapper: 'max-w-full min-w-0 h-fit flex gap-2',
+    cardsWrapper: 'max-w-full min-w-0 h-fit flex py-4 px-1 gap-4 justify-between overflow-x-auto',
 }
 
 type Banks =  'Nubank' | 'Santander' | 'Inter' | 'BTG Pactual';
@@ -28,18 +29,21 @@ const CardsList = ({creditCards, isLoading}: CardListProps) => {
 
     if (isLoading) return <FloatingCard><p className="text-white">Loading goals...</p></FloatingCard>;
 
-    if (creditCards.length === 0) {
-        return (
-            <FloatingCard>
-                <p className="text-gray-500">No Cards found.</p>
-            </FloatingCard>
-        );
-    }
+    const totalSlots = 4;
+    const slotsAvailabe  = Array.from({ length:  totalSlots - creditCards.length});
+    
   return (
-      <section className={STYLE.cardsWrapper}>
-          {creditCards.map((card) => (<CreditCard key={card.id} creditCard={card}/>))}
-      </section>
+    <FloatingCard>
+        <section className={STYLE.cardsWrapper}>
+            {creditCards.map(card => (<div className="group:hover bg-white"> 
+                                        <CreditCard key={card.id} creditCard={card}/>
+                                     </div> ))}
+
+            {slotsAvailabe.map(() => ( <CardFallback /> ))}
+        </section>
+    </FloatingCard>
   )
 }
+
 
 export default CardsList;

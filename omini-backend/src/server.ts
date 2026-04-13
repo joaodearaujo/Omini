@@ -8,4 +8,4 @@ app.use(cors());
 app.use(express.json());
 app.use(router);
 
-app.listen(3333, () => console.log("Omini API rodando na porta 3333"));
+app.listen(3333, () => console.log("Omini API: 3333"));

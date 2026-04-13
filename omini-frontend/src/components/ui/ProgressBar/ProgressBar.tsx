@@ -1,3 +1,4 @@
+
 interface ProgressBarProps {
     track: number;
     indicator: number;
@@ -5,7 +6,7 @@ interface ProgressBarProps {
 }
 
 const STYLE = {
-  track: 'flex w-full h-[12px] items-center justify-start] rounded-full bg-progressBar',
+  track: 'flex w-full h-[12px] items-center justify-start rounded-full bg-progressBar',
   indicator:'h-[12px] rounded-full ransition-all duration-1000 ease-in-out outline-none',
 }
 
@@ -15,7 +16,7 @@ const ProgressBar = ({track, indicator, color = "#197BBD"}: ProgressBarProps) =>
   return (
     <div className={STYLE.track}>
         <div  className={STYLE.indicator}
-              style={{ width: `${usage}%`, backgroundColor:`${color}`}}
+              style={{ width: `${usage}%`, backgroundColor: color}}
               role="progressbar">
         </div>  
     </div>

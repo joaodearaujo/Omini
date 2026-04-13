@@ -22,7 +22,7 @@ const useMyCards = () => {
         fetchCreditCardArray();
     }, [fetchCreditCardArray])
 
-    return { creditCardsArray, refresh: fetchCreditCardArray, loading }
+    return { creditCardsArray, refresh: fetchCreditCardArray, cardsQuantity: creditCardsArray.length, loading }
 }
 
 export default useMyCards

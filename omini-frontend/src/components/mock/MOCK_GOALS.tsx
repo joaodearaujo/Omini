@@ -15,7 +15,7 @@ export const MOCK_GOALS: GoalCardProps[] = [
   },
   {
     category: 'Gaming',
-    value: 3500, 
+    value: 3800, 
     target: 3500, 
     name: 'PS5', 
   },

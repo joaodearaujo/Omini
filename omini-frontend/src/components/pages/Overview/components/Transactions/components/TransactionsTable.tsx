@@ -2,8 +2,11 @@ import type { TransactionsTableProps } from "../TransactionsHistory.type";
 import TableData from "./TableData";
 import { CATEGORY_MAP } from "../../../../../../utils/CategoryMap";
 import TableHead from "./TableHead";
+import useFormatNumber from "../../../../../../hooks/useFormatNumber";
 
 const TransactionsTable = ({transactions}: TransactionsTableProps) => {
+
+  const { format } = useFormatNumber();
 
   return (
       <table className="h-full w-full border-collapse table-fixed overflow-y">
@@ -15,7 +18,7 @@ const TransactionsTable = ({transactions}: TransactionsTableProps) => {
                 <TableData  style={{color:"var(--text-primary-color)" }} Icon={CATEGORY_MAP[transaction.category].icon} data={transaction.receiver}/>
                 <TableData  data={transaction.category}/>
                 <TableData  data={transaction.date}/>
-                <TableData  style={{color:"var(--text-primary-color)", justifySelf:'end'}} data={`R$ ${transaction.amount}`}/>
+                <TableData  style={{color:"var(--text-primary-color)", justifySelf:'end'}} data={`${format(transaction.amount)}`}/>
               </tr>
               )
             })}

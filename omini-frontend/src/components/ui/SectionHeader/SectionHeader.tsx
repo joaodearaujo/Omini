@@ -4,7 +4,7 @@ import FloatingCard from "../FloatingCard/FloatingCard";
 const STYLE = {
     container: 'w-full h-fit flex justify-between items-center',
     title:  'text-title',
-    button:  'bg-black text-white text-title hover:bg-white transition duration-300 rounded-xl py-2 px-3 cursor-pointer',
+    button:  'bg-black text-white text-title hover:bg-[#2e2d2d] transition duration-300 rounded-xl py-2 px-3 cursor-pointer',
 }
 
 interface SectionsHeaderProps {

@@ -1,6 +1,5 @@
 import type { Config } from 'tailwindcss'
 import scrollbar from 'tailwind-scrollbar'
-import { Weight } from 'lucide-react'
 
 export default {
   content: [
@@ -40,7 +39,7 @@ export default {
           },
           pending: {
             primary: 'rgb(var(--status-pending-primary) / <alpha-value>)',
-            secondarys: 'rgb(var(--status-pending-secondary) / <alpha-value>)',
+            secondary: 'rgb(var(--status-pending-secondary) / <alpha-value>)',
           },
           canceled: {
             primary: 'rgb(var(--status-canceled-primary) / <alpha-value>)',

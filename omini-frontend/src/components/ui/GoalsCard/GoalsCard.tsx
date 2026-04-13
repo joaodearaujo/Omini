@@ -1,10 +1,11 @@
 import ProgressBar from "../ProgressBar/ProgressBar";
 import { Mountain, Brush,Gamepad2, HandCoins } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import  useFormatNumber from "../../../hooks/useFormatNumber";
 
 const STYLE = {
-    container: 'flex w-full h-fit items-center justify-between gap-4 p-4 rounded-3xl border-1 border-black/10',
-    wrapper: 'flex flex-col w-full h-fit gap-4',
+    container: 'flex w-full h-fit items-center justify-between p-4 rounded-3xl border-1 border-black/10',
+    wrapper: 'flex flex-col w-full h-fit gap-2',
 }
 
 export interface GoalCardProps {
@@ -26,28 +27,24 @@ const CATEGORY_GOALS: Record<GoalCategory, {icon: LucideIcon, color: string, siz
 const GoalsCard = ({name, value, target, category}: GoalCardProps) => {
 
     const percentage = Math.round((value / target) * 100)
-
     const Icon = CATEGORY_GOALS[category].icon   
-
+    const { format } = useFormatNumber();
+  
     return (
             <article className={STYLE.container}>
-                    <div aria-hidden="true" className="flex-shrink-0">
-                        
-                    </div>
-
                     <div className={STYLE.wrapper}>
                         <header className="w-full h-[30px] gap-2 items-center flex">
                             <Icon size={CATEGORY_GOALS[category].size} className={CATEGORY_GOALS[category].color}/>
-                            <p className="text-small">{name}</p>
+                            <p className="text-small font-[500]">{name}</p>
                         </header>
 
                         <footer className="flex flex-col gap-2">
                             <div>
-                                <ProgressBar track={value} indicator={target} color="#197BBD"/>
+                                <ProgressBar track={value} indicator={target}/>
                             </div>
 
                             <div className="flex justify-between gap-2">
-                                <p className="text-primary text-small">{`R$${value} / R$${target}`}
+                                <p className="text-primary text-small">{`${format(value)} / ${format(target)}`}
                                 </p>
                                 <p className="text-small">{percentage}%</p>
                             </div>

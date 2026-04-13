@@ -9,7 +9,13 @@ const STYLE = {
 
 const BalanceItem = ({label = 'Balance', value = 0, isMain = false, color = 'text-#404040' } : BalanceItemsProps) => {
 
-  const options = {prefix: 'R$'}
+    const options = {
+    prefix: 'R$',
+    decimal: ',',
+    thousands: '.',
+    decimals: 2
+  };  
+
   const { countRef } = useCountUp(value, options);
 
   return (

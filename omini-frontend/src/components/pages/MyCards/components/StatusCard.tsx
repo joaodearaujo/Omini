@@ -13,7 +13,13 @@ const STYLE = {
 }
 
 const StatusCard = ({title, amount, icon, description}: StatusCardProps) => {
-    const options = {prefix: 'R$'}
+    const options = {
+    prefix: 'R$',
+    decimal: ',',
+    thousands: '.',
+    decimals: 2
+  };
+
     const { countRef } = useCountUp(amount, options)
     const Icon = icon
 

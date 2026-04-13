@@ -1,6 +1,6 @@
 import type { TransactionItemProps } from "../Transacitions.type";
-import {  HelpCircle } from "lucide-react";
 import { CATEGORY_MAP } from "../../../../utils/CategoryMap";
+import useFormatNumber from "../../../../hooks/useFormatNumber";
 
 const STYLE = {
     conatainer: 'w-full h-[60px] flex justify-between items-center p-4 bg-white hover:bg-transactionHover transition-all duration-500 rounded-xl cursor-default',
@@ -8,7 +8,7 @@ const STYLE = {
     receiver: 'text-small',
     info: 'text-extraSmall text-secondary',
     status: '' ,
-    amount: 'text-medium text-strong',
+    amount: 'text-small text-strong',
 }
 
 const STATUS_VARIANTS = {
@@ -22,6 +22,7 @@ const TransactionItem = ({transaction, bank}: TransactionItemProps) => {
 
   const status = STATUS_VARIANTS[transaction.status]
   const Icon = CATEGORY_MAP[transaction.category].icon
+  const { format } = useFormatNumber();
 
   return (
     <article className={STYLE.conatainer}>
@@ -44,7 +45,7 @@ const TransactionItem = ({transaction, bank}: TransactionItemProps) => {
           <span className={`capitalize text-extraSmall ${status.text}`}>{transaction.status}</span>
         </div>
 
-        <span className={STYLE.amount}>{`R$ ${transaction.amount}`}</span>
+        <span className={STYLE.amount}>{`${format(transaction.amount)}`}</span>
       </div>
     </article>
 )
