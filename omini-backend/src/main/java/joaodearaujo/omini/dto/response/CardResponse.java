@@ -1,9 +1,7 @@
 package joaodearaujo.omini.dto.response;
 
-import joaodearaujo.omini.domain.entity.Transaction;
-
 import java.math.BigDecimal;
-import java.util.List;
+import java.time.YearMonth;
 
 public record CardResponse(
         String id,
