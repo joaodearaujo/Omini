@@ -1,11 +1,21 @@
 package joaodearaujo.omini.domain.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
 import java.math.BigDecimal;
 import java.time.YearMonth;
 import java.util.List;
 
+@Entity
+@DiscriminatorValue("CREDIT")
 public class CreditCard extends Card {
+
+    @Column
     private BigDecimal limit;
+
+    @Column
     private BigDecimal limitUsed;
 
     public CreditCard() {

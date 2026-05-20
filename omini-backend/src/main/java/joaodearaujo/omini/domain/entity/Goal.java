@@ -1,17 +1,29 @@
 package joaodearaujo.omini.domain.entity;
 
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
 
+@Entity
+@Table(name = "goals")
 public class Goal {
+
+    @Id
     private String id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private BigDecimal currentAmount;
+
+    @Column(nullable = false)
     private BigDecimal targetAmount;
+
+    @Column(nullable = false)
     private LocalDate createdAt;
 
-    // JPA exige construtor vazio para instanciar via reflexão
     public Goal() { }
 
     public Goal(String name, BigDecimal targetAmount) {
@@ -22,17 +34,12 @@ public class Goal {
         this.createdAt = LocalDate.now();
     }
 
-    public String getId () { return id; }
-    public BigDecimal  getTargetAmount() { return targetAmount; }
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public BigDecimal getCurrentAmount() { return currentAmount; }
+    public BigDecimal getTargetAmount() { return targetAmount; }
     public LocalDate getCreatedAt() { return createdAt; }
 
-    public String getName ()  { return name; }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getCurrentAmount() { return currentAmount; }
-    public void setCurrentAmount(BigDecimal currentAmount) {
-        this.currentAmount = currentAmount;
-    }
+    public void setName(String name) { this.name = name; }
+    public void setCurrentAmount(BigDecimal currentAmount) { this.currentAmount = currentAmount; }
 }
