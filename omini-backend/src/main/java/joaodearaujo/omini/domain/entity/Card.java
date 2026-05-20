@@ -40,6 +40,8 @@ public abstract class Card {
         this.transactions = new ArrayList<>();
     }
 
+    public String getId() { return id;}
+
     public String getOwnerName() { return ownerName; }
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;

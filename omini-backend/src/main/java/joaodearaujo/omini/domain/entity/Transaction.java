@@ -36,6 +36,7 @@ public class Transaction {
     @Enumerated(EnumType.STRING)
     private TransactionCategory category;
 
+    // JPA exige construtor vazio para instanciar via reflexão
     public Transaction() { }
 
     public Transaction(String receiver, BigDecimal amount, TransactionType type, TransactionCategory category) {
