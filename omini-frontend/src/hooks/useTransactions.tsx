@@ -1,27 +1,31 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useState } from "react"
+import type { TransactionProps } from "../components/pages/Overview/components/Transactions/TransactionsHistory.type"
+import { MOCK_TRANSACTIONS } from "../components/mock/MOCK_TRANSACTIONS"
+
+
+let _transactionsStore: TransactionProps[] = Object.values(MOCK_TRANSACTIONS).flat();
 
 const useTransactions = () => {
-    const [transactionsArray, setransactionsArray] = useState([])
-    const [loading, setLoading] = useState<boolean>(true)
+    const [transactionsArray, setTransactionsArray] = useState<TransactionProps[]>(_transactionsStore)
+    const [loading, setLoading] = useState<boolean>(false)
 
     const fetchtransactionsArray = useCallback(async () => {
-        try {
-            setLoading(true);
-            const res = await fetch('http://localhost:3333/transactions');
-            const data = await res.json();
-            setransactionsArray(data);
-        } catch (error) {
-            console.error("Fetch error:", error);
-        } finally {
-            setLoading(false);
-        }
+        setLoading(true);
+        await new Promise(resolve => setTimeout(resolve, 300));
+        setTransactionsArray([..._transactionsStore]);
+        setLoading(false);
     }, []);
 
-    useEffect(() => {
-        fetchtransactionsArray();
-    }, [fetchtransactionsArray])
+    const addTransaction = useCallback((newTransaction: Omit<TransactionProps, 'id'>) => {
+        const transaction: TransactionProps = {
+            ...newTransaction,
+            id: `tx-${Date.now()}`,
+        };
+        _transactionsStore = [transaction, ..._transactionsStore];
+        setTransactionsArray([..._transactionsStore]);
+    }, []);
 
-    return { transactionsArray, refresh: fetchtransactionsArray, loading }
+    return { transactionsArray, refresh: fetchtransactionsArray, loading, addTransaction }
 }
 
 export default useTransactions;

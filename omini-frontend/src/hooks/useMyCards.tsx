@@ -1,28 +1,38 @@
-import { useState, useEffect, useCallback } from "react"
+import { useState, useCallback } from "react"
 import type { CardInfoProps } from "../components/ui/CreditCard/CreditCard.type"
+import { MOCK_CARDS } from "../components/mock/MOCK_CARDS"
 
 const useMyCards = () => {
-    const [creditCardsArray, setCreditCardArray] = useState<CardInfoProps[]>([])
-    const [loading, setLoading] = useState<boolean>(true)
+    const [creditCardsArray, setCreditCardArray] = useState<CardInfoProps[]>(MOCK_CARDS)
+    const [loading, setLoading] = useState<boolean>(false)
 
     const fetchCreditCardArray = useCallback(async () => {
-        try {
-            setLoading(true);
-            const res = await fetch('http://localhost:3333/mycards');
-            const data = await res.json();
-            setCreditCardArray(data);
-        } catch (error) {
-            console.error("Fetch error:", error);
-        } finally {
-            setLoading(false);
-        }
+        setLoading(true);
+        // Simula latência de rede
+        await new Promise(resolve => setTimeout(resolve, 300));
+        setCreditCardArray([...MOCK_CARDS]);
+        setLoading(false);
     }, []);
 
-    useEffect(() => {
-        fetchCreditCardArray();
-    }, [fetchCreditCardArray])
+    const addCard = useCallback((newCard: Omit<CardInfoProps, 'id' | 'balance' | 'income' | 'outcome' | 'limitUsage'> & { cardNumber: string }) => {
+        const card: CardInfoProps = {
+            id: `cc-${Date.now()}`,
+            owner: newCard.owner,
+            bank: newCard.bank,
+            flag: newCard.flag,
+            color: newCard.color,
+            number: newCard.cardNumber,
+            date: newCard.date,
+            balance: 0,
+            income: 0,
+            outcome: 0,
+            totalLimit: 5000,
+            limitUsage: 0,
+        };
+        setCreditCardArray(prev => [...prev, card]);
+    }, []);
 
-    return { creditCardsArray, refresh: fetchCreditCardArray, cardsQuantity: creditCardsArray.length, loading }
+    return { creditCardsArray, refresh: fetchCreditCardArray, cardsQuantity: creditCardsArray.length, loading, addCard }
 }
 
 export default useMyCards

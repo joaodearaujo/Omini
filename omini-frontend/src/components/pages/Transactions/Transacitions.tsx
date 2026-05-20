@@ -1,4 +1,4 @@
-import TransactionsWrapper from "./components/TransactionsWrapper"
+import TransactionsWrapper from "./TransactionsWrapper"
 import Main from "../../ui/Main/Main"
 
 const MAIN_CONFIG = {

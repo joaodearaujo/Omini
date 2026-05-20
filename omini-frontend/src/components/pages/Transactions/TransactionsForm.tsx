@@ -1,23 +1,22 @@
-import Modal from "../../../ui/Modal/Modal"
-import Form from "../../../ui/Form/Form"
-import FormContent from "../../../ui/FormContent/FormContent"
+import Modal from "../../ui/Modal/Modal";
+import Form from "../../ui/Form/Form";
+import FormContent from "../../ui/FormContent/FormContent";
 import { useState } from "react";
 
 interface TransactionsFormProps {
     isFormOpen: boolean,
     onClose: () => void,
     onTransactionsCreated: () => void,
+    onAddTransaction?: (transaction: TransactionFormData) => void,
 }
 
-export interface TransactionProps {
-    id: string;
-    status: 'Completed' | 'Pending' | 'Canceled'
-    cardId?: string;
+export interface TransactionFormData {
+    status: 'Completed' | 'Pending' | 'Canceled';
     receiver: string;
     category: 'Food' | 'Health' | 'Transport' | 'Essentials' | 'Lifestyle';
     date: string;
     amount: number;
-} 
+}
 
 const TRANSACTIONS_FORM_CONFIG = [
     {label: 'Receiver', name: 'receiver', type: 'text', placeholder: 'e.g. Amazon'},
@@ -39,58 +38,36 @@ const TRANSACTIONS_FORM_CONFIG = [
     {label: 'Date', name: 'date', type: 'date'}
 ]
 
-const TransactionsForm = ({isFormOpen, onClose, onTransactionsCreated}: TransactionsFormProps) => {
+const TransactionsForm = ({isFormOpen, onClose, onTransactionsCreated, onAddTransaction}: TransactionsFormProps) => {
 
-    const [ formData, setFormaData ] = useState(
-   { status: '',
-    receiver: '',
-    category: '',
-    date: '',
-    amount: 0,}
-    )
-
-    
+    const [formData, setFormaData] = useState({
+        status: '',
+        receiver: '',
+        category: '',
+        date: '',
+        amount: 0,
+    })
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        setFormaData(prev => ({...prev, [name]: name  === 'amount'? Number(value): value}))
+        setFormaData(prev => ({...prev, [name]: name === 'amount' ? Number(value) : value}))
     }
 
     const handleSubimit = async (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-
         e.preventDefault();
 
-        console.log(formData);
-
-        const transactionsFromForm  =   {
-            status: formData.status,
+        const newTransaction: TransactionFormData = {
+            status: formData.status as TransactionFormData['status'],
             receiver: formData.receiver,
-            category: formData.category,
+            category: formData.category as TransactionFormData['category'],
             date: formData.date,
             amount: Number(formData.amount),
+        };
 
-        }
-
-        try {
-            const response = await fetch('http://localhost:3333/transactions', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(transactionsFromForm), 
-        });
-
-            if (!response.ok) {
-            const errorData = await response.json();
-            console.error("Backend validation failed:", errorData);
-            return;
-            }
-
-            onClose();
-            onTransactionsCreated();
-                
-            } catch (error) {
-                console.error("Network error:", error);
-            }
-        }
+        onAddTransaction?.(newTransaction);
+        onClose();
+        onTransactionsCreated();
+    }
 
   return (
     <Modal title="New Transaction" description="Create your transaction here!" isFormOpen={isFormOpen} onClose={onClose}>

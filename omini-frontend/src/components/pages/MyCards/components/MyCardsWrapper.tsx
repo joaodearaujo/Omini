@@ -6,18 +6,21 @@ import { useState } from "react"
 import useMyCards from "../../../../hooks/useMyCards"
 
 const WRAPPER_CONFIG = {
- title: 'My Cards',
+  title: 'My Cards',
 }
 
 const MyCardsWrapper = () => {
-  const { creditCardsArray, loading, refresh } = useMyCards();
-  const [ isFormOpen, setIsFormOpen ] = useState<boolean>(false)
-
-  // const isDisabled = creditCardsArray.length >= 4;
+  const { creditCardsArray, loading, refresh, addCard } = useMyCards();
+  const [isFormOpen, setIsFormOpen] = useState<boolean>(false)
 
   return (
-    <Wrapper title={WRAPPER_CONFIG.title} onClick={() => setIsFormOpen(true)} >
-        <MyCardsForm isFormOpen={isFormOpen} onClose={() => setIsFormOpen(false)} onCardCreated={refresh}/>
+    <Wrapper title={WRAPPER_CONFIG.title} onClick={() => setIsFormOpen(true)}>
+        <MyCardsForm
+          isFormOpen={isFormOpen}
+          onClose={() => setIsFormOpen(false)}
+          onCardCreated={refresh}
+          onAddCard={addCard}
+        />
         <CardsList creditCards={creditCardsArray} isLoading={loading}/>
         <CardsStatus />
     </Wrapper>
@@ -25,4 +28,3 @@ const MyCardsWrapper = () => {
 }
 
 export default MyCardsWrapper
-

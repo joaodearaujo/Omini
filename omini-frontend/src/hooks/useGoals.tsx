@@ -1,17 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
+import type { GoalCardProps } from '../components/ui/GoalsCard/GoalsCard';
+import { MOCK_GOALS } from '../components/mock/MOCK_GOALS';
 
 export const useGoals = () => {
-  const [goals, setGoals] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [goals, setGoals] = useState<GoalCardProps[]>(MOCK_GOALS);
+  const [loading, setLoading] = useState(false);
 
-  const fetchGoals = async () => {
-    const res = await fetch('http://localhost:3333/goals');
-    const data = await res.json();
-    setGoals(data);
+  const fetchGoals = useCallback(async () => {
+    setLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 300));
+    setGoals([...MOCK_GOALS]);
     setLoading(false);
-  };
+  }, []);
 
-  useEffect(() => { fetchGoals(); }, []);
+  const addGoal = useCallback((newGoal: GoalCardProps) => {
+    setGoals(prev => [...prev, newGoal]);
+  }, []);
 
-  return { goals, refresh: fetchGoals, loading };
+  return { goals, refresh: fetchGoals, loading, addGoal };
 };
